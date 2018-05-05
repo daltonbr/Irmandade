@@ -38,8 +38,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.exitButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label = new System.Windows.Forms.Label();
             this.listBox = new System.Windows.Forms.ListBox();
             this.comboBox = new System.Windows.Forms.ComboBox();
+            this.checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.gridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -79,12 +81,14 @@
             resources.ApplyResources(this.editButton, "editButton");
             this.editButton.Name = "editButton";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // insertButton
             // 
             resources.ApplyResources(this.insertButton, "insertButton");
             this.insertButton.Name = "insertButton";
             this.insertButton.UseVisualStyleBackColor = true;
+            this.insertButton.Click += new System.EventHandler(this.insertButton_Click);
             // 
             // panel2
             // 
@@ -101,16 +105,24 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label);
             this.panel3.Controls.Add(this.listBox);
             this.panel3.Controls.Add(this.comboBox);
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
+            // 
+            // label
+            // 
+            resources.ApplyResources(this.label, "label");
+            this.label.Name = "label";
+            this.label.Click += new System.EventHandler(this.label1_Click);
             // 
             // listBox
             // 
             this.listBox.FormattingEnabled = true;
             resources.ApplyResources(this.listBox, "listBox");
             this.listBox.Name = "listBox";
+            this.listBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // comboBox
@@ -119,10 +131,17 @@
             resources.ApplyResources(this.comboBox, "comboBox");
             this.comboBox.Name = "comboBox";
             // 
+            // checkedListBox
+            // 
+            this.checkedListBox.FormattingEnabled = true;
+            resources.ApplyResources(this.checkedListBox, "checkedListBox");
+            this.checkedListBox.Name = "checkedListBox";
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.checkedListBox);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -134,6 +153,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -151,6 +171,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.ComboBox comboBox;
+        private System.Windows.Forms.CheckedListBox checkedListBox;
+        private System.Windows.Forms.Label label;
     }
 }
 
