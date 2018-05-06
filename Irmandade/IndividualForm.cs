@@ -63,8 +63,7 @@ namespace Irmandade
                 pessoa.Observacoes = observacoesTextBox.Text;
                 pessoa.Email = emailTextBox.Text;
                 pessoa.DiasDisponiveis = getDiasDisponiveis();
-
-                //aluno.idade = Convert.ToInt32(txtIdade.Text);
+                                
                 try
                 {
                     if (operacao == "incluir")

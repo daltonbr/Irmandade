@@ -133,9 +133,11 @@
             // 
             // checkedListBox
             // 
+            this.checkedListBox.CheckOnClick = true;
             this.checkedListBox.FormattingEnabled = true;
             resources.ApplyResources(this.checkedListBox, "checkedListBox");
             this.checkedListBox.Name = "checkedListBox";
+            this.checkedListBox.SelectedIndexChanged += new System.EventHandler(this.checkedListBox_SelectedIndexChanged);
             // 
             // MainForm
             // 

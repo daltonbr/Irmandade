@@ -90,7 +90,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Weekdays.cs" />
+    <Compile Include="Dias.cs" />
     <EmbeddedResource Include="IndividualForm.resx">
       <DependentUpon>IndividualForm.cs</DependentUpon>
     </EmbeddedResource>

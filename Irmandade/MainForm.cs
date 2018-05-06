@@ -61,19 +61,18 @@ namespace Irmandade
 
         private void CarregaDiasDaSemana()
         {
-            List<string> diasDaSemana = new List<string> { "seg", "ter", "qua", "qui", "sex" };
-            List<Days> dias = new List<Days> { Days.Monday, Days.Tuesday };
+            //List<string> diasDaSemana = new List<string> { "seg", "ter", "qua", "qui", "sex" };
+            //List<Days> dias = new List<Days> { Days.Segunda, Days.Terça, Days.Quarta, Days.Quinta, Days.Sexta };
 
-            //DayOfWeek monday = DayOfWeek.Monday;
-            DayOfWeek[] days = { DayOfWeek.Monday, DayOfWeek.Tuesday };
+            //DayOfWeek monday = DayOfWeek.Monday;            
 
-            for (int i = 0; i < dias.Count; i++)
-            {                
-                //listBox.Items.Add(diasDaSemana[i]);
-                checkedListBox.Items.Add(dias[i]);
-            }
+            //for (int i = 0; i < dias.Count; i++)
+            //{                
+            //    //listBox.Items.Add(diasDaSemana[i]);
+            //    checkedListBox.Items.Add(dias[i]);
+            //}
 
-            listBox.DataSource = Enum.GetValues(typeof(Days));
+            checkedListBox.DataSource = Enum.GetValues(typeof(Dias));
 
             //for (int i = 0; i < days.Length; i++)
             //{
@@ -182,6 +181,48 @@ namespace Irmandade
             {
                 throw ex;
             }
+        }
+
+        private void checkedListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Display in a message box all the items that are checked.
+
+            int bitwiseSum = 0;
+            // First show the index and check state of all selected items.
+            foreach (int indexChecked in checkedListBox.CheckedIndices)
+            {
+                bitwiseSum += (int)Math.Pow(2,(indexChecked));
+                // The indexChecked variable contains the index of the item.
+                //MessageBox.Show("Index#: " + indexChecked.ToString() + ", is checked. Checked state is:" +
+                //                checkedListBox.GetItemCheckState(indexChecked).ToString() + ".");
+            }
+
+            label.Text = bitwiseSum.ToString();
+
+            // Next show the object title and check state for each item selected.
+            //foreach (object itemChecked in checkedListBox.CheckedItems)
+            //{
+
+            //    // Use the IndexOf method to get the index of an item.
+            //    MessageBox.Show("Item with title: \"" + itemChecked.ToString() +
+            //                    "\", is checked. Checked state is: " +
+            //                    checkedListBox.GetItemCheckState(checkedListBox.Items.IndexOf(itemChecked)).ToString() + ".");
+            //}
+
+            //var collection = checkedListBox.SelectedIndices;
+
+            //List<int> selectedItemIndexes = new List<int>();
+            //foreach (object o in checkedListBox.SelectedItems)
+            //    selectedItemIndexes.Add(checkedListBox.Items.IndexOf(o));
+
+            //string test = "";
+            //var i = 0;
+            //foreach(var v in selectedItemIndexes)
+            //{
+            //    i++;           
+            //    test += v.ToString() + ", ";
+            //}
+            //label.Text = i.ToString();
         }
     }
 }
