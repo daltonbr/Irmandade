@@ -38,10 +38,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.exitButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label = new System.Windows.Forms.Label();
             this.listBox = new System.Windows.Forms.ListBox();
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.checkedListBox = new System.Windows.Forms.CheckedListBox();
-            this.label = new System.Windows.Forms.Label();
             this.gridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -75,6 +75,7 @@
             resources.ApplyResources(this.deleteButton, "deleteButton");
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // editButton
             // 
@@ -111,6 +112,12 @@
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
             // 
+            // label
+            // 
+            resources.ApplyResources(this.label, "label");
+            this.label.Name = "label";
+            this.label.Click += new System.EventHandler(this.label_Click);
+            // 
             // listBox
             // 
             this.listBox.FormattingEnabled = true;
@@ -130,13 +137,7 @@
             this.checkedListBox.CheckOnClick = true;
             this.checkedListBox.FormattingEnabled = true;
             resources.ApplyResources(this.checkedListBox, "checkedListBox");
-            this.checkedListBox.Name = "checkedListBox";            
-            // 
-            // label
-            // 
-            resources.ApplyResources(this.label, "label");
-            this.label.Name = "label";
-            this.label.Click += new System.EventHandler(this.label_Click);
+            this.checkedListBox.Name = "checkedListBox";
             // 
             // MainForm
             // 

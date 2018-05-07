@@ -122,7 +122,7 @@ namespace Irmandade
                 Pessoa pessoa = null;
                 IndividualForm iForm = new IndividualForm(pessoa); // passar _pessoa como parametro
                 iForm.ShowDialog();
-                //CarregaDados();
+                CarregaDados();
             }
             catch (Exception ex)
             {
@@ -140,7 +140,8 @@ namespace Irmandade
             try
             {
                 IndividualForm iform = new IndividualForm(pessoa);
-                iform.ShowDialog();                
+                iform.ShowDialog();
+                CarregaDados();
             }
             catch (Exception ex)
             {
@@ -227,5 +228,54 @@ namespace Irmandade
         {
 
         }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult response = MessageBox.Show("Deseja deletar este registro ?", "Deletar linha",
+                      MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (response == DialogResult.Yes)
+                {
+                    DeletaDados(GetPessoaCPFFromActiveRow());
+                    //TODO make a verication above
+                    CarregaDados();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro : " + ex.Message);
+            }
+        }
+
+        public int DeletaDados(string CPF)
+        {
+            int resultado = -1;
+            //using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+            using (SQLiteConnection conn = BaseRepository.DbConnection())
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                {
+                    cmd.CommandText = "DELETE FROM Pessoas WHERE CPF = @CPF";
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@CPF", CPF);
+                    try
+                    {
+                        resultado = cmd.ExecuteNonQuery();
+                    }
+                    catch (SQLiteException ex)
+                    {
+                        throw ex;
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            return resultado;
+        }
+
     }
 }

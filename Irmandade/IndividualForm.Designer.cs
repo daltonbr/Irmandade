@@ -68,7 +68,6 @@
             // 
             // saveButton
             // 
-            this.saveButton.Enabled = false;
             this.saveButton.Location = new System.Drawing.Point(97, 913);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(279, 121);
