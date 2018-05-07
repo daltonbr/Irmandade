@@ -61,6 +61,24 @@ namespace Irmandade {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data Source=C:\Irmandade\Database\VoluntariosDB.db.
+        /// </summary>
+        internal static string connectionString {
+            get {
+                return ResourceManager.GetString("connectionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VoluntariosDB.db.
+        /// </summary>
+        internal static string databaseFileName {
+            get {
+                return ResourceManager.GetString("databaseFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to friday.
         /// </summary>
         internal static string friday {
@@ -75,6 +93,15 @@ namespace Irmandade {
         internal static string monday {
             get {
                 return ResourceManager.GetString("monday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Database\VoluntariosDB.db.
+        /// </summary>
+        internal static string relativeDatabaseFileName {
+            get {
+                return ResourceManager.GetString("relativeDatabaseFileName", resourceCulture);
             }
         }
         

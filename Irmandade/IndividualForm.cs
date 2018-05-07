@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Irmandade.Model;
+using Irmandade.Data;
 using System.Data.SQLite;
 
 namespace Irmandade
@@ -16,8 +17,8 @@ namespace Irmandade
     {
 
         Pessoa _pessoa;
-        string operacao = "";
-        string connectionString = @"Data Source=C:\Irmandade\database\VoluntariosDB.db";
+        string operacao = "";        
+                
         public IndividualForm(Pessoa pessoa)
         {
             _pessoa = pessoa;
@@ -32,6 +33,8 @@ namespace Irmandade
 
         private void IndividualForm_Load(object sender, EventArgs e)
         {
+            diasCheckedListBox.DataSource = Enum.GetValues(typeof(Dias));
+
             if (_pessoa == null)
             {
                 saveButton.Enabled = true;
@@ -41,9 +44,22 @@ namespace Irmandade
             else
             {
                 operacao = "alterar";
-                nomeTextBox.Text = _pessoa.Nome;
                 CPFTextBox.Text = _pessoa.CPF;
+                RGTextBox.Text = _pessoa.RG;                
+                emissorTextBox.Text = _pessoa.RGEmissor;
+                nomeTextBox.Text = _pessoa.Nome;
+                enderecoTextBox.Text = _pessoa.Endereco;
+                telefoneFixoTextBox.Text = _pessoa.TelefoneFixo;
+                telefoneCelularTextBox.Text = _pessoa.TelefoneCelular;
+                dateTimePicker.Text = _pessoa.InicioDasAtividades;
+                observacoesTextBox.Text = _pessoa.Observacoes;
                 emailTextBox.Text = _pessoa.Email;
+
+                diasCheckedListBox.SetItemChecked(0, _pessoa.DisponivelSegunda == 1);
+                diasCheckedListBox.SetItemChecked(1, _pessoa.DisponivelTerca == 1);
+                diasCheckedListBox.SetItemChecked(2, _pessoa.DisponivelQuarta == 1);
+                diasCheckedListBox.SetItemChecked(3, _pessoa.DisponivelQuinta == 1);
+                diasCheckedListBox.SetItemChecked(4, _pessoa.DisponivelSexta == 1);
             }
         }      
 
@@ -62,8 +78,12 @@ namespace Irmandade
                 pessoa.InicioDasAtividades = dateTimePicker.Text;
                 pessoa.Observacoes = observacoesTextBox.Text;
                 pessoa.Email = emailTextBox.Text;
-                pessoa.DiasDisponiveis = getDiasDisponiveis();
-                                
+                pessoa.DisponivelSegunda = diasCheckedListBox.GetItemCheckState(0) == CheckState.Unchecked ? 0 : 1;
+                pessoa.DisponivelTerca   = diasCheckedListBox.GetItemCheckState(1) == CheckState.Unchecked ? 0 : 1;
+                pessoa.DisponivelQuarta  = diasCheckedListBox.GetItemCheckState(2) == CheckState.Unchecked ? 0 : 1;
+                pessoa.DisponivelQuinta  = diasCheckedListBox.GetItemCheckState(3) == CheckState.Unchecked ? 0 : 1;
+                pessoa.DisponivelSexta   = diasCheckedListBox.GetItemCheckState(4) == CheckState.Unchecked ? 0 : 1;
+
                 try
                 {
                     if (operacao == "incluir")
@@ -113,12 +133,6 @@ namespace Irmandade
             return retorno;
         }
 
-        public int getDiasDisponiveis()
-        {
-            // TODO check the bitwise integer from the diasDisponiveis Checklist
-            return 5;
-        }
-
         private void label1_Click_1(object sender, EventArgs e)
         {
 
@@ -140,15 +154,16 @@ namespace Irmandade
         }
 
         public int IncluirDados(Pessoa pessoa)
-        {
+        {            
             int resultado = -1;
-            using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+            //using (SQLiteConnection conn = new SQLiteConnection(@strings.connectionString))
+            using (SQLiteConnection conn = BaseRepository.DbConnection())
             {
                 conn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(conn))
                 {
-                    cmd.CommandText = "INSERT INTO Pessoas(CPF, RG, RGEmissor, Nome, Endereco, TelefoneFixo, TelefoneCelular, InicioDasAtividades, Observacoes, Email, DiasDisponiveis) " +
-                                       "VALUES (@CPF, @RG, @RGEmissor, @Nome, @Endereco, @TelefoneFixo, @TelefoneCelular, @InicioDasAtividades, @Observacoes, @Email, @DiasDisponiveis)";
+                    cmd.CommandText = "INSERT INTO Pessoas(CPF, RG, RGEmissor, Nome, Endereco, TelefoneFixo, TelefoneCelular, InicioDasAtividades, Observacoes, Email, DisponivelSegunda, DisponivelTerca, DisponivelQuarta, DisponivelQuinta, DisponivelSexta) " +
+                                       "VALUES (@CPF, @RG, @RGEmissor, @Nome, @Endereco, @TelefoneFixo, @TelefoneCelular, @InicioDasAtividades, @Observacoes, @Email, @DisponivelSegunda, @DisponivelTerca, @DisponivelQuarta, @DisponivelQuinta, @DisponivelSexta)";
                     cmd.Prepare();
                     cmd.Parameters.AddWithValue("@CPF", pessoa.CPF);
                     cmd.Parameters.AddWithValue("@RG", pessoa.RG);
@@ -160,7 +175,11 @@ namespace Irmandade
                     cmd.Parameters.AddWithValue("@InicioDasAtividades", pessoa.InicioDasAtividades);
                     cmd.Parameters.AddWithValue("@Observacoes", pessoa.Observacoes);
                     cmd.Parameters.AddWithValue("@Email", pessoa.Email);
-                    cmd.Parameters.AddWithValue("@DiasDisponiveis", pessoa.DiasDisponiveis);
+                    cmd.Parameters.AddWithValue("@DisponivelSegunda", pessoa.DisponivelSegunda);
+                    cmd.Parameters.AddWithValue("@DisponivelTerca", pessoa.DisponivelTerca);
+                    cmd.Parameters.AddWithValue("@DisponivelQuarta", pessoa.DisponivelQuarta);
+                    cmd.Parameters.AddWithValue("@DisponivelQuinta", pessoa.DisponivelQuinta);
+                    cmd.Parameters.AddWithValue("@DisponivelSexta", pessoa.DisponivelSexta);
                     try
                     {
                         resultado = cmd.ExecuteNonQuery();
@@ -181,12 +200,13 @@ namespace Irmandade
         public int AtualizaDados(Pessoa pessoa)
         {
             int resultado = -1;
-            using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+            //using (SQLiteConnection conn = new SQLiteConnection(@strings.connectionString))
+            using (SQLiteConnection conn = BaseRepository.DbConnection())
             {
                 conn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(conn))
                 {
-                    cmd.CommandText = "UPDATE Pessoas SET RG=@RG, RGEmissor=@RGEmissor, Endereco=@Endereco, Nome=@Nome, TelefoneFixo=@TelefoneFixo, TelefoneCelular=@TelefoneCelular, InicioDasAtividades=@InicioDasAtividades, Observacoes=@Observacoes, Email=@Email, DiasDisponiveis=@DiasDisponiveis WHERE CPF = @CPF";
+                    cmd.CommandText = "UPDATE Pessoas SET RG=@RG, RGEmissor=@RGEmissor, Endereco=@Endereco, Nome=@Nome, TelefoneFixo=@TelefoneFixo, TelefoneCelular=@TelefoneCelular, InicioDasAtividades=@InicioDasAtividades, Observacoes=@Observacoes, Email=@Email, DisponivelSegunda=@DisponivelSegunda, DisponivelTerca=@DisponivelTerca, DisponivelQuarta=@DisponivelQuarta, DisponivelQuinta=@DisponivelQuinta, DisponivelSexta=@DisponivelSexta WHERE CPF = @CPF";
                     cmd.Prepare();
                     cmd.Parameters.AddWithValue("@CPF", pessoa.CPF);
                     cmd.Parameters.AddWithValue("@RG", pessoa.RG);
@@ -198,7 +218,11 @@ namespace Irmandade
                     cmd.Parameters.AddWithValue("@InicioDasAtividades", pessoa.InicioDasAtividades);
                     cmd.Parameters.AddWithValue("@Observacoes", pessoa.Observacoes);
                     cmd.Parameters.AddWithValue("@Email", pessoa.Email);
-                    cmd.Parameters.AddWithValue("@DiasDisponiveis", pessoa.DiasDisponiveis);
+                    cmd.Parameters.AddWithValue("@DisponivelSegunda", pessoa.DisponivelSegunda);
+                    cmd.Parameters.AddWithValue("@DisponivelTerca", pessoa.DisponivelTerca);
+                    cmd.Parameters.AddWithValue("@DisponivelQuarta", pessoa.DisponivelQuarta);
+                    cmd.Parameters.AddWithValue("@DisponivelQuinta", pessoa.DisponivelQuinta);
+                    cmd.Parameters.AddWithValue("@DisponivelSexta", pessoa.DisponivelSexta);                    
                     try
                     {
                         resultado = cmd.ExecuteNonQuery();

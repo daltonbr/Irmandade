@@ -221,10 +221,11 @@
             // 
             // diasCheckedListBox
             // 
+            this.diasCheckedListBox.CheckOnClick = true;
             this.diasCheckedListBox.FormattingEnabled = true;
             this.diasCheckedListBox.Location = new System.Drawing.Point(899, 385);
             this.diasCheckedListBox.Name = "diasCheckedListBox";
-            this.diasCheckedListBox.Size = new System.Drawing.Size(319, 186);
+            this.diasCheckedListBox.Size = new System.Drawing.Size(319, 160);
             this.diasCheckedListBox.TabIndex = 19;
             // 
             // diasDisponiveisLabel

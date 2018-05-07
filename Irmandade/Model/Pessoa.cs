@@ -12,7 +12,11 @@
         public string InicioDasAtividades { get; set; }
         public string Observacoes { get; set; }
         public string Email { get; set; }
-        public int DiasDisponiveis { get; set; }
+        public int DisponivelSegunda { get; set; }
+        public int DisponivelTerca { get; set; }
+        public int DisponivelQuarta { get; set; }
+        public int DisponivelQuinta { get; set; }
+        public int DisponivelSexta { get; set; }
 
     }
 }
