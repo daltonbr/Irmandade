@@ -42,32 +42,37 @@
             this.listBox = new System.Windows.Forms.ListBox();
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.checkedListBox = new System.Windows.Forms.CheckedListBox();
+            this.filtroGroupBox = new System.Windows.Forms.GroupBox();
             this.gridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.filtroGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridPanel
             // 
-            this.gridPanel.Controls.Add(this.dataGridView);
             resources.ApplyResources(this.gridPanel, "gridPanel");
+            this.gridPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gridPanel.Controls.Add(this.dataGridView);
             this.gridPanel.Name = "gridPanel";
             // 
             // dataGridView
             // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.dataGridView, "dataGridView");
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 33;
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.deleteButton);
             this.panel1.Controls.Add(this.editButton);
             this.panel1.Controls.Add(this.insertButton);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // deleteButton
@@ -93,8 +98,8 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.exitButton);
             resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Controls.Add(this.exitButton);
             this.panel2.Name = "panel2";
             // 
             // exitButton
@@ -106,9 +111,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label);
-            this.panel3.Controls.Add(this.listBox);
-            this.panel3.Controls.Add(this.comboBox);
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
             // 
@@ -122,6 +124,7 @@
             // 
             this.listBox.FormattingEnabled = true;
             resources.ApplyResources(this.listBox, "listBox");
+            this.listBox.MultiColumn = true;
             this.listBox.Name = "listBox";
             this.listBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
@@ -139,11 +142,23 @@
             resources.ApplyResources(this.checkedListBox, "checkedListBox");
             this.checkedListBox.Name = "checkedListBox";
             // 
+            // filtroGroupBox
+            // 
+            resources.ApplyResources(this.filtroGroupBox, "filtroGroupBox");
+            this.filtroGroupBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.filtroGroupBox.Controls.Add(this.label);
+            this.filtroGroupBox.Controls.Add(this.listBox);
+            this.filtroGroupBox.Controls.Add(this.comboBox);
+            this.filtroGroupBox.Controls.Add(this.checkedListBox);
+            this.filtroGroupBox.Name = "filtroGroupBox";
+            this.filtroGroupBox.TabStop = false;
+            this.filtroGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.checkedListBox);
+            this.Controls.Add(this.filtroGroupBox);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -154,8 +169,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.filtroGroupBox.ResumeLayout(false);
+            this.filtroGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -175,6 +190,7 @@
         private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.CheckedListBox checkedListBox;
         private System.Windows.Forms.Label label;
+        private System.Windows.Forms.GroupBox filtroGroupBox;
     }
 }
 

@@ -277,5 +277,9 @@ namespace Irmandade
             return resultado;
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
