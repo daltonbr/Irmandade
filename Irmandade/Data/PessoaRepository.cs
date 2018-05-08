@@ -40,39 +40,6 @@ namespace Irmandade.Data
             }            
         }
 
-        //private static void CreateDatabase()
-        //{
-        //    using (var conn = DbConnection())
-        //    {
-        //        conn.Open();
-                
-        //        conn.Execute(
-        //            @"CREATE TABLE IF NOT EXISTS Pessoas (
-        //                CPF TEXT NOT NULL,
-        //                RG TEXT,
-        //                RGEmissor TEXT,
-        //                Nome TEXT NOT NULL,
-        //                Endereco TEXT,
-        //                TelefoneFixo TEXT,
-        //                TelefoneCelular TEXT,
-        //                InicioDasAtividades TEXT NOT NULL,
-        //                Observacoes TEXT,
-        //                Email TEXT,
-        //                DisponivelSegunda INTEGER NOT NULL DEFAULT 0,
-        //                DisponivelTerca INTEGER NOT NULL DEFAULT 0,
-        //                DisponivelQuarta INTEGER NOT NULL DEFAULT 0,
-        //                DisponivelQuinta INTEGER NOT NULL DEFAULT 0,
-        //                DisponivelSexta INTEGER NOT NULL DEFAULT 0,
-        //                CONSTRAINT PK_Pessoas PRIMARY KEY(CPF) 
-        //        )");
-        //        //conn.Execute(
-        //        //    @"CREATE TABLE Servicos ( `Id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `Descricao` TEXT NOT NULL)");
-        //        //conn.Execute(
-        //        //    @"CREATE TABLE Pessoas_Servicos ( `Servico_Id` INTEGER, `Pessoa_CPF` TEXT, PRIMARY KEY(`Servico_Id`,`Pessoa_CPF`), FOREIGN KEY(`Pessoa_CPF`) REFERENCES `Pessoas`(`CPF`), FOREIGN KEY(`Servico_Id`) REFERENCES `Servicos`(`Id`) )");
-        //        conn.Close();
-        //    }
-        //}
-
         public DataTable ProcurarPessoas(string nome)
         {
             string sql = "SELECT * FROM Pessoas WHERE Nome LIKE '%" + nome + "%'";
@@ -106,6 +73,7 @@ namespace Irmandade.Data
                                          bool quinta,
                                          bool sexta)
         {
+            // Concatenates the SQL Query suffix
             string[] sqlSuffixList = new string[]
             {
                 segunda ? "DisponivelSegunda = 1" : null,
@@ -115,7 +83,6 @@ namespace Irmandade.Data
                 sexta   ? "DisponivelSexta = 1" : null
             };
             string sqlSuffix = string.Join(" AND ", sqlSuffixList.Where(x => x != null));
-
             bool isEmpty = sqlSuffixList.All(x => x == null);
 
             if (isEmpty)
@@ -128,7 +95,7 @@ namespace Irmandade.Data
             }
 
             string sql = "SELECT * FROM Pessoas " + sqlSuffix;
-            //using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+            
             using (var conn = DbConnection())
             {
                 conn.Open();

@@ -20,6 +20,7 @@ namespace Irmandade
     public partial class MainForm : Form
     {
         PessoaRepository repo = new PessoaRepository();
+        ServicoRepository servicoRepo = new ServicoRepository();
         BaseRepository baseRepo = new BaseRepository();
         public MainForm()
         {
@@ -30,7 +31,7 @@ namespace Irmandade
         {
             CarregaDiasDaSemana();
             CarregaDados();
-            //CarregaServicos();
+            CarregaServicos();
         }
 
         private void CarregaDados()
@@ -109,9 +110,25 @@ namespace Irmandade
             //}
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //label.Text = listBox.SelectedItem.ToString();
+            // Concatenates the SQL Query suffix
+            var servicosList = new List<string>();
+
+            var selected = listBox.SelectedIndices;
+
+            foreach (var item in selected)
+            {
+                servicosList.Add(listBox.GetItemText(item));
+            }
+
+            string servicos = string.Join(" AND ", servicosList);
+            //bool isEmpty = sqlSuffixList.All(x => x == null);
+
+            // string sql = "SELECT * FROM Pessoas " + sqlSuffix;
+
+            testLabel.Text = servicos;
+            //testLabel.Text = listBox.GetItemText(0);
         }
 
         private void insertButton_Click(object sender, EventArgs e)
@@ -162,25 +179,6 @@ namespace Irmandade
             }            
         }
         
-        //private Pessoa GetDadosDoGrid()
-        //{
-        //    try
-        //    {
-        //        int linha;
-        //        linha = dataGridView.CurrentRow.Index;
-        //        Pessoa pessoa = new Pessoa();
-        //        // TODO improve this
-        //        pessoa.CPF = dataGridView[0, linha].Value.ToString();
-        //        pessoa.Nome = dataGridView[1, linha].Value.ToString();
-        //        pessoa.Email = dataGridView[2, linha].Value.ToString();                
-        //        return pessoa;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-
         //private void checkedListBox_SelectedIndexChanged(object sender, EventArgs e)
         //{
         //    // Display in a message box all the items that are checked.
@@ -288,12 +286,18 @@ namespace Irmandade
 
         private void checkedListBox_SelectedIndexChanged(object sender, EventArgs e)
         {            
-            // TODO check if we always have 5 Items in this checkedListBox
+            // TODO check if we always have 5 Item
             dataGridView.DataSource = repo.ProcurarPessoas(checkedListBox.GetItemChecked(0),
                                                            checkedListBox.GetItemChecked(1),
                                                            checkedListBox.GetItemChecked(2),
                                                            checkedListBox.GetItemChecked(3),
                                                            checkedListBox.GetItemChecked(4));
         }
+
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.editButton_Click(editButton, e);
+        }
+
     }
 }

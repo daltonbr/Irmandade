@@ -73,9 +73,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\IPessoaRepository.cs" />
     <Compile Include="Data\BaseRepository.cs" />
     <Compile Include="Data\PessoaRepository.cs" />
+    <Compile Include="Data\ServicoRepository.cs" />
     <Compile Include="IndividualForm.cs">
       <SubType>Form</SubType>
     </Compile>

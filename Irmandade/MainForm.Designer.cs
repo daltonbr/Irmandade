@@ -42,8 +42,11 @@
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.filtroGroupBox = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.searchNameLabel = new System.Windows.Forms.Label();
             this.nameSearchTextBox = new System.Windows.Forms.TextBox();
+            this.testLabel = new System.Windows.Forms.Label();
             this.gridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -69,6 +72,7 @@
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 33;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 
             // panel1
             // 
@@ -124,7 +128,7 @@
             this.listBox.MultiColumn = true;
             this.listBox.Name = "listBox";
             this.listBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
             // comboBox
             // 
@@ -144,6 +148,9 @@
             // 
             resources.ApplyResources(this.filtroGroupBox, "filtroGroupBox");
             this.filtroGroupBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.filtroGroupBox.Controls.Add(this.testLabel);
+            this.filtroGroupBox.Controls.Add(this.label2);
+            this.filtroGroupBox.Controls.Add(this.label1);
             this.filtroGroupBox.Controls.Add(this.searchNameLabel);
             this.filtroGroupBox.Controls.Add(this.nameSearchTextBox);
             this.filtroGroupBox.Controls.Add(this.listBox);
@@ -152,6 +159,16 @@
             this.filtroGroupBox.Name = "filtroGroupBox";
             this.filtroGroupBox.TabStop = false;
             this.filtroGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
             // searchNameLabel
             // 
@@ -163,6 +180,11 @@
             resources.ApplyResources(this.nameSearchTextBox, "nameSearchTextBox");
             this.nameSearchTextBox.Name = "nameSearchTextBox";
             this.nameSearchTextBox.TextChanged += new System.EventHandler(this.nameSearchTextBox_TextChanged);
+            // 
+            // testLabel
+            // 
+            resources.ApplyResources(this.testLabel, "testLabel");
+            this.testLabel.Name = "testLabel";
             // 
             // MainForm
             // 
@@ -202,6 +224,9 @@
         private System.Windows.Forms.GroupBox filtroGroupBox;
         private System.Windows.Forms.Label searchNameLabel;
         private System.Windows.Forms.TextBox nameSearchTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label testLabel;
     }
 }
 

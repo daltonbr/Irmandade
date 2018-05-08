@@ -90,22 +90,22 @@ namespace Irmandade
                     {
                         if (IncluirDados(pessoa) > 0)
                         {
-                            MessageBox.Show("Dados incluídos com sucesso.");
+                            MessageBox.Show("Dados incluídos com sucesso!");
                         }
                         else
                         {
-                            MessageBox.Show("Os dados não foram incluídos.");
+                            MessageBox.Show("Os dados não foram incluídos!");
                         }
                     }
                     else
                     {
                         if (AtualizaDados(pessoa) > 0)
                         {
-                            MessageBox.Show("Dados atualizados com sucesso.");
+                            MessageBox.Show("Dados atualizados com sucesso!");
                         }
                         else
                         {
-                            MessageBox.Show("Os dados não foram atualizados.");
+                            MessageBox.Show("Os dados não foram atualizados!");
                         }
                     }
                 }
@@ -116,21 +116,24 @@ namespace Irmandade
             }
             else
             {
-                MessageBox.Show("Dados inválidos.");
+                MessageBox.Show("Registo NÃO inserido!");
             }
         }
 
         // TODO improve this verification
         private Boolean ValidaDados()
-        {
-            bool retorno = true;
+        {            
             if (nomeTextBox.Text == string.Empty)
-                retorno = false;
-            if (emailTextBox.Text == string.Empty)
-                retorno = false;
+            {
+                MessageBox.Show("Erro : " + "Campo Nome inválido!");
+                return false;
+            }
             if (CPFTextBox.Text == string.Empty)
-                retorno = false;
-            return retorno;
+            {
+                MessageBox.Show("Erro : " + "Campo CPF inválido!");
+                return false;
+            }
+            return true;
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -239,6 +242,12 @@ namespace Irmandade
             }
             return resultado;
 
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // TODO check for editions before closing!
+            Close();
         }
     }
 

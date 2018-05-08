@@ -412,7 +412,7 @@
     <value>1</value>
   </data>
   <data name="listBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>412, 12</value>
+    <value>421, 44</value>
   </data>
   <data name="listBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -433,10 +433,10 @@
     <value>filtroGroupBox</value>
   </data>
   <data name="&gt;&gt;listBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="comboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 78</value>
+    <value>233, 44</value>
   </data>
   <data name="comboBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -457,10 +457,10 @@
     <value>filtroGroupBox</value>
   </data>
   <data name="&gt;&gt;comboBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="checkedListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>594, 12</value>
+    <value>594, 47</value>
   </data>
   <data name="checkedListBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -481,7 +481,7 @@
     <value>filtroGroupBox</value>
   </data>
   <data name="&gt;&gt;checkedListBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="filtroGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -489,11 +489,95 @@
   <data name="filtroGroupBox.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
+  <data name="testLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="testLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 103</value>
+  </data>
+  <data name="testLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="testLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="testLabel.Text" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;testLabel.Name" xml:space="preserve">
+    <value>testLabel</value>
+  </data>
+  <data name="&gt;&gt;testLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;testLabel.Parent" xml:space="preserve">
+    <value>filtroGroupBox</value>
+  </data>
+  <data name="&gt;&gt;testLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>418, 16</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Serviços</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>filtroGroupBox</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>596, 16</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Dias Disponíveis</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>filtroGroupBox</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="searchNameLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="searchNameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 35</value>
+    <value>20, 29</value>
   </data>
   <data name="searchNameLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -514,10 +598,10 @@
     <value>filtroGroupBox</value>
   </data>
   <data name="&gt;&gt;searchNameLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="nameSearchTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 51</value>
+    <value>23, 45</value>
   </data>
   <data name="nameSearchTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 20</value>
@@ -535,13 +619,13 @@
     <value>filtroGroupBox</value>
   </data>
   <data name="&gt;&gt;nameSearchTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="filtroGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 13</value>
   </data>
   <data name="filtroGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>757, 104</value>
+    <value>757, 131</value>
   </data>
   <data name="filtroGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>

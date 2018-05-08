@@ -29,8 +29,7 @@ namespace Irmandade.Data
             {
                 using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = query;
-                    //cmd.Connection.ConnectionString = strings.connectionString;
+                    cmd.CommandText = query;                    
                     cmd.Connection = DbConnection();
                     cmd.Connection.Open();
                     var table = new DataTable();
