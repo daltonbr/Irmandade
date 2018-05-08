@@ -31,7 +31,6 @@ namespace Irmandade
             CarregaDiasDaSemana();
             CarregaDados();
             //CarregaServicos();
-            label.Text = Environment.CurrentDirectory;            
         }
 
         private void CarregaDados()
@@ -233,7 +232,7 @@ namespace Irmandade
         {
             try
             {
-                DialogResult response = MessageBox.Show("Deseja deletar este registro ?", "Deletar linha",
+                DialogResult response = MessageBox.Show("Deseja REMOVER este voluntário?", "Remover Voluntario",
                       MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
                 if (response == DialogResult.Yes)
                 {
@@ -280,6 +279,21 @@ namespace Irmandade
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void nameSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView.DataSource = repo.ProcurarPessoas(nameSearchTextBox.Text);
+        }
+
+        private void checkedListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {            
+            // TODO check if we always have 5 Items in this checkedListBox
+            dataGridView.DataSource = repo.ProcurarPessoas(checkedListBox.GetItemChecked(0),
+                                                           checkedListBox.GetItemChecked(1),
+                                                           checkedListBox.GetItemChecked(2),
+                                                           checkedListBox.GetItemChecked(3),
+                                                           checkedListBox.GetItemChecked(4));
         }
     }
 }

@@ -38,11 +38,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.exitButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label = new System.Windows.Forms.Label();
             this.listBox = new System.Windows.Forms.ListBox();
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.filtroGroupBox = new System.Windows.Forms.GroupBox();
+            this.searchNameLabel = new System.Windows.Forms.Label();
+            this.nameSearchTextBox = new System.Windows.Forms.TextBox();
             this.gridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -63,9 +64,11 @@
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.dataGridView, "dataGridView");
+            this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 33;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
             // panel1
             // 
@@ -114,12 +117,6 @@
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
             // 
-            // label
-            // 
-            resources.ApplyResources(this.label, "label");
-            this.label.Name = "label";
-            this.label.Click += new System.EventHandler(this.label_Click);
-            // 
             // listBox
             // 
             this.listBox.FormattingEnabled = true;
@@ -141,18 +138,31 @@
             this.checkedListBox.FormattingEnabled = true;
             resources.ApplyResources(this.checkedListBox, "checkedListBox");
             this.checkedListBox.Name = "checkedListBox";
+            this.checkedListBox.SelectedIndexChanged += new System.EventHandler(this.checkedListBox_SelectedIndexChanged);
             // 
             // filtroGroupBox
             // 
             resources.ApplyResources(this.filtroGroupBox, "filtroGroupBox");
             this.filtroGroupBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.filtroGroupBox.Controls.Add(this.label);
+            this.filtroGroupBox.Controls.Add(this.searchNameLabel);
+            this.filtroGroupBox.Controls.Add(this.nameSearchTextBox);
             this.filtroGroupBox.Controls.Add(this.listBox);
             this.filtroGroupBox.Controls.Add(this.comboBox);
             this.filtroGroupBox.Controls.Add(this.checkedListBox);
             this.filtroGroupBox.Name = "filtroGroupBox";
             this.filtroGroupBox.TabStop = false;
             this.filtroGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // searchNameLabel
+            // 
+            resources.ApplyResources(this.searchNameLabel, "searchNameLabel");
+            this.searchNameLabel.Name = "searchNameLabel";
+            // 
+            // nameSearchTextBox
+            // 
+            resources.ApplyResources(this.nameSearchTextBox, "nameSearchTextBox");
+            this.nameSearchTextBox.Name = "nameSearchTextBox";
+            this.nameSearchTextBox.TextChanged += new System.EventHandler(this.nameSearchTextBox_TextChanged);
             // 
             // MainForm
             // 
@@ -189,8 +199,9 @@
         private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.CheckedListBox checkedListBox;
-        private System.Windows.Forms.Label label;
         private System.Windows.Forms.GroupBox filtroGroupBox;
+        private System.Windows.Forms.Label searchNameLabel;
+        private System.Windows.Forms.TextBox nameSearchTextBox;
     }
 }
 
