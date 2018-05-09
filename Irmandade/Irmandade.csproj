@@ -76,26 +76,26 @@
     <Compile Include="Data\BaseRepository.cs" />
     <Compile Include="Data\PessoaRepository.cs" />
     <Compile Include="Data\ServicoRepository.cs" />
-    <Compile Include="IndividualForm.cs">
+    <Compile Include="View\IndividualForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IndividualForm.Designer.cs">
+    <Compile Include="View\IndividualForm.Designer.cs">
       <DependentUpon>IndividualForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Pessoa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Servico.cs" />
-    <Compile Include="ServicoForm.cs">
+    <Compile Include="View\ServicoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ServicoForm.Designer.cs">
+    <Compile Include="View\ServicoForm.Designer.cs">
       <DependentUpon>ServicoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="strings.Designer.cs">
@@ -104,10 +104,10 @@
       <DependentUpon>strings.resx</DependentUpon>
     </Compile>
     <Compile Include="Model\Dias.cs" />
-    <EmbeddedResource Include="IndividualForm.resx">
+    <EmbeddedResource Include="View\IndividualForm.resx">
       <DependentUpon>IndividualForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -119,7 +119,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ServicoForm.resx">
+    <EmbeddedResource Include="View\ServicoForm.resx">
       <DependentUpon>ServicoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="strings.pt-BR.resx" />

@@ -67,7 +67,7 @@ namespace Irmandade.Data
                 conn.Execute(
                     @"CREATE TABLE IF NOT EXISTS Servicos (
                         Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                        Descricao TEXT NOT NULL
+                        Descricao TEXT NOT NULL UNIQUE
                 )");
                 conn.Execute(
                     @"CREATE TABLE Pessoas_Servicos (

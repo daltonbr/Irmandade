@@ -50,7 +50,7 @@ namespace Irmandade
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro :" + ex.Message);
+                MessageBox.Show("Erro:" + ex.Message);
             }
             finally
             {
@@ -90,7 +90,7 @@ namespace Irmandade
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro :" + ex.Message);
+                MessageBox.Show("Erro:" + ex.Message);
             }
             finally
             {
@@ -153,7 +153,7 @@ namespace Irmandade
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro : " + ex.Message);
+                MessageBox.Show("Erro: " + ex.Message);
             }
         }
 
@@ -172,7 +172,7 @@ namespace Irmandade
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro : " + ex.Message);
+                MessageBox.Show("Erro: " + ex.Message);
             }
         }
 

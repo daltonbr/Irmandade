@@ -177,6 +177,9 @@
   <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
+  <data name="deleteButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
   <data name="deleteButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>454, 2</value>
   </data>
@@ -204,6 +207,9 @@
   <data name="&gt;&gt;deleteButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="editButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
   <data name="editButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>224, 2</value>
   </data>
@@ -230,6 +236,9 @@
   </data>
   <data name="&gt;&gt;editButton.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="insertButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="insertButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 2</value>
@@ -284,6 +293,9 @@
   </data>
   <data name="panel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
+  </data>
+  <data name="exitButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="exitButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 2</value>

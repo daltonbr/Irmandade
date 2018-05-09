@@ -283,6 +283,20 @@ namespace Irmandade
         {
 
         }
+
+        private void servicosListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addServicoButton_Click(object sender, EventArgs e)
+        {
+            //Pessoa pessoa = null;
+            ServicoForm sForm = new ServicoForm(); // passar _pessoa como parametro ?
+            sForm.ShowDialog();
+            //CarregaDados();
+            // TODO refresh the actual Volunteer screen when comes back
+        }
     }
 
 }

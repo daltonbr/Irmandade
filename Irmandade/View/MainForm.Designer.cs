@@ -40,12 +40,12 @@
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.filtroGroupBox = new System.Windows.Forms.GroupBox();
+            this.cleanButton = new System.Windows.Forms.Button();
             this.testLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.searchNameLabel = new System.Windows.Forms.Label();
             this.nameSearchTextBox = new System.Windows.Forms.TextBox();
-            this.cleanButton = new System.Windows.Forms.Button();
             this.listBox = new System.Windows.Forms.ListBox();
             this.gridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -148,6 +148,13 @@
             this.filtroGroupBox.TabStop = false;
             this.filtroGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // cleanButton
+            // 
+            resources.ApplyResources(this.cleanButton, "cleanButton");
+            this.cleanButton.Name = "cleanButton";
+            this.cleanButton.UseVisualStyleBackColor = true;
+            this.cleanButton.Click += new System.EventHandler(this.cleanButton_Click);
+            // 
             // testLabel
             // 
             resources.ApplyResources(this.testLabel, "testLabel");
@@ -174,13 +181,6 @@
             resources.ApplyResources(this.nameSearchTextBox, "nameSearchTextBox");
             this.nameSearchTextBox.Name = "nameSearchTextBox";
             this.nameSearchTextBox.TextChanged += new System.EventHandler(this.nameSearchTextBox_TextChanged);
-            // 
-            // cleanButton
-            // 
-            resources.ApplyResources(this.cleanButton, "cleanButton");
-            this.cleanButton.Name = "cleanButton";
-            this.cleanButton.UseVisualStyleBackColor = true;
-            this.cleanButton.Click += new System.EventHandler(this.cleanButton_Click);
             // 
             // listBox
             // 

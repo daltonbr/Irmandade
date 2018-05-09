@@ -71,6 +71,7 @@
             // 
             // saveButton
             // 
+            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButton.Location = new System.Drawing.Point(35, 531);
             this.saveButton.Margin = new System.Windows.Forms.Padding(2);
             this.saveButton.Name = "saveButton";
@@ -83,6 +84,7 @@
             // exitButton
             // 
             this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.Location = new System.Drawing.Point(304, 531);
             this.exitButton.Margin = new System.Windows.Forms.Padding(2);
             this.exitButton.Name = "exitButton";
@@ -94,6 +96,7 @@
             // 
             // editButton
             // 
+            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editButton.Location = new System.Drawing.Point(159, 531);
             this.editButton.Margin = new System.Windows.Forms.Padding(2);
             this.editButton.Name = "editButton";
@@ -245,16 +248,16 @@
             // 
             this.diasCheckedListBox.CheckOnClick = true;
             this.diasCheckedListBox.FormattingEnabled = true;
-            this.diasCheckedListBox.Location = new System.Drawing.Point(292, 179);
+            this.diasCheckedListBox.Location = new System.Drawing.Point(35, 182);
             this.diasCheckedListBox.Margin = new System.Windows.Forms.Padding(2);
             this.diasCheckedListBox.Name = "diasCheckedListBox";
-            this.diasCheckedListBox.Size = new System.Drawing.Size(132, 79);
+            this.diasCheckedListBox.Size = new System.Drawing.Size(146, 79);
             this.diasCheckedListBox.TabIndex = 19;
             // 
             // diasDisponiveisLabel
             // 
             this.diasDisponiveisLabel.AutoSize = true;
-            this.diasDisponiveisLabel.Location = new System.Drawing.Point(289, 164);
+            this.diasDisponiveisLabel.Location = new System.Drawing.Point(32, 167);
             this.diasDisponiveisLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.diasDisponiveisLabel.Name = "diasDisponiveisLabel";
             this.diasDisponiveisLabel.Size = new System.Drawing.Size(87, 13);
@@ -264,7 +267,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(275, 274);
+            this.label1.Location = new System.Drawing.Point(32, 285);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 13);
@@ -274,7 +277,7 @@
             // dateTimePicker
             // 
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker.Location = new System.Drawing.Point(278, 288);
+            this.dateTimePicker.Location = new System.Drawing.Point(35, 300);
             this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(146, 20);
@@ -287,7 +290,7 @@
             this.enderecoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.enderecoTextBox.Multiline = true;
             this.enderecoTextBox.Name = "enderecoTextBox";
-            this.enderecoTextBox.Size = new System.Drawing.Size(200, 68);
+            this.enderecoTextBox.Size = new System.Drawing.Size(191, 68);
             this.enderecoTextBox.TabIndex = 24;
             // 
             // enderecoLabel
@@ -303,7 +306,7 @@
             // servicosLabel
             // 
             this.servicosLabel.AutoSize = true;
-            this.servicosLabel.Location = new System.Drawing.Point(31, 165);
+            this.servicosLabel.Location = new System.Drawing.Point(221, 167);
             this.servicosLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.servicosLabel.Name = "servicosLabel";
             this.servicosLabel.Size = new System.Drawing.Size(48, 13);
@@ -313,24 +316,26 @@
             // servicosListBox
             // 
             this.servicosListBox.FormattingEnabled = true;
-            this.servicosListBox.Location = new System.Drawing.Point(34, 179);
+            this.servicosListBox.Location = new System.Drawing.Point(223, 182);
             this.servicosListBox.Margin = new System.Windows.Forms.Padding(2);
             this.servicosListBox.Name = "servicosListBox";
-            this.servicosListBox.Size = new System.Drawing.Size(201, 108);
+            this.servicosListBox.Size = new System.Drawing.Size(201, 95);
             this.servicosListBox.TabIndex = 26;
+            this.servicosListBox.SelectedIndexChanged += new System.EventHandler(this.servicosListBox_SelectedIndexChanged);
             // 
             // addServicoButton
             // 
-            this.addServicoButton.Location = new System.Drawing.Point(35, 292);
+            this.addServicoButton.Location = new System.Drawing.Point(224, 295);
             this.addServicoButton.Name = "addServicoButton";
             this.addServicoButton.Size = new System.Drawing.Size(92, 34);
             this.addServicoButton.TabIndex = 27;
             this.addServicoButton.Text = "Adicionar Serviços";
             this.addServicoButton.UseVisualStyleBackColor = true;
+            this.addServicoButton.Click += new System.EventHandler(this.addServicoButton_Click);
             // 
             // removeServicoButton
             // 
-            this.removeServicoButton.Location = new System.Drawing.Point(142, 292);
+            this.removeServicoButton.Location = new System.Drawing.Point(331, 295);
             this.removeServicoButton.Name = "removeServicoButton";
             this.removeServicoButton.Size = new System.Drawing.Size(93, 34);
             this.removeServicoButton.TabIndex = 28;
