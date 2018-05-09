@@ -129,6 +129,7 @@
             this.comboBox.FormattingEnabled = true;
             resources.ApplyResources(this.comboBox, "comboBox");
             this.comboBox.Name = "comboBox";
+            this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
             // 
             // checkedListBox
             // 

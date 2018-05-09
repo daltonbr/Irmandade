@@ -83,7 +83,8 @@ namespace Irmandade
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     DataRow dr = dt.Rows[i];
-                    listBox.Items.Add(dr[1]);                    
+                    //listBox.Items.Add(dr[1]);
+                    comboBox.Items.Add(dr[1]);
                 }
                 //dataGridView.DataSource = dt.DefaultView;
             }
@@ -119,24 +120,23 @@ namespace Irmandade
 
             foreach (var item in selected)
             {                
-                servicosList.Add(item.ToString());
+                servicosList.Add(@" """ + item.ToString() + @""" ");
             }
 
-            string sqlSuffix = string.Join(" AND ", servicosList);
+            string sqlSuffix = string.Join(" OR ", servicosList);
 
             if (sqlSuffix != "")
             {
-                sqlSuffix = "WHERE " + sqlSuffix;
+                sqlSuffix = "WHERE S.Descricao = " + sqlSuffix;
             }
 
-            string sql = @"SELECT *
-                           FROM Pessoas
-                           INNER JOIN Pessoas_Servicos 
-                                ON Pessoas.CPF = Pessoas_Servicos.Pessoa_CPF 
-                           INNER JOIN Servicos
-                                ON Pessoas_Servicos.Servico_Id = Servicos.Id                                                                  
+            string sql = @"SELECT * FROM Pessoas P
+                           INNER JOIN Pessoas_Servicos PS
+                                ON (P.CPF = PS.Pessoa_CPF)
+                           INNER JOIN Servicos S
+                                ON (PS.Servico_Id = S.Id)
                             " + sqlSuffix;
-            testLabel.Text = sql;
+            testLabel.Text = sqlSuffix;
 
             DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
             dataGridView.DataSource = dt.DefaultView;
@@ -310,5 +310,24 @@ namespace Irmandade
             this.editButton_Click(editButton, e);
         }
 
+        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Concatenates the SQL Query suffix
+            var servicosList = new List<string>();           
+
+            string sqlSuffix = "WHERE S.Descricao = " + @" """ + comboBox.SelectedItem.ToString() + @""" ";
+
+            string sql = @"SELECT * FROM Pessoas P
+                           INNER JOIN Pessoas_Servicos PS
+                                ON (P.CPF = PS.Pessoa_CPF)
+                           INNER JOIN Servicos S
+                                ON (PS.Servico_Id = S.Id)
+                            " + sqlSuffix;
+
+            testLabel.Text = sqlSuffix;
+
+            DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
+            dataGridView.DataSource = dt.DefaultView;
+        }
     }
 }
