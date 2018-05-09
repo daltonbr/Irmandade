@@ -64,33 +64,28 @@ namespace Irmandade
 
                 // Query servicos
 
-                // Concatenates the SQL Query suffix
-                //var servicosList = new List<string>();
+                string sql = @"SELECT S.Descricao FROM Servicos S
+                                INNER JOIN Pessoas_Servicos PS
+                                   ON (PS.Servico_Id = S.Id)
+                                INNER JOIN Pessoas P
+                                   ON (P.CPF = PS.Pessoa_CPF)
+                                    WHERE P.CPF = " + @" """ + _pessoa.CPF + @""" ";
 
-                //string sqlSuffix = "WHERE S.Descricao = " + @" """ + comboBox.SelectedItem.ToString() + @""" ";
-
-                string sql = @"SELECT S.Descricao FROM Pessoas_Servicos PS
-                               INNER JOIN Pessoas P
-                                    ON (PS.Pessoa_CPF = P.CPF)
-                               NATURAL JOIN Servicos S                                    
-                               WHERE P.CPF = " + @" """ + _pessoa.CPF + @""" ";
+                //string sql = @"SELECT S.Descricao FROM Pessoas_Servicos PS
+                //               INNER JOIN Pessoas P
+                //                    ON (PS.Pessoa_CPF = P.CPF)
+                //               INNER JOIN Servicos S                                    
+                //               WHERE P.CPF = " + @" """ + _pessoa.CPF + @""" ";
                 
-                DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
-                DataColumn dc = dt.Columns[0];
+                DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);                
 
-                //servicosListBox.DataSource = dc;
-                //servicosListBox.DataSource = dt.DefaultView;
-
-                //List<Servico> servicos = new List<Servico>();
-                //servicos.Add(new Servico { })
-
-                //List<int> ids = new List<int>(dt.Rows.Count);
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    //servicosListBox.Items.Add(dt[0]);
-                }               
+                    DataRow dr = dt.Rows[i];
+                    servicosListBox.Items.Add(dr[0]);
+                }
             }
-        }      
+        }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
@@ -296,6 +291,11 @@ namespace Irmandade
             sForm.ShowDialog();
             //CarregaDados();
             // TODO refresh the actual Volunteer screen when comes back
+        }
+
+        private void diasCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

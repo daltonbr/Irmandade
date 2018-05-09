@@ -253,6 +253,7 @@
             this.diasCheckedListBox.Name = "diasCheckedListBox";
             this.diasCheckedListBox.Size = new System.Drawing.Size(146, 79);
             this.diasCheckedListBox.TabIndex = 19;
+            this.diasCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.diasCheckedListBox_SelectedIndexChanged);
             // 
             // diasDisponiveisLabel
             // 

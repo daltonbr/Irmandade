@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Data.SQLite;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Irmandade.Data
 {
@@ -29,12 +30,23 @@ namespace Irmandade.Data
             {
                 using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = query;                    
-                    cmd.Connection = DbConnection();
-                    cmd.Connection.Open();
-                    var table = new DataTable();
-                    table.Load(cmd.ExecuteReader());
-                    return table;
+                        cmd.CommandText = query;                    
+                        cmd.Connection = DbConnection();
+                        cmd.Connection.Open();
+                        var table = new DataTable();
+                    try
+                    {
+                        table.Load(cmd.ExecuteReader());
+                    }
+                    catch(SQLiteException ex)
+                    {
+                        throw ex;
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                        return table;
                 }
             }
         }
