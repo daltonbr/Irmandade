@@ -115,20 +115,31 @@ namespace Irmandade
             // Concatenates the SQL Query suffix
             var servicosList = new List<string>();
 
-            var selected = listBox.SelectedIndices;
+            var selected = listBox.SelectedItems;
 
             foreach (var item in selected)
-            {
-                servicosList.Add(listBox.GetItemText(item));
+            {                
+                servicosList.Add(item.ToString());
             }
 
-            string servicos = string.Join(" AND ", servicosList);
-            //bool isEmpty = sqlSuffixList.All(x => x == null);
+            string sqlSuffix = string.Join(" AND ", servicosList);
 
-            // string sql = "SELECT * FROM Pessoas " + sqlSuffix;
+            if (sqlSuffix != "")
+            {
+                sqlSuffix = "WHERE " + sqlSuffix;
+            }
 
-            testLabel.Text = servicos;
-            //testLabel.Text = listBox.GetItemText(0);
+            string sql = @"SELECT *
+                           FROM Pessoas
+                           INNER JOIN Pessoas_Servicos 
+                                ON Pessoas.CPF = Pessoas_Servicos.Pessoa_CPF 
+                           INNER JOIN Servicos
+                                ON Pessoas_Servicos.Servico_Id = Servicos.Id                                                                  
+                            " + sqlSuffix;
+            testLabel.Text = sql;
+
+            DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
+            dataGridView.DataSource = dt.DefaultView;
         }
 
         private void insertButton_Click(object sender, EventArgs e)

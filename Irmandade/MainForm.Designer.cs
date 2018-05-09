@@ -37,16 +37,15 @@
             this.insertButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.exitButton = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.listBox = new System.Windows.Forms.ListBox();
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.filtroGroupBox = new System.Windows.Forms.GroupBox();
+            this.testLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.searchNameLabel = new System.Windows.Forms.Label();
             this.nameSearchTextBox = new System.Windows.Forms.TextBox();
-            this.testLabel = new System.Windows.Forms.Label();
             this.gridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -116,11 +115,6 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // panel3
-            // 
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Name = "panel3";
-            // 
             // listBox
             // 
             this.listBox.FormattingEnabled = true;
@@ -160,6 +154,11 @@
             this.filtroGroupBox.TabStop = false;
             this.filtroGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // testLabel
+            // 
+            resources.ApplyResources(this.testLabel, "testLabel");
+            this.testLabel.Name = "testLabel";
+            // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
@@ -181,17 +180,11 @@
             this.nameSearchTextBox.Name = "nameSearchTextBox";
             this.nameSearchTextBox.TextChanged += new System.EventHandler(this.nameSearchTextBox_TextChanged);
             // 
-            // testLabel
-            // 
-            resources.ApplyResources(this.testLabel, "testLabel");
-            this.testLabel.Name = "testLabel";
-            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.filtroGroupBox);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gridPanel);
@@ -217,7 +210,6 @@
         private System.Windows.Forms.Button insertButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.CheckedListBox checkedListBox;

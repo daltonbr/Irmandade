@@ -128,11 +128,8 @@
   <data name="dataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="dataGridView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
   <data name="dataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 242</value>
+    <value>1140, 372</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView.TabIndex" type="System.Int32, mscorlib">
@@ -151,13 +148,10 @@
     <value>0</value>
   </data>
   <data name="gridPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 149</value>
-  </data>
-  <data name="gridPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>20, 229</value>
   </data>
   <data name="gridPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 242</value>
+    <value>1140, 372</value>
   </data>
   <data name="gridPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -172,79 +166,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gridPanel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="&gt;&gt;deleteButton.Name" xml:space="preserve">
-    <value>deleteButton</value>
-  </data>
-  <data name="&gt;&gt;deleteButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;deleteButton.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;deleteButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;editButton.Name" xml:space="preserve">
-    <value>editButton</value>
-  </data>
-  <data name="&gt;&gt;editButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;editButton.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;editButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;insertButton.Name" xml:space="preserve">
-    <value>insertButton</value>
-  </data>
-  <data name="&gt;&gt;insertButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;insertButton.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;insertButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 481</value>
-  </data>
-  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>596, 69</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="deleteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>454, 2</value>
-  </data>
-  <data name="deleteButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>681, 3</value>
   </data>
   <data name="deleteButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 60</value>
+    <value>210, 92</value>
   </data>
   <data name="deleteButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -265,13 +196,10 @@
     <value>0</value>
   </data>
   <data name="editButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 2</value>
-  </data>
-  <data name="editButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>336, 3</value>
   </data>
   <data name="editButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 60</value>
+    <value>210, 92</value>
   </data>
   <data name="editButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -292,13 +220,10 @@
     <value>1</value>
   </data>
   <data name="insertButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
-  </data>
-  <data name="insertButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 3</value>
   </data>
   <data name="insertButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 60</value>
+    <value>210, 92</value>
   </data>
   <data name="insertButton.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -318,53 +243,35 @@
   <data name="&gt;&gt;insertButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 740</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>894, 106</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="panel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="&gt;&gt;exitButton.Name" xml:space="preserve">
-    <value>exitButton</value>
-  </data>
-  <data name="&gt;&gt;exitButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exitButton.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;exitButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>615, 481</value>
-  </data>
-  <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 69</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="exitButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
-  </data>
-  <data name="exitButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 3</value>
   </data>
   <data name="exitButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 60</value>
+    <value>210, 92</value>
   </data>
   <data name="exitButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -384,41 +291,35 @@
   <data name="&gt;&gt;exitButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="panel3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>922, 740</value>
   </data>
-  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 416</value>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 106</value>
   </data>
-  <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>594, 61</value>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
   </data>
-  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="listBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>421, 44</value>
+  <data name="listBox.ItemHeight" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
-  <data name="listBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="listBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>632, 68</value>
   </data>
   <data name="listBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 82</value>
+    <value>234, 124</value>
   </data>
   <data name="listBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -436,13 +337,10 @@
     <value>5</value>
   </data>
   <data name="comboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>233, 44</value>
-  </data>
-  <data name="comboBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>350, 68</value>
   </data>
   <data name="comboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 21</value>
+    <value>232, 28</value>
   </data>
   <data name="comboBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -460,13 +358,10 @@
     <value>6</value>
   </data>
   <data name="checkedListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>594, 47</value>
-  </data>
-  <data name="checkedListBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>891, 72</value>
   </data>
   <data name="checkedListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 79</value>
+    <value>235, 109</value>
   </data>
   <data name="checkedListBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -493,10 +388,13 @@
     <value>True</value>
   </data>
   <data name="testLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 103</value>
+    <value>345, 158</value>
+  </data>
+  <data name="testLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="testLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
+    <value>51, 20</value>
   </data>
   <data name="testLabel.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -523,10 +421,13 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>418, 16</value>
+    <value>627, 25</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
+    <value>69, 20</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -550,10 +451,13 @@
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>596, 16</value>
+    <value>894, 25</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 13</value>
+    <value>125, 20</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -577,10 +481,13 @@
     <value>True</value>
   </data>
   <data name="searchNameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 29</value>
+    <value>30, 45</value>
+  </data>
+  <data name="searchNameLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="searchNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
+    <value>51, 20</value>
   </data>
   <data name="searchNameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -601,10 +508,13 @@
     <value>3</value>
   </data>
   <data name="nameSearchTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 45</value>
+    <value>34, 69</value>
+  </data>
+  <data name="nameSearchTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="nameSearchTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 20</value>
+    <value>232, 26</value>
   </data>
   <data name="nameSearchTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -622,10 +532,16 @@
     <value>4</value>
   </data>
   <data name="filtroGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 13</value>
+    <value>24, 20</value>
+  </data>
+  <data name="filtroGroupBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="filtroGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="filtroGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>757, 131</value>
+    <value>1136, 202</value>
   </data>
   <data name="filtroGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -649,16 +565,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>9, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>784, 561</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>1176, 863</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 600</value>
+    <value>1189, 893</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Irmandade - Cadastro de Voluntários</value>
