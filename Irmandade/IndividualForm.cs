@@ -15,6 +15,7 @@ namespace Irmandade
 {
     public partial class IndividualForm : Form
     {
+        BaseRepository baseRepo = new BaseRepository();
 
         Pessoa _pessoa;
         string operacao = "";        
@@ -60,6 +61,34 @@ namespace Irmandade
                 diasCheckedListBox.SetItemChecked(2, _pessoa.DisponivelQuarta == 1);
                 diasCheckedListBox.SetItemChecked(3, _pessoa.DisponivelQuinta == 1);
                 diasCheckedListBox.SetItemChecked(4, _pessoa.DisponivelSexta == 1);
+
+                // Query servicos
+
+                // Concatenates the SQL Query suffix
+                //var servicosList = new List<string>();
+
+                //string sqlSuffix = "WHERE S.Descricao = " + @" """ + comboBox.SelectedItem.ToString() + @""" ";
+
+                string sql = @"SELECT S.Descricao FROM Pessoas_Servicos PS
+                               INNER JOIN Pessoas P
+                                    ON (PS.Pessoa_CPF = P.CPF)
+                               NATURAL JOIN Servicos S                                    
+                               WHERE P.CPF = " + @" """ + _pessoa.CPF + @""" ";
+                
+                DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
+                DataColumn dc = dt.Columns[0];
+
+                //servicosListBox.DataSource = dc;
+                //servicosListBox.DataSource = dt.DefaultView;
+
+                //List<Servico> servicos = new List<Servico>();
+                //servicos.Add(new Servico { })
+
+                //List<int> ids = new List<int>(dt.Rows.Count);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    //servicosListBox.Items.Add(dt[0]);
+                }               
             }
         }      
 
@@ -248,6 +277,11 @@ namespace Irmandade
         {
             // TODO check for editions before closing!
             Close();
+        }
+
+        private void removeServicoButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

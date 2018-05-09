@@ -312,6 +312,8 @@ namespace Irmandade
 
         private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox.SelectedIndex == -1) return;
+            
             // Concatenates the SQL Query suffix
             var servicosList = new List<string>();           
 
@@ -328,6 +330,22 @@ namespace Irmandade
 
             DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
             dataGridView.DataSource = dt.DefaultView;
+        }
+
+        private void cleanButton_Click(object sender, EventArgs e)
+        {
+            nameSearchTextBox.Text = "";
+            comboBox.SelectedIndex = -1;
+            checkedListBox.ClearSelected();
+            foreach (int i in checkedListBox.CheckedIndices)
+            {
+                checkedListBox.SetItemCheckState(i, CheckState.Unchecked);
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

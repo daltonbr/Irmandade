@@ -55,8 +55,8 @@
             this.enderecoLabel = new System.Windows.Forms.Label();
             this.servicosLabel = new System.Windows.Forms.Label();
             this.servicosListBox = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.addServicoButton = new System.Windows.Forms.Button();
+            this.removeServicoButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -72,7 +72,7 @@
             // saveButton
             // 
             this.saveButton.Location = new System.Drawing.Point(35, 531);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(2);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(120, 60);
             this.saveButton.TabIndex = 1;
@@ -84,7 +84,7 @@
             // 
             this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.exitButton.Location = new System.Drawing.Point(304, 531);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(2);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(120, 60);
             this.exitButton.TabIndex = 2;
@@ -95,7 +95,7 @@
             // editButton
             // 
             this.editButton.Location = new System.Drawing.Point(159, 531);
-            this.editButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editButton.Margin = new System.Windows.Forms.Padding(2);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(120, 60);
             this.editButton.TabIndex = 3;
@@ -105,7 +105,7 @@
             // nomeTextBox
             // 
             this.nomeTextBox.Location = new System.Drawing.Point(34, 40);
-            this.nomeTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nomeTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(390, 20);
             this.nomeTextBox.TabIndex = 4;
@@ -113,7 +113,7 @@
             // emailTextBox
             // 
             this.emailTextBox.Location = new System.Drawing.Point(34, 82);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(390, 20);
             this.emailTextBox.TabIndex = 6;
@@ -131,7 +131,7 @@
             // CPFTextBox
             // 
             this.CPFTextBox.Location = new System.Drawing.Point(241, 352);
-            this.CPFTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CPFTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.CPFTextBox.Name = "CPFTextBox";
             this.CPFTextBox.Size = new System.Drawing.Size(183, 20);
             this.CPFTextBox.TabIndex = 8;
@@ -149,7 +149,7 @@
             // RGTextBox
             // 
             this.RGTextBox.Location = new System.Drawing.Point(242, 400);
-            this.RGTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RGTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.RGTextBox.Name = "RGTextBox";
             this.RGTextBox.Size = new System.Drawing.Size(112, 20);
             this.RGTextBox.TabIndex = 10;
@@ -168,7 +168,7 @@
             // emissorTextBox
             // 
             this.emissorTextBox.Location = new System.Drawing.Point(357, 400);
-            this.emissorTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emissorTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.emissorTextBox.Name = "emissorTextBox";
             this.emissorTextBox.Size = new System.Drawing.Size(67, 20);
             this.emissorTextBox.TabIndex = 12;
@@ -186,7 +186,7 @@
             // telefoneFixoTextBox
             // 
             this.telefoneFixoTextBox.Location = new System.Drawing.Point(34, 133);
-            this.telefoneFixoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.telefoneFixoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.telefoneFixoTextBox.Name = "telefoneFixoTextBox";
             this.telefoneFixoTextBox.Size = new System.Drawing.Size(192, 20);
             this.telefoneFixoTextBox.TabIndex = 14;
@@ -204,7 +204,7 @@
             // telefoneCelularTextBox
             // 
             this.telefoneCelularTextBox.Location = new System.Drawing.Point(234, 133);
-            this.telefoneCelularTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.telefoneCelularTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.telefoneCelularTextBox.Name = "telefoneCelularTextBox";
             this.telefoneCelularTextBox.Size = new System.Drawing.Size(190, 20);
             this.telefoneCelularTextBox.TabIndex = 16;
@@ -224,7 +224,7 @@
             this.observacoesTextBox.AcceptsReturn = true;
             this.observacoesTextBox.AcceptsTab = true;
             this.observacoesTextBox.Location = new System.Drawing.Point(34, 449);
-            this.observacoesTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.observacoesTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.observacoesTextBox.Multiline = true;
             this.observacoesTextBox.Name = "observacoesTextBox";
             this.observacoesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -245,8 +245,8 @@
             // 
             this.diasCheckedListBox.CheckOnClick = true;
             this.diasCheckedListBox.FormattingEnabled = true;
-            this.diasCheckedListBox.Location = new System.Drawing.Point(292, 187);
-            this.diasCheckedListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.diasCheckedListBox.Location = new System.Drawing.Point(292, 179);
+            this.diasCheckedListBox.Margin = new System.Windows.Forms.Padding(2);
             this.diasCheckedListBox.Name = "diasCheckedListBox";
             this.diasCheckedListBox.Size = new System.Drawing.Size(132, 79);
             this.diasCheckedListBox.TabIndex = 19;
@@ -254,7 +254,7 @@
             // diasDisponiveisLabel
             // 
             this.diasDisponiveisLabel.AutoSize = true;
-            this.diasDisponiveisLabel.Location = new System.Drawing.Point(289, 172);
+            this.diasDisponiveisLabel.Location = new System.Drawing.Point(289, 164);
             this.diasDisponiveisLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.diasDisponiveisLabel.Name = "diasDisponiveisLabel";
             this.diasDisponiveisLabel.Size = new System.Drawing.Size(87, 13);
@@ -275,7 +275,7 @@
             // 
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker.Location = new System.Drawing.Point(278, 288);
-            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(146, 20);
             this.dateTimePicker.TabIndex = 22;
@@ -284,7 +284,7 @@
             // enderecoTextBox
             // 
             this.enderecoTextBox.Location = new System.Drawing.Point(35, 352);
-            this.enderecoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.enderecoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.enderecoTextBox.Multiline = true;
             this.enderecoTextBox.Name = "enderecoTextBox";
             this.enderecoTextBox.Size = new System.Drawing.Size(200, 68);
@@ -303,7 +303,7 @@
             // servicosLabel
             // 
             this.servicosLabel.AutoSize = true;
-            this.servicosLabel.Location = new System.Drawing.Point(31, 173);
+            this.servicosLabel.Location = new System.Drawing.Point(31, 165);
             this.servicosLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.servicosLabel.Name = "servicosLabel";
             this.servicosLabel.Size = new System.Drawing.Size(48, 13);
@@ -313,29 +313,30 @@
             // servicosListBox
             // 
             this.servicosListBox.FormattingEnabled = true;
-            this.servicosListBox.Location = new System.Drawing.Point(34, 187);
-            this.servicosListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.servicosListBox.Location = new System.Drawing.Point(34, 179);
+            this.servicosListBox.Margin = new System.Windows.Forms.Padding(2);
             this.servicosListBox.Name = "servicosListBox";
             this.servicosListBox.Size = new System.Drawing.Size(201, 108);
             this.servicosListBox.TabIndex = 26;
             // 
-            // button1
+            // addServicoButton
             // 
-            this.button1.Location = new System.Drawing.Point(52, 300);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addServicoButton.Location = new System.Drawing.Point(35, 292);
+            this.addServicoButton.Name = "addServicoButton";
+            this.addServicoButton.Size = new System.Drawing.Size(92, 34);
+            this.addServicoButton.TabIndex = 27;
+            this.addServicoButton.Text = "Adicionar Serviços";
+            this.addServicoButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // removeServicoButton
             // 
-            this.button2.Location = new System.Drawing.Point(151, 300);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.removeServicoButton.Location = new System.Drawing.Point(142, 292);
+            this.removeServicoButton.Name = "removeServicoButton";
+            this.removeServicoButton.Size = new System.Drawing.Size(93, 34);
+            this.removeServicoButton.TabIndex = 28;
+            this.removeServicoButton.Text = "Remover Serviços";
+            this.removeServicoButton.UseVisualStyleBackColor = true;
+            this.removeServicoButton.Click += new System.EventHandler(this.removeServicoButton_Click);
             // 
             // IndividualForm
             // 
@@ -345,8 +346,8 @@
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.CancelButton = this.exitButton;
             this.ClientSize = new System.Drawing.Size(474, 611);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.removeServicoButton);
+            this.Controls.Add(this.addServicoButton);
             this.Controls.Add(this.servicosListBox);
             this.Controls.Add(this.servicosLabel);
             this.Controls.Add(this.enderecoTextBox);
@@ -374,7 +375,7 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.nameLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(490, 650);
             this.MinimumSize = new System.Drawing.Size(490, 650);
@@ -416,7 +417,7 @@
         private System.Windows.Forms.Label enderecoLabel;
         private System.Windows.Forms.Label servicosLabel;
         private System.Windows.Forms.ListBox servicosListBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button addServicoButton;
+        private System.Windows.Forms.Button removeServicoButton;
     }
 }

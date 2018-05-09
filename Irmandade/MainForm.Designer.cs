@@ -37,7 +37,6 @@
             this.insertButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.exitButton = new System.Windows.Forms.Button();
-            this.listBox = new System.Windows.Forms.ListBox();
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.filtroGroupBox = new System.Windows.Forms.GroupBox();
@@ -46,6 +45,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.searchNameLabel = new System.Windows.Forms.Label();
             this.nameSearchTextBox = new System.Windows.Forms.TextBox();
+            this.cleanButton = new System.Windows.Forms.Button();
+            this.listBox = new System.Windows.Forms.ListBox();
             this.gridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -115,15 +116,6 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // listBox
-            // 
-            this.listBox.FormattingEnabled = true;
-            resources.ApplyResources(this.listBox, "listBox");
-            this.listBox.MultiColumn = true;
-            this.listBox.Name = "listBox";
-            this.listBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
-            // 
             // comboBox
             // 
             this.comboBox.FormattingEnabled = true;
@@ -142,7 +134,8 @@
             // filtroGroupBox
             // 
             resources.ApplyResources(this.filtroGroupBox, "filtroGroupBox");
-            this.filtroGroupBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.filtroGroupBox.BackColor = System.Drawing.Color.Linen;
+            this.filtroGroupBox.Controls.Add(this.cleanButton);
             this.filtroGroupBox.Controls.Add(this.testLabel);
             this.filtroGroupBox.Controls.Add(this.label2);
             this.filtroGroupBox.Controls.Add(this.label1);
@@ -164,6 +157,7 @@
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -180,6 +174,22 @@
             resources.ApplyResources(this.nameSearchTextBox, "nameSearchTextBox");
             this.nameSearchTextBox.Name = "nameSearchTextBox";
             this.nameSearchTextBox.TextChanged += new System.EventHandler(this.nameSearchTextBox_TextChanged);
+            // 
+            // cleanButton
+            // 
+            resources.ApplyResources(this.cleanButton, "cleanButton");
+            this.cleanButton.Name = "cleanButton";
+            this.cleanButton.UseVisualStyleBackColor = true;
+            this.cleanButton.Click += new System.EventHandler(this.cleanButton_Click);
+            // 
+            // listBox
+            // 
+            resources.ApplyResources(this.listBox, "listBox");
+            this.listBox.FormattingEnabled = true;
+            this.listBox.MultiColumn = true;
+            this.listBox.Name = "listBox";
+            this.listBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
             // MainForm
             // 
@@ -211,7 +221,6 @@
         private System.Windows.Forms.Button insertButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.CheckedListBox checkedListBox;
         private System.Windows.Forms.GroupBox filtroGroupBox;
@@ -220,6 +229,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label testLabel;
+        private System.Windows.Forms.Button cleanButton;
+        private System.Windows.Forms.ListBox listBox;
     }
 }
 
