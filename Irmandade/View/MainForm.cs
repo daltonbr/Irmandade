@@ -341,6 +341,8 @@ namespace Irmandade
             {
                 checkedListBox.SetItemCheckState(i, CheckState.Unchecked);
             }
+
+            CarregaDados();
         }
 
         private void label2_Click(object sender, EventArgs e)
