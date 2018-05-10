@@ -151,6 +151,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Images\heartIcon.ico" />
     <None Include="Resources\Images\coracaoIcon128.png" />
     <None Include="Resources\Images\brasao.jpg" />
     <Content Include="Resources\Images\coracaoIcon256.ico" />

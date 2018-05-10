@@ -52,8 +52,13 @@ namespace Irmandade
             }
             else
             {
-                // TODO load only the Servicos that the Pessoa don't have
-                sql = "SELECT S.* FROM Servicos S";
+                // TODO load only the Servicos that the Pessoa doesn't have
+                sql = "SELECT S.* FROM Servicos S " +                            
+                            "WHERE (S.Id) NOT IN " +
+                            "( SELECT S.Id " +
+                            "FROM Servicos S INNER JOIN Pessoas_Servicos PS " +
+                                "ON S.Id = PS.Servico_Id " +
+                                "WHERE (PS.Pessoa_CPF == " + @" """ + _CPF + @""" " + "))";                                
             }
             try
             {

@@ -279,6 +279,7 @@ namespace Irmandade
             {
                 //editButton.Enabled = false;
                 MessageBox.Show("Selecione um serviço para ser removido!");
+                return;
             }
             removeServiceFromPessoa(servicosListBox.SelectedItem.ToString(), _pessoa.CPF);
             UpdateServicos(_pessoa.CPF);
@@ -292,7 +293,7 @@ namespace Irmandade
         private void addServicoButton_Click(object sender, EventArgs e)
         {
             //Pessoa pessoa = null;
-            ServicoForm sForm = new ServicoForm(); // passar _pessoa como parametro ?
+            ServicoForm sForm = new ServicoForm(_pessoa.CPF); // passar _pessoa como parametro ?
             sForm.ShowDialog();
             //CarregaDados();
             // TODO refresh the actual Volunteer screen when comes back
