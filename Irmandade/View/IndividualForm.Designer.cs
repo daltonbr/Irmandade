@@ -326,9 +326,10 @@
             // 
             // addServicoButton
             // 
-            this.addServicoButton.Location = new System.Drawing.Point(224, 295);
+            this.addServicoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addServicoButton.Location = new System.Drawing.Point(223, 282);
             this.addServicoButton.Name = "addServicoButton";
-            this.addServicoButton.Size = new System.Drawing.Size(92, 34);
+            this.addServicoButton.Size = new System.Drawing.Size(93, 47);
             this.addServicoButton.TabIndex = 27;
             this.addServicoButton.Text = "Adicionar Serviços";
             this.addServicoButton.UseVisualStyleBackColor = true;
@@ -336,9 +337,10 @@
             // 
             // removeServicoButton
             // 
-            this.removeServicoButton.Location = new System.Drawing.Point(331, 295);
+            this.removeServicoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeServicoButton.Location = new System.Drawing.Point(331, 282);
             this.removeServicoButton.Name = "removeServicoButton";
-            this.removeServicoButton.Size = new System.Drawing.Size(93, 34);
+            this.removeServicoButton.Size = new System.Drawing.Size(93, 47);
             this.removeServicoButton.TabIndex = 28;
             this.removeServicoButton.Text = "Remover Serviços";
             this.removeServicoButton.UseVisualStyleBackColor = true;
@@ -351,7 +353,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.CancelButton = this.exitButton;
-            this.ClientSize = new System.Drawing.Size(474, 611);
+            this.ClientSize = new System.Drawing.Size(464, 611);
             this.Controls.Add(this.removeServicoButton);
             this.Controls.Add(this.addServicoButton);
             this.Controls.Add(this.servicosListBox);
@@ -383,8 +385,8 @@
             this.Controls.Add(this.nameLabel);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(490, 650);
-            this.MinimumSize = new System.Drawing.Size(490, 650);
+            this.MaximumSize = new System.Drawing.Size(480, 650);
+            this.MinimumSize = new System.Drawing.Size(480, 650);
             this.Name = "IndividualForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Ficha do Voluntário";

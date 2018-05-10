@@ -69,13 +69,7 @@ namespace Irmandade
                                    ON (PS.Servico_Id = S.Id)
                                 INNER JOIN Pessoas P
                                    ON (P.CPF = PS.Pessoa_CPF)
-                                    WHERE P.CPF = " + @" """ + _pessoa.CPF + @""" ";
-
-                //string sql = @"SELECT S.Descricao FROM Pessoas_Servicos PS
-                //               INNER JOIN Pessoas P
-                //                    ON (PS.Pessoa_CPF = P.CPF)
-                //               INNER JOIN Servicos S                                    
-                //               WHERE P.CPF = " + @" """ + _pessoa.CPF + @""" ";
+                                    WHERE P.CPF = " + @" """ + _pessoa.CPF + @""" ";                
                 
                 DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);                
 
@@ -276,7 +270,12 @@ namespace Irmandade
 
         private void removeServicoButton_Click(object sender, EventArgs e)
         {
-
+            if (servicosListBox.SelectedIndex == -1)
+            {
+                //editButton.Enabled = false;
+                MessageBox.Show("Selecione um serviço para ser removido!");
+            }
+            removeServiceFromPessoa(servicosListBox.SelectedItem.ToString(), _pessoa.CPF);
         }
 
         private void servicosListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -296,6 +295,61 @@ namespace Irmandade
         private void diasCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void removeServiceFromPessoa(string descricaoServico, string CPF)
+        {
+            try
+            {
+                DialogResult response = MessageBox.Show($"Deseja REMOVER este Serviço ({descricaoServico}) deste voluntário?", "Remover Serviço",
+                      MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (response == DialogResult.Yes)
+                {
+                    DeletaDados(descricaoServico, CPF);
+                    // TODO make a verication above
+                    // TODO atualiza listBox
+                    //CarregaDados();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro : " + ex.Message);
+            }
+        }
+
+        private int DeletaDados(string descricaoServico, string CPF)
+        {
+            int resultado = -1;            
+            using (SQLiteConnection conn = BaseRepository.DbConnection())
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                {
+                    cmd.CommandText = "DELETE FROM Pessoas_Servicos " +
+                                            "WHERE Pessoa_CPF = @CPF AND (Servico_Id) IN " +
+                                                "( SELECT S.Id " +
+                                                   "FROM Servicos S INNER JOIN Pessoas_Servicos " +
+                                                      "ON S.Id = Pessoas_Servicos.Servico_Id " +
+                                                    "WHERE (Pessoas_Servicos.Pessoa_CPF = @CPF AND S.Descricao = @Descricao))";
+
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@CPF", CPF);
+                    cmd.Parameters.AddWithValue("@Descricao", descricaoServico);
+                    try
+                    {
+                        resultado = cmd.ExecuteNonQuery();
+                    }
+                    catch (SQLiteException ex)
+                    {
+                        throw ex;
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            return resultado;
         }
     }
 
