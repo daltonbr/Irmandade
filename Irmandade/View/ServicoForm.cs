@@ -16,10 +16,17 @@ namespace Irmandade
     public partial class ServicoForm : Form
     {
         BaseRepository baseRepo = new BaseRepository();
+        string _CPF = null;
 
         public ServicoForm()
         {
             InitializeComponent();
+        }
+
+        public ServicoForm(string CPF)
+        {
+            InitializeComponent();
+            _CPF = CPF;
         }
 
         private void ServicoForm_Load(object sender, EventArgs e)
@@ -28,7 +35,7 @@ namespace Irmandade
             if (listBox.SelectedIndex == -1)
             {
                 editButton.Enabled = false;
-             //   MessageBox.Show("Please select an Item first!");
+                // MessageBox.Show("Por favor selecione um item antes!");
             }
         }
 
@@ -36,8 +43,18 @@ namespace Irmandade
         {
             listBox.Items.Clear();
 
-            DataTable dt = new DataTable();            
-            string sql = "SELECT S.* FROM Servicos S";            
+            DataTable dt = new DataTable();
+            string sql;
+
+            if (_CPF == null)
+            {
+                sql = "SELECT S.* FROM Servicos S";
+            }
+            else
+            {
+                // TODO load only the Servicos that the Pessoa don't have
+                sql = "SELECT S.* FROM Servicos S";
+            }
             try
             {
                 dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
