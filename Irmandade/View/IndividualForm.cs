@@ -61,23 +61,28 @@ namespace Irmandade
                 diasCheckedListBox.SetItemChecked(2, _pessoa.DisponivelQuarta == 1);
                 diasCheckedListBox.SetItemChecked(3, _pessoa.DisponivelQuinta == 1);
                 diasCheckedListBox.SetItemChecked(4, _pessoa.DisponivelSexta == 1);
+                
+                UpdateServicos(_pessoa.CPF);
+            }
+        }
 
-                // Query servicos
-
-                string sql = @"SELECT S.Descricao FROM Servicos S
+        private void UpdateServicos(string CPF)
+        {
+            string sql = @"SELECT S.Descricao FROM Servicos S
                                 INNER JOIN Pessoas_Servicos PS
                                    ON (PS.Servico_Id = S.Id)
                                 INNER JOIN Pessoas P
                                    ON (P.CPF = PS.Pessoa_CPF)
-                                    WHERE P.CPF = " + @" """ + _pessoa.CPF + @""" ";                
-                
-                DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);                
+                                    WHERE P.CPF = " + @" """ + _pessoa.CPF + @""" ";
 
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    DataRow dr = dt.Rows[i];
-                    servicosListBox.Items.Add(dr[0]);
-                }
+            DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
+
+            servicosListBox.Items.Clear();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow dr = dt.Rows[i];
+                servicosListBox.Items.Add(dr[0]);
             }
         }
 
@@ -276,6 +281,7 @@ namespace Irmandade
                 MessageBox.Show("Selecione um serviço para ser removido!");
             }
             removeServiceFromPessoa(servicosListBox.SelectedItem.ToString(), _pessoa.CPF);
+            UpdateServicos(_pessoa.CPF);
         }
 
         private void servicosListBox_SelectedIndexChanged(object sender, EventArgs e)
