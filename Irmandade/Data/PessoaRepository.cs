@@ -13,7 +13,7 @@ namespace Irmandade.Data
         {
             if (!File.Exists(DbFile)) return null;
 
-            using (var conn = DbConnection())
+            using (SQLiteConnection conn = DbConnection())
             {
                 conn.Open();
                 Pessoa result = conn.Query<Pessoa>(
@@ -31,20 +31,24 @@ namespace Irmandade.Data
                 CreateDatabase();
             }
 
-            using (var conn = DbConnection())
+            using (SQLiteConnection conn = DbConnection())
             {
                 conn.Open();
                 pessoa.CPF = conn.Query<string>(
-                    @"INSERT INTO Pessoas(CPF, RG, RGEmissor, Nome, Endereco, TelefoneFixo, TelefoneCelular, InicioDasAtividades, Observacoes, Email, DisponivelSegunda, DisponivelTerca, DisponivelQuarta, DisponivelQuinta, DisponivelSexta) " +
-                                       "VALUES (@CPF, @RG, @RGEmissor, @Nome, @Endereco, @TelefoneFixo, @TelefoneCelular, @InicioDasAtividades, @Observacoes, @Email, @DisponivelSegunda, @DisponivelTerca, @DisponivelQuarta, @DisponivelQuinta, @DisponivelSexta)", pessoa).First();                
-            }            
+                    @"INSERT INTO Pessoas(CPF, RG, RGEmissor, Nome, Endereco, TelefoneFixo, TelefoneCelular,
+                                          InicioDasAtividades, Observacoes, Email, DisponivelSegunda, DisponivelTerca,
+                                          DisponivelQuarta, DisponivelQuinta, DisponivelSexta) " + 
+                    "VALUES (@CPF, @RG, @RGEmissor, @Nome, @Endereco, @TelefoneFixo, @TelefoneCelular, @InicioDasAtividades, " +
+                            "@Observacoes, @Email, @DisponivelSegunda, @DisponivelTerca, @DisponivelQuarta, @DisponivelQuinta, " + 
+                            "@DisponivelSexta)", pessoa).First();
+            }
         }
 
-        public DataTable ProcurarPessoas(string nome)
+        public DataTable GetPessoasByNome(string nome)
         {
             string sql = "SELECT * FROM Pessoas WHERE Nome LIKE '%" + nome + "%'";
-            //using (SQLiteConnection conn = new SQLiteConnection(connectionString))
-            using (var conn = DbConnection())
+            
+            using (SQLiteConnection conn = DbConnection())
             {
                 conn.Open();
                 using (SQLiteDataAdapter da = new SQLiteDataAdapter(sql, conn))
@@ -67,11 +71,11 @@ namespace Irmandade.Data
             }
         }
 
-        public DataTable ProcurarPessoas(bool segunda,
-                                         bool terca,
-                                         bool quarta,
-                                         bool quinta,
-                                         bool sexta)
+        public DataTable GetPessoasByDiasDisponiveis(bool segunda,
+                                                     bool terca,
+                                                     bool quarta,
+                                                     bool quinta,
+                                                     bool sexta)
         {
             // Concatenates the SQL Query suffix
             string[] sqlSuffixList = new string[]

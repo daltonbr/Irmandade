@@ -30,11 +30,11 @@ namespace Irmandade
         private void MainForm_Load(object sender, EventArgs e)
         {
             //CarregaDiasDaSemana();
-            CarregaDados();
-            CarregaServicos();
+            LoadMainQuery();
+            LoadServicos();
         }
 
-        private void CarregaDados()
+        private void LoadMainQuery()
         {
             DataTable dt = new DataTable();            
             string sql = "SELECT * FROM Pessoas";            
@@ -49,7 +49,7 @@ namespace Irmandade
             }            
         }
 
-        private void CarregaServicos()
+        private void LoadServicos()
         {
             DataTable dt = new DataTable();            
             string sql = "SELECT * FROM Servicos ORDER BY Descricao";            
@@ -79,37 +79,6 @@ namespace Irmandade
             //}
         }
 
-        //private void listBox_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    // Concatenates the SQL Query suffix
-        //    var servicosList = new List<string>();
-
-        //    var selected = listBox.SelectedItems;
-
-        //    foreach (var item in selected)
-        //    {                
-        //        servicosList.Add(@" """ + item.ToString() + @""" ");
-        //    }
-
-        //    string sqlSuffix = string.Join(" OR ", servicosList);
-
-        //    if (sqlSuffix != "")
-        //    {
-        //        sqlSuffix = "WHERE S.Descricao = " + sqlSuffix;
-        //    }
-
-        //    string sql = @"SELECT * FROM Pessoas P
-        //                   INNER JOIN Pessoas_Servicos PS
-        //                        ON (P.CPF = PS.Pessoa_CPF)
-        //                   INNER JOIN Servicos S
-        //                        ON (PS.Servico_Id = S.Id)
-        //                    " + sqlSuffix;
-        //    testLabel.Text = sqlSuffix;
-
-        //    DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
-        //    dataGridView.DataSource = dt.DefaultView;
-        //}
-
         private void insertButton_Click(object sender, EventArgs e)
         {
             try
@@ -117,7 +86,7 @@ namespace Irmandade
                 Pessoa pessoa = null;
                 IndividualForm iForm = new IndividualForm(pessoa); // passar _pessoa como parametro
                 iForm.ShowDialog();
-                CarregaDados();
+                LoadMainQuery();
             }
             catch (Exception ex)
             {
@@ -136,7 +105,7 @@ namespace Irmandade
             {
                 IndividualForm iform = new IndividualForm(pessoa);
                 iform.ShowDialog();
-                CarregaDados();
+                LoadMainQuery();
             }
             catch (Exception ex)
             {
@@ -208,9 +177,9 @@ namespace Irmandade
                       MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
                 if (response == DialogResult.Yes)
                 {
-                    DeletaDados(GetPessoaCPFFromActiveRow());
+                    DeletePessoaByCPF(GetPessoaCPFFromActiveRow());
                     //TODO make a verication above
-                    CarregaDados();
+                    LoadMainQuery();
                 }
             }
             catch (Exception ex)
@@ -219,10 +188,9 @@ namespace Irmandade
             }
         }
 
-        public int DeletaDados(string CPF)
+        public int DeletePessoaByCPF(string CPF)
         {
-            int resultado = -1;
-            //using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+            int resultado = -1;            
             using (SQLiteConnection conn = BaseRepository.DbConnection())
             {
                 conn.Open();
@@ -255,13 +223,13 @@ namespace Irmandade
 
         private void nameSearchTextBox_TextChanged(object sender, EventArgs e)
         {
-            dataGridView.DataSource = repo.ProcurarPessoas(nameSearchTextBox.Text);
+            dataGridView.DataSource = repo.GetPessoasByNome(nameSearchTextBox.Text);
         }
 
         private void checkedListBox_SelectedIndexChanged(object sender, EventArgs e)
         {            
             // TODO check if we always have 5 Item
-            dataGridView.DataSource = repo.ProcurarPessoas(checkedListBox.GetItemChecked(0),
+            dataGridView.DataSource = repo.GetPessoasByDiasDisponiveis(checkedListBox.GetItemChecked(0),
                                                            checkedListBox.GetItemChecked(1),
                                                            checkedListBox.GetItemChecked(2),
                                                            checkedListBox.GetItemChecked(3),
@@ -302,8 +270,7 @@ namespace Irmandade
             {
                 checkedListBox.SetItemCheckState(i, CheckState.Unchecked);
             }
-
-            CarregaDados();
+            LoadMainQuery();
         }
 
         private void label2_Click(object sender, EventArgs e)

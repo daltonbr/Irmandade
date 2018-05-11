@@ -96,7 +96,7 @@ namespace Irmandade
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (ValidaDados())
+            if (ValidateInputs())
             {
                 Pessoa pessoa = new Pessoa();
                 pessoa.CPF = CPFTextBox.Text;
@@ -119,7 +119,7 @@ namespace Irmandade
                 {
                     if (_operation == operation.insert)
                     {
-                        if (IncluirDados(pessoa) > 0)
+                        if (InsertPessoa(pessoa) > 0)
                         {
                             MessageBox.Show("Dados incluídos com sucesso!");
                             _operation = operation.update;
@@ -131,7 +131,7 @@ namespace Irmandade
                     }
                     else
                     {
-                        if (AtualizaDados(pessoa) > 0)
+                        if (UpdatePessoa(pessoa) > 0)
                         {
                             MessageBox.Show("Dados atualizados com sucesso!");
                         }
@@ -153,7 +153,7 @@ namespace Irmandade
         }
 
         // TODO improve this verification
-        private Boolean ValidaDados()
+        private Boolean ValidateInputs()
         {            
             if (nomeTextBox.Text == string.Empty)
             {
@@ -188,7 +188,7 @@ namespace Irmandade
 
         }
 
-        public int IncluirDados(Pessoa pessoa)
+        public int InsertPessoa(Pessoa pessoa)
         {            
             int resultado = -1;            
             using (SQLiteConnection conn = BaseRepository.DbConnection())
@@ -236,38 +236,9 @@ namespace Irmandade
             return resultado;
         }
 
-        //public void IncluirServicoEmPessoa(string CPF, string descricaoServico)
-        //{                     
-        //    using (SQLiteConnection conn = BaseRepository.DbConnection())
-        //    {
-        //        conn.Open();
-        //        using (SQLiteCommand cmd = new SQLiteCommand(conn))
-        //        {
-        //            cmd.CommandText = "INSERT INTO Pessoas_Servicos(Servico_Id, Pessoa_CPF) " +
-        //                               "VALUES (@Servico_Id, @Pessoa_CPF)";
-        //            cmd.Prepare();
-        //            cmd.Parameters.AddWithValue("@Servico_Id", CPF);
-        //            cmd.Parameters.AddWithValue("@Pessoa_CPF", pessoa.RG);
-        //            try
-        //            {
-        //                cmd.ExecuteNonQuery();
-        //            }
-        //            catch (SQLiteException ex)
-        //            {
-        //                throw ex;
-        //            }
-        //            finally
-        //            {
-        //                conn.Close();
-        //            }
-        //        }
-        //    }            
-        //}
-
-        public int AtualizaDados(Pessoa pessoa)
+        public int UpdatePessoa(Pessoa pessoa)
         {
-            int resultado = -1;
-            //using (SQLiteConnection conn = new SQLiteConnection(@strings.connectionString))
+            int resultado = -1;            
             using (SQLiteConnection conn = BaseRepository.DbConnection())
             {
                 conn.Open();
@@ -305,7 +276,6 @@ namespace Irmandade
                 }
             }
             return resultado;
-
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -336,12 +306,12 @@ namespace Irmandade
             if (_pessoa == null)
             {
                 // We need first to add a Pessoa
-                if (!ValidaDados()) return;
+                if (!ValidateInputs()) return;
                 _pessoa = new Pessoa();
                 _pessoa.CPF = CPFTextBox.Text;
                 _pessoa.Nome = nomeTextBox.Text;
                 _pessoa.InicioDasAtividades = dateTimePicker.Text;
-                IncluirDados(_pessoa);                
+                InsertPessoa(_pessoa);                
             }
 
             ServicoForm sForm = new ServicoForm(_pessoa.CPF);
@@ -362,7 +332,7 @@ namespace Irmandade
                       MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
                 if (response == DialogResult.Yes)
                 {
-                    DeletaDados(descricaoServico, CPF);
+                    RemoveFromPessoasServicos(descricaoServico, CPF);
                     // TODO make a verication above
                     // TODO atualiza listBox
                     // CarregaDados();
@@ -374,7 +344,7 @@ namespace Irmandade
             }
         }
 
-        private int DeletaDados(string descricaoServico, string CPF)
+        private int RemoveFromPessoasServicos(string descricaoServico, string CPF)
         {
             int resultado = -1;            
             using (SQLiteConnection conn = BaseRepository.DbConnection())
