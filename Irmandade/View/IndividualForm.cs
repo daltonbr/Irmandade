@@ -114,6 +114,7 @@ namespace Irmandade
                         if (IncluirDados(pessoa) > 0)
                         {
                             MessageBox.Show("Dados incluídos com sucesso!");
+                            operacao = "alterar";
                         }
                         else
                         {
@@ -212,6 +213,10 @@ namespace Irmandade
                     }
                     catch (SQLiteException ex)
                     {
+                        if (ex.ErrorCode == 19)
+                        {                            
+                            MessageBox.Show("Erro: CPF já cadastrado!");
+                        }                        
                         throw ex;
                     }
                     finally
@@ -321,7 +326,17 @@ namespace Irmandade
 
         private void addServicoButton_Click(object sender, EventArgs e)
         {
-            //Pessoa pessoa = null;
+            if (_pessoa == null)
+            {
+                // We need first to add a Pessoa
+                if (!ValidaDados()) return;
+                _pessoa = new Pessoa();
+                _pessoa.CPF = CPFTextBox.Text;
+                _pessoa.Nome = nomeTextBox.Text;
+                //_pessoa.InicioDasAtividades = dateTimePicker.Text;
+                IncluirDados(_pessoa);                
+            }
+
             ServicoForm sForm = new ServicoForm(_pessoa.CPF); // passar _pessoa como parametro ?
             sForm.ShowDialog();
             UpdateServicos(_pessoa.CPF);

@@ -147,6 +147,7 @@ namespace Irmandade
                     finally
                     {
                         conn.Close();
+                        CarregaDados();
                     }
                 }
             }
