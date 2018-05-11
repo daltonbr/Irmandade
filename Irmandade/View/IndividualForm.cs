@@ -223,33 +223,33 @@ namespace Irmandade
             return resultado;
         }
 
-        public void IncluirServicoEmPessoa(string CPF, string descricaoServico)
-        {                     
-            using (SQLiteConnection conn = BaseRepository.DbConnection())
-            {
-                conn.Open();
-                using (SQLiteCommand cmd = new SQLiteCommand(conn))
-                {
-                    cmd.CommandText = "INSERT INTO Pessoas_Servicos(Servico_Id, Pessoa_CPF) " +
-                                       "VALUES (@Servico_Id, @Pessoa_CPF)";
-                    cmd.Prepare();
-                    cmd.Parameters.AddWithValue("@Servico_Id", CPF);
-                    cmd.Parameters.AddWithValue("@Pessoa_CPF", pessoa.RG);
-                    try
-                    {
-                        cmd.ExecuteNonQuery();
-                    }
-                    catch (SQLiteException ex)
-                    {
-                        throw ex;
-                    }
-                    finally
-                    {
-                        conn.Close();
-                    }
-                }
-            }            
-        }
+        //public void IncluirServicoEmPessoa(string CPF, string descricaoServico)
+        //{                     
+        //    using (SQLiteConnection conn = BaseRepository.DbConnection())
+        //    {
+        //        conn.Open();
+        //        using (SQLiteCommand cmd = new SQLiteCommand(conn))
+        //        {
+        //            cmd.CommandText = "INSERT INTO Pessoas_Servicos(Servico_Id, Pessoa_CPF) " +
+        //                               "VALUES (@Servico_Id, @Pessoa_CPF)";
+        //            cmd.Prepare();
+        //            cmd.Parameters.AddWithValue("@Servico_Id", CPF);
+        //            cmd.Parameters.AddWithValue("@Pessoa_CPF", pessoa.RG);
+        //            try
+        //            {
+        //                cmd.ExecuteNonQuery();
+        //            }
+        //            catch (SQLiteException ex)
+        //            {
+        //                throw ex;
+        //            }
+        //            finally
+        //            {
+        //                conn.Close();
+        //            }
+        //        }
+        //    }            
+        //}
 
 
         public int AtualizaDados(Pessoa pessoa)
@@ -324,7 +324,7 @@ namespace Irmandade
             //Pessoa pessoa = null;
             ServicoForm sForm = new ServicoForm(_pessoa.CPF); // passar _pessoa como parametro ?
             sForm.ShowDialog();
-            //CarregaDados();
+            UpdateServicos(_pessoa.CPF);
             // TODO refresh the actual Volunteer screen when comes back
         }
 

@@ -91,35 +91,18 @@ namespace Irmandade
                 return;                
             }                        
 
-            // Concatenates the SQL Query suffix
-            //var servicosList = new List<string>();
-
-            //string sqlSuffix = "WHERE S.Descricao = " + @" """ + comboBox.SelectedItem.ToString() + @""" ";
-
-            //string sql = @"SELECT * FROM Pessoas P
-            //               INNER JOIN Pessoas_Servicos PS
-            //                    ON (P.CPF = PS.Pessoa_CPF)
-            //               INNER JOIN Servicos S
-            //                    ON (PS.Servico_Id = S.Id)
-            //                " + sqlSuffix;
-
-            //testLabel.Text = sqlSuffix;
-
-            //DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
-            //dataGridView.DataSource = dt.DefaultView;
-
-
             using (SQLiteConnection conn = BaseRepository.DbConnection())
             {
                 conn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(conn))
                 {
-                    cmd.CommandText = "INSERT INTO Pessoas_Servicos(Servicos_Id, Pessoa_CPF) " +
-                                      "VALUES (@Servicos_Id, Pessoa_CPF)" + 
-                                      "WHERE (Pessoa_CPF) in ";
+                    cmd.CommandText = "INSERT INTO Pessoas_Servicos(Servico_Id, Pessoa_CPF) " +
+                                         "SELECT S.Id, @Pessoa_CPF " + 
+                                         "FROM Servicos S " + 
+                                         "WHERE (S.Descricao = @Descricao)";                                      
                     cmd.Prepare();
-                    cmd.Parameters.AddWithValue("@Servicos_Id", _CPF);
-                    cmd.Parameters.AddWithValue("@Pessoa_CPF", listBox.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@Descricao", listBox.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@Pessoa_CPF", _CPF);
                     try
                     {
                         cmd.ExecuteNonQuery();
@@ -133,6 +116,7 @@ namespace Irmandade
                         conn.Close();
                     }
                 }
+                CarregaDados();
             }
 
         }
