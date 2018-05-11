@@ -29,76 +29,44 @@ namespace Irmandade
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            CarregaDiasDaSemana();
+            //CarregaDiasDaSemana();
             CarregaDados();
             CarregaServicos();
         }
 
         private void CarregaDados()
         {
-            DataTable dt = new DataTable();
-            //SQLiteConnection conn = null;
+            DataTable dt = new DataTable();            
             string sql = "SELECT * FROM Pessoas";            
-            //String strConn = @strings.connectionString;
             try
             {
-                //conn = new SQLiteConnection(strConn);
-                //SQLiteDataAdapter da = new SQLiteDataAdapter(sql, strConn);
-                //da.Fill(dt);
                 dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
                 dataGridView.DataSource = dt.DefaultView;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro:" + ex.Message);
-            }
-            finally
-            {
-                //if (conn.State == ConnectionState.Open)
-                //{
-                //    conn.Close();
-                //}
-            }
+            }            
         }
-
-        private void CarregaDiasDaSemana()
-        {
-            checkedListBox.DataSource = Enum.GetValues(typeof(Dias));
-        }
-
 
         private void CarregaServicos()
         {
-            DataTable dt = new DataTable();
-            //SQLiteConnection conn = null;
-            string sql = "SELECT * FROM Servicos ORDER BY Descricao";
-            //string strConn = @strings.connectionString;
+            DataTable dt = new DataTable();            
+            string sql = "SELECT * FROM Servicos ORDER BY Descricao";            
             try
-            {
-                //conn = new SQLiteConnection(strConn);
-                //SQLiteDataAdapter da = new SQLiteDataAdapter(sql, strConn);
-                //da.Fill(dt);
+            {                
                 dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    DataRow dr = dt.Rows[i];
-                    //listBox.Items.Add(dr[1]);
+                    DataRow dr = dt.Rows[i];                    
                     comboBox.Items.Add(dr[1]);
-                }
-                //dataGridView.DataSource = dt.DefaultView;
+                }             
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro:" + ex.Message);
-            }
-            finally
-            {
-                //if (conn.State == ConnectionState.Open)
-                //{
-                //    conn.Close();
-                //}
-            }
+            }            
         }
 
 
@@ -111,36 +79,36 @@ namespace Irmandade
             //}
         }
 
-        private void listBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Concatenates the SQL Query suffix
-            var servicosList = new List<string>();
+        //private void listBox_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    // Concatenates the SQL Query suffix
+        //    var servicosList = new List<string>();
 
-            var selected = listBox.SelectedItems;
+        //    var selected = listBox.SelectedItems;
 
-            foreach (var item in selected)
-            {                
-                servicosList.Add(@" """ + item.ToString() + @""" ");
-            }
+        //    foreach (var item in selected)
+        //    {                
+        //        servicosList.Add(@" """ + item.ToString() + @""" ");
+        //    }
 
-            string sqlSuffix = string.Join(" OR ", servicosList);
+        //    string sqlSuffix = string.Join(" OR ", servicosList);
 
-            if (sqlSuffix != "")
-            {
-                sqlSuffix = "WHERE S.Descricao = " + sqlSuffix;
-            }
+        //    if (sqlSuffix != "")
+        //    {
+        //        sqlSuffix = "WHERE S.Descricao = " + sqlSuffix;
+        //    }
 
-            string sql = @"SELECT * FROM Pessoas P
-                           INNER JOIN Pessoas_Servicos PS
-                                ON (P.CPF = PS.Pessoa_CPF)
-                           INNER JOIN Servicos S
-                                ON (PS.Servico_Id = S.Id)
-                            " + sqlSuffix;
-            testLabel.Text = sqlSuffix;
+        //    string sql = @"SELECT * FROM Pessoas P
+        //                   INNER JOIN Pessoas_Servicos PS
+        //                        ON (P.CPF = PS.Pessoa_CPF)
+        //                   INNER JOIN Servicos S
+        //                        ON (PS.Servico_Id = S.Id)
+        //                    " + sqlSuffix;
+        //    testLabel.Text = sqlSuffix;
 
-            DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
-            dataGridView.DataSource = dt.DefaultView;
-        }
+        //    DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
+        //    dataGridView.DataSource = dt.DefaultView;
+        //}
 
         private void insertButton_Click(object sender, EventArgs e)
         {
@@ -232,11 +200,6 @@ namespace Irmandade
         //    //label.Text = i.ToString();
         //}
 
-        private void label_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void deleteButton_Click(object sender, EventArgs e)
         {
             try
@@ -324,9 +287,7 @@ namespace Irmandade
                                 ON (P.CPF = PS.Pessoa_CPF)
                            INNER JOIN Servicos S
                                 ON (PS.Servico_Id = S.Id)
-                            " + sqlSuffix;
-
-            testLabel.Text = sqlSuffix;
+                            " + sqlSuffix;            
 
             DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
             dataGridView.DataSource = dt.DefaultView;

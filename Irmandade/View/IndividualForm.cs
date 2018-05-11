@@ -13,12 +13,20 @@ using System.Data.SQLite;
 
 namespace Irmandade
 {
+    enum operation
+    {
+        notDefined,
+        insert,
+        update
+    };
+
     public partial class IndividualForm : Form
     {
+
         BaseRepository baseRepo = new BaseRepository();
 
         Pessoa _pessoa;
-        string operacao = "";        
+        operation _operation = operation.notDefined;
                 
         public IndividualForm(Pessoa pessoa)
         {
@@ -34,17 +42,15 @@ namespace Irmandade
 
         private void IndividualForm_Load(object sender, EventArgs e)
         {
-            diasCheckedListBox.DataSource = Enum.GetValues(typeof(Dias));
-
             if (_pessoa == null)
             {
                 saveButton.Enabled = true;
                 nomeTextBox.Focus();
-                operacao = "incluir";
+                _operation = operation.insert;
             }
             else
             {
-                operacao = "alterar";
+                _operation = operation.update;
                 CPFTextBox.Text = _pessoa.CPF;
                 RGTextBox.Text = _pessoa.RG;                
                 emissorTextBox.Text = _pessoa.RGEmissor;
@@ -73,7 +79,9 @@ namespace Irmandade
                                    ON (PS.Servico_Id = S.Id)
                                 INNER JOIN Pessoas P
                                    ON (P.CPF = PS.Pessoa_CPF)
-                                    WHERE P.CPF = " + @" """ + _pessoa.CPF + @""" ";
+                                   WHERE P.CPF = " + @" """ + _pessoa.CPF + @""" 
+                                   ORDER BY S.Descricao";
+                                   
 
             DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
 
@@ -109,12 +117,12 @@ namespace Irmandade
 
                 try
                 {
-                    if (operacao == "incluir")
+                    if (_operation == operation.insert)
                     {
                         if (IncluirDados(pessoa) > 0)
                         {
                             MessageBox.Show("Dados incluídos com sucesso!");
-                            operacao = "alterar";
+                            _operation = operation.update;
                         }
                         else
                         {
@@ -182,8 +190,7 @@ namespace Irmandade
 
         public int IncluirDados(Pessoa pessoa)
         {            
-            int resultado = -1;
-            //using (SQLiteConnection conn = new SQLiteConnection(@strings.connectionString))
+            int resultado = -1;            
             using (SQLiteConnection conn = BaseRepository.DbConnection())
             {
                 conn.Open();
@@ -213,6 +220,7 @@ namespace Irmandade
                     }
                     catch (SQLiteException ex)
                     {
+                        // SQLException constraint 
                         if (ex.ErrorCode == 19)
                         {                            
                             MessageBox.Show("Erro: CPF já cadastrado!");
@@ -255,7 +263,6 @@ namespace Irmandade
         //        }
         //    }            
         //}
-
 
         public int AtualizaDados(Pessoa pessoa)
         {
@@ -333,14 +340,13 @@ namespace Irmandade
                 _pessoa = new Pessoa();
                 _pessoa.CPF = CPFTextBox.Text;
                 _pessoa.Nome = nomeTextBox.Text;
-                //_pessoa.InicioDasAtividades = dateTimePicker.Text;
+                _pessoa.InicioDasAtividades = dateTimePicker.Text;
                 IncluirDados(_pessoa);                
             }
 
-            ServicoForm sForm = new ServicoForm(_pessoa.CPF); // passar _pessoa como parametro ?
+            ServicoForm sForm = new ServicoForm(_pessoa.CPF);
             sForm.ShowDialog();
-            UpdateServicos(_pessoa.CPF);
-            // TODO refresh the actual Volunteer screen when comes back
+            UpdateServicos(_pessoa.CPF);            
         }
 
         private void diasCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -359,7 +365,7 @@ namespace Irmandade
                     DeletaDados(descricaoServico, CPF);
                     // TODO make a verication above
                     // TODO atualiza listBox
-                    //CarregaDados();
+                    // CarregaDados();
                 }
             }
             catch (Exception ex)

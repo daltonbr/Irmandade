@@ -248,6 +248,12 @@
             // 
             this.diasCheckedListBox.CheckOnClick = true;
             this.diasCheckedListBox.FormattingEnabled = true;
+            this.diasCheckedListBox.Items.AddRange(new object[] {
+            "Segunda",
+            "Terça",
+            "Quarta",
+            "Quinta",
+            "Sexta"});
             this.diasCheckedListBox.Location = new System.Drawing.Point(35, 182);
             this.diasCheckedListBox.Margin = new System.Windows.Forms.Padding(2);
             this.diasCheckedListBox.Name = "diasCheckedListBox";

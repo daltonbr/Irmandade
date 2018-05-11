@@ -56,9 +56,10 @@ namespace Irmandade
                 sql = "SELECT S.* FROM Servicos S " +
                             "WHERE (S.Id) NOT IN " +
                             "( SELECT S.Id " +
-                            "FROM Servicos S INNER JOIN Pessoas_Servicos PS " +
+                                "FROM Servicos S INNER JOIN Pessoas_Servicos PS " +
                                 "ON S.Id = PS.Servico_Id " +
-                                "WHERE (PS.Pessoa_CPF == " + @" """ + _CPF + @""" " + "))";
+                                "WHERE (PS.Pessoa_CPF == " + @" """ + _CPF + @""" " + ") )" + 
+                            "ORDER BY S.Descricao";
             }
             try
             {
@@ -73,13 +74,6 @@ namespace Irmandade
             catch (Exception ex)
             {
                 MessageBox.Show("Erro:" + ex.Message);
-            }
-            finally
-            {
-                //if (conn.State == ConnectionState.Open)
-                //{
-                //    conn.Close();
-                //}
             }
         }
 
@@ -187,7 +181,18 @@ namespace Irmandade
                 MessageBox.Show("Erro: Nome de Serviço inválido!");
                 return;
             }
-            IncluirServico(textBox.Text);
+            try
+            {
+                IncluirServico(textBox.Text);
+            }
+            catch(SQLiteException ex)
+            {
+                MessageBox.Show("Erro2: " + ex.Message);
+            }
+            finally
+            {
+
+            }
             textBox.Clear();
             CarregaDados();
         }
