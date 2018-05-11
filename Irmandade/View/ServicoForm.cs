@@ -53,12 +53,12 @@ namespace Irmandade
             else
             {
                 // TODO load only the Servicos that the Pessoa doesn't have
-                sql = "SELECT S.* FROM Servicos S " +                            
+                sql = "SELECT S.* FROM Servicos S " +
                             "WHERE (S.Id) NOT IN " +
                             "( SELECT S.Id " +
                             "FROM Servicos S INNER JOIN Pessoas_Servicos PS " +
                                 "ON S.Id = PS.Servico_Id " +
-                                "WHERE (PS.Pessoa_CPF == " + @" """ + _CPF + @""" " + "))";                                
+                                "WHERE (PS.Pessoa_CPF == " + @" """ + _CPF + @""" " + "))";
             }
             try
             {
@@ -85,9 +85,56 @@ namespace Irmandade
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            IncluirServico(textBox.Text);
-            textBox.Clear();
-            CarregaDados();            
+            if (listBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Erro: Selecione ou Crie algum Serviço!");
+                return;                
+            }                        
+
+            // Concatenates the SQL Query suffix
+            //var servicosList = new List<string>();
+
+            //string sqlSuffix = "WHERE S.Descricao = " + @" """ + comboBox.SelectedItem.ToString() + @""" ";
+
+            //string sql = @"SELECT * FROM Pessoas P
+            //               INNER JOIN Pessoas_Servicos PS
+            //                    ON (P.CPF = PS.Pessoa_CPF)
+            //               INNER JOIN Servicos S
+            //                    ON (PS.Servico_Id = S.Id)
+            //                " + sqlSuffix;
+
+            //testLabel.Text = sqlSuffix;
+
+            //DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
+            //dataGridView.DataSource = dt.DefaultView;
+
+
+            using (SQLiteConnection conn = BaseRepository.DbConnection())
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                {
+                    cmd.CommandText = "INSERT INTO Pessoas_Servicos(Servicos_Id, Pessoa_CPF) " +
+                                      "VALUES (@Servicos_Id, Pessoa_CPF)" + 
+                                      "WHERE (Pessoa_CPF) in ";
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@Servicos_Id", _CPF);
+                    cmd.Parameters.AddWithValue("@Pessoa_CPF", listBox.SelectedItem.ToString());
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SQLiteException ex)
+                    {
+                        throw ex;
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+
         }
 
         private int IncluirServico(string descricao)
@@ -146,6 +193,18 @@ namespace Irmandade
         {
             // TODO fazer alguma verificacao antes de fechar
             Close();
+        }
+
+        private void newButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                MessageBox.Show("Erro: Nome de Serviço inválido!");
+                return;
+            }
+            IncluirServico(textBox.Text);
+            textBox.Clear();
+            CarregaDados();
         }
     }
 }
