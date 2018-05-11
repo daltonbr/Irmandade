@@ -66,7 +66,7 @@ namespace Irmandade.Data
                         Endereco TEXT,
                         TelefoneFixo TEXT,
                         TelefoneCelular TEXT,
-                        InicioDasAtividades TEXT NOT NULL,
+                        InicioDasAtividades TEXT,
                         Observacoes TEXT,
                         Email TEXT,
                         DisponivelSegunda INTEGER NOT NULL DEFAULT 0,
