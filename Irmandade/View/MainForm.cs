@@ -18,18 +18,16 @@ using Irmandade.Data;
 namespace Irmandade
 {
     public partial class MainForm : Form
-    {
-        PessoaRepository repo = new PessoaRepository();
-        ServicoRepository servicoRepo = new ServicoRepository();
-        BaseRepository baseRepo = new BaseRepository();
+    {        
+//        Repository repo = new Repository();
+
         public MainForm()
         {
             InitializeComponent();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
-        {
-            //CarregaDiasDaSemana();
+        {            
             LoadMainQuery();
             LoadServicos();
         }
@@ -40,7 +38,8 @@ namespace Irmandade
             string sql = "SELECT * FROM Pessoas";            
             try
             {
-                dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
+                //dt = repo.GetDataTableFromConnection<SQLiteConnection>(sql);
+                dt = Repository.Instance.GetDataTableFromConnection<SQLiteConnection>(sql);
                 dataGridView.DataSource = dt.DefaultView;
             }
             catch (Exception ex)
@@ -55,12 +54,12 @@ namespace Irmandade
             string sql = "SELECT * FROM Servicos ORDER BY Descricao";            
             try
             {                
-                dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
+                dt = Repository.Instance.GetDataTableFromConnection<SQLiteConnection>(sql);
 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     DataRow dr = dt.Rows[i];                    
-                    comboBox.Items.Add(dr[1]);
+                    servicosComboBox.Items.Add(dr[1]);
                 }             
             }
             catch (Exception ex)
@@ -69,15 +68,7 @@ namespace Irmandade
             }            
         }
 
-
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            //MessageBoxResult result = MessageBox.Show("Deseja realmente sair?", "Irmandade", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            //if (result == MessageBoxResult.Yes)
-            //{
-                Close();
-            //}
-        }
+        #region Buttons
 
         private void insertButton_Click(object sender, EventArgs e)
         {
@@ -99,7 +90,7 @@ namespace Irmandade
             string CPF = GetPessoaCPFFromActiveRow();
             //TODO MessageBox when cannot get valid CPF
             // TODO garantir que temos uma linha selecionada (talvez botao disabled)
-            Pessoa pessoa = repo.GetPessoa(CPF);
+            Pessoa pessoa = Repository.Instance.GetPessoaByCPF(CPF);
 
             try
             {
@@ -112,62 +103,6 @@ namespace Irmandade
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-
-        public string GetPessoaCPFFromActiveRow()
-        {            
-            try
-            {
-                int linha = dataGridView.CurrentRow.Index;
-                // Todo improve check
-                return dataGridView[0, linha].Value.ToString();                
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }            
-        }
-        
-        //private void checkedListBox_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    // Display in a message box all the items that are checked.
-
-        //    int bitwiseSum = 0;
-        //    // First show the index and check state of all selected items.
-        //    foreach (int indexChecked in checkedListBox.CheckedIndices)
-        //    {
-        //        bitwiseSum += (int)Math.Pow(2,(indexChecked));
-        //        // The indexChecked variable contains the index of the item.
-        //        //MessageBox.Show("Index#: " + indexChecked.ToString() + ", is checked. Checked state is:" +
-        //        //                checkedListBox.GetItemCheckState(indexChecked).ToString() + ".");
-        //    }
-
-        //    label.Text = bitwiseSum.ToString();
-
-        //    // Next show the object title and check state for each item selected.
-        //    //foreach (object itemChecked in checkedListBox.CheckedItems)
-        //    //{
-
-        //    //    // Use the IndexOf method to get the index of an item.
-        //    //    MessageBox.Show("Item with title: \"" + itemChecked.ToString() +
-        //    //                    "\", is checked. Checked state is: " +
-        //    //                    checkedListBox.GetItemCheckState(checkedListBox.Items.IndexOf(itemChecked)).ToString() + ".");
-        //    //}
-
-        //    //var collection = checkedListBox.SelectedIndices;
-
-        //    //List<int> selectedItemIndexes = new List<int>();
-        //    //foreach (object o in checkedListBox.SelectedItems)
-        //    //    selectedItemIndexes.Add(checkedListBox.Items.IndexOf(o));
-
-        //    //string test = "";
-        //    //var i = 0;
-        //    //foreach(var v in selectedItemIndexes)
-        //    //{
-        //    //    i++;           
-        //    //    test += v.ToString() + ", ";
-        //    //}
-        //    //label.Text = i.ToString();
-        //}
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
@@ -188,10 +123,36 @@ namespace Irmandade
             }
         }
 
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // TODO put this message box to work in release version
+            //MessageBoxResult result = MessageBox.Show("Deseja realmente sair?", "Irmandade", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            //if (result == MessageBoxResult.Yes)
+            //{
+                Close();
+            //}
+        }
+
+        #endregion
+
+        public string GetPessoaCPFFromActiveRow()
+        {            
+            try
+            {
+                int linha = dataGridView.CurrentRow.Index;
+                // Todo improve check
+                return dataGridView[0, linha].Value.ToString();                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
+        }
+
         public int DeletePessoaByCPF(string CPF)
         {
             int resultado = -1;            
-            using (SQLiteConnection conn = BaseRepository.DbConnection())
+            using (SQLiteConnection conn = Repository.DbConnection())
             {
                 conn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(conn))
@@ -216,24 +177,18 @@ namespace Irmandade
             return resultado;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void nameSearchTextBox_TextChanged(object sender, EventArgs e)
         {
-            dataGridView.DataSource = repo.GetPessoasByNome(nameSearchTextBox.Text);
+            dataGridView.DataSource = Repository.Instance.GetPessoasByNome(nameSearchTextBox.Text);
         }
 
-        private void checkedListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {            
-            // TODO check if we always have 5 Item
-            dataGridView.DataSource = repo.GetPessoasByDiasDisponiveis(checkedListBox.GetItemChecked(0),
-                                                           checkedListBox.GetItemChecked(1),
-                                                           checkedListBox.GetItemChecked(2),
-                                                           checkedListBox.GetItemChecked(3),
-                                                           checkedListBox.GetItemChecked(4));
+        private void diasCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {                        
+            dataGridView.DataSource = Repository.Instance.GetPessoasByDiasDisponiveis(diasCheckedListBox.GetItemChecked(0),
+                                                                       diasCheckedListBox.GetItemChecked(1),
+                                                                       diasCheckedListBox.GetItemChecked(2),
+                                                                       diasCheckedListBox.GetItemChecked(3),
+                                                                       diasCheckedListBox.GetItemChecked(4));
         }
 
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -241,14 +196,14 @@ namespace Irmandade
             this.editButton_Click(editButton, e);
         }
 
-        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void servicosComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox.SelectedIndex == -1) return;
+            if (servicosComboBox.SelectedIndex == -1) return;
             
             // Concatenates the SQL Query suffix
             var servicosList = new List<string>();           
 
-            string sqlSuffix = "WHERE S.Descricao = " + @" """ + comboBox.SelectedItem.ToString() + @""" ";
+            string sqlSuffix = "WHERE S.Descricao = " + @" """ + servicosComboBox.SelectedItem.ToString() + @""" ";
 
             string sql = @"SELECT * FROM Pessoas P
                            INNER JOIN Pessoas_Servicos PS
@@ -257,25 +212,21 @@ namespace Irmandade
                                 ON (PS.Servico_Id = S.Id)
                             " + sqlSuffix;            
 
-            DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
+            DataTable dt = Repository.Instance.GetDataTableFromConnection<SQLiteConnection>(sql);
             dataGridView.DataSource = dt.DefaultView;
         }
 
         private void cleanButton_Click(object sender, EventArgs e)
         {
             nameSearchTextBox.Text = "";
-            comboBox.SelectedIndex = -1;
-            checkedListBox.ClearSelected();
-            foreach (int i in checkedListBox.CheckedIndices)
+            servicosComboBox.SelectedIndex = -1;
+            diasCheckedListBox.ClearSelected();
+            foreach (int i in diasCheckedListBox.CheckedIndices)
             {
-                checkedListBox.SetItemCheckState(i, CheckState.Unchecked);
+                diasCheckedListBox.SetItemCheckState(i, CheckState.Unchecked);
             }
             LoadMainQuery();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

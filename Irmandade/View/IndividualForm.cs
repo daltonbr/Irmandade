@@ -21,10 +21,7 @@ namespace Irmandade
     };
 
     public partial class IndividualForm : Form
-    {
-
-        BaseRepository baseRepo = new BaseRepository();
-
+    {        
         Pessoa _pessoa;
         operation _operation = operation.notDefined;
                 
@@ -83,7 +80,7 @@ namespace Irmandade
                                    ORDER BY S.Descricao";
                                    
 
-            DataTable dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
+            DataTable dt = Repository.Instance.GetDataTableFromConnection<SQLiteConnection>(sql);
 
             servicosListBox.Items.Clear();
 
@@ -191,7 +188,7 @@ namespace Irmandade
         public int InsertPessoa(Pessoa pessoa)
         {            
             int resultado = -1;            
-            using (SQLiteConnection conn = BaseRepository.DbConnection())
+            using (SQLiteConnection conn = Repository.DbConnection())
             {
                 conn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(conn))
@@ -239,7 +236,7 @@ namespace Irmandade
         public int UpdatePessoa(Pessoa pessoa)
         {
             int resultado = -1;            
-            using (SQLiteConnection conn = BaseRepository.DbConnection())
+            using (SQLiteConnection conn = Repository.DbConnection())
             {
                 conn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(conn))
@@ -311,7 +308,8 @@ namespace Irmandade
                 _pessoa.CPF = CPFTextBox.Text;
                 _pessoa.Nome = nomeTextBox.Text;
                 _pessoa.InicioDasAtividades = dateTimePicker.Text;
-                InsertPessoa(_pessoa);                
+                InsertPessoa(_pessoa);
+                _operation = operation.update;
             }
 
             ServicoForm sForm = new ServicoForm(_pessoa.CPF);
@@ -347,7 +345,7 @@ namespace Irmandade
         private int RemoveFromPessoasServicos(string descricaoServico, string CPF)
         {
             int resultado = -1;            
-            using (SQLiteConnection conn = BaseRepository.DbConnection())
+            using (SQLiteConnection conn = Repository.DbConnection())
             {
                 conn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(conn))
@@ -377,6 +375,11 @@ namespace Irmandade
                 }
             }
             return resultado;
+        }
+
+        private void telefoneCelularLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

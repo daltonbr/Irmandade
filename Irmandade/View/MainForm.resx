@@ -129,10 +129,10 @@
     <value>0, 0</value>
   </data>
   <data name="dataGridView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="dataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 242</value>
+    <value>1520, 465</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView.TabIndex" type="System.Int32, mscorlib">
@@ -151,13 +151,13 @@
     <value>0</value>
   </data>
   <data name="gridPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 209</value>
+    <value>32, 402</value>
   </data>
   <data name="gridPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gridPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 242</value>
+    <value>1520, 465</value>
   </data>
   <data name="gridPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -177,77 +177,17 @@
   <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="&gt;&gt;deleteButton.Name" xml:space="preserve">
-    <value>deleteButton</value>
-  </data>
-  <data name="&gt;&gt;deleteButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;deleteButton.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;deleteButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;editButton.Name" xml:space="preserve">
-    <value>editButton</value>
-  </data>
-  <data name="&gt;&gt;editButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;editButton.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;editButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;insertButton.Name" xml:space="preserve">
-    <value>insertButton</value>
-  </data>
-  <data name="&gt;&gt;insertButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;insertButton.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;insertButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 481</value>
-  </data>
-  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>596, 69</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="deleteButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="deleteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>454, 2</value>
+    <value>652, 4</value>
   </data>
   <data name="deleteButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="deleteButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 60</value>
+    <value>280, 115</value>
   </data>
   <data name="deleteButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -271,13 +211,13 @@
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="editButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 2</value>
+    <value>326, 4</value>
   </data>
   <data name="editButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="editButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 60</value>
+    <value>280, 115</value>
   </data>
   <data name="editButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -301,13 +241,13 @@
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="insertButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
+    <value>4, 4</value>
   </data>
   <data name="insertButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="insertButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 60</value>
+    <value>280, 115</value>
   </data>
   <data name="insertButton.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -327,56 +267,44 @@
   <data name="&gt;&gt;insertButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="panel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 925</value>
   </data>
-  <data name="&gt;&gt;exitButton.Name" xml:space="preserve">
-    <value>exitButton</value>
+  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="&gt;&gt;exitButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1192, 133</value>
   </data>
-  <data name="&gt;&gt;exitButton.Parent" xml:space="preserve">
-    <value>panel2</value>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;exitButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>615, 481</value>
-  </data>
-  <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 69</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
   <data name="exitButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="exitButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
+    <value>4, 4</value>
   </data>
   <data name="exitButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="exitButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 60</value>
+    <value>280, 115</value>
   </data>
   <data name="exitButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -396,67 +324,94 @@
   <data name="&gt;&gt;exitButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="comboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 57</value>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1230, 925</value>
   </data>
-  <data name="comboBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="comboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 26</value>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 133</value>
   </data>
-  <data name="comboBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="servicosComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>489, 104</value>
+  </data>
+  <data name="servicosComboBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="servicosComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>308, 44</value>
+  </data>
+  <data name="servicosComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;comboBox.Name" xml:space="preserve">
-    <value>comboBox</value>
+  <data name="&gt;&gt;servicosComboBox.Name" xml:space="preserve">
+    <value>servicosComboBox</value>
   </data>
-  <data name="&gt;&gt;comboBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;servicosComboBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;comboBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;servicosComboBox.Parent" xml:space="preserve">
     <value>filtroGroupBox</value>
   </data>
-  <data name="&gt;&gt;comboBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;servicosComboBox.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="checkedListBox.Items" xml:space="preserve">
+  <data name="diasCheckedListBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.875pt</value>
+  </data>
+  <data name="diasCheckedListBox.Items" xml:space="preserve">
     <value>Segunda</value>
   </data>
-  <data name="checkedListBox.Items1" xml:space="preserve">
+  <data name="diasCheckedListBox.Items1" xml:space="preserve">
     <value>Terça</value>
   </data>
-  <data name="checkedListBox.Items2" xml:space="preserve">
+  <data name="diasCheckedListBox.Items2" xml:space="preserve">
     <value>Quarta</value>
   </data>
-  <data name="checkedListBox.Items3" xml:space="preserve">
+  <data name="diasCheckedListBox.Items3" xml:space="preserve">
     <value>Quinta</value>
   </data>
-  <data name="checkedListBox.Items4" xml:space="preserve">
+  <data name="diasCheckedListBox.Items4" xml:space="preserve">
     <value>Sexta</value>
   </data>
-  <data name="checkedListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>409, 57</value>
+  <data name="diasCheckedListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>865, 104</value>
   </data>
-  <data name="checkedListBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="diasCheckedListBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="checkedListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 99</value>
+  <data name="diasCheckedListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 214</value>
   </data>
-  <data name="checkedListBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="diasCheckedListBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;checkedListBox.Name" xml:space="preserve">
-    <value>checkedListBox</value>
+  <data name="&gt;&gt;diasCheckedListBox.Name" xml:space="preserve">
+    <value>diasCheckedListBox</value>
   </data>
-  <data name="&gt;&gt;checkedListBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;diasCheckedListBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkedListBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;diasCheckedListBox.Parent" xml:space="preserve">
     <value>filtroGroupBox</value>
   </data>
-  <data name="&gt;&gt;checkedListBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;diasCheckedListBox.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="filtroGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -466,10 +421,13 @@
     <value>Zoom</value>
   </data>
   <data name="cleanButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>601, 57</value>
+    <value>1202, 119</value>
+  </data>
+  <data name="cleanButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="cleanButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 54</value>
+    <value>280, 132</value>
   </data>
   <data name="cleanButton.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -496,10 +454,13 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 29</value>
+    <value>483, 47</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 18</value>
+    <value>130, 36</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -523,10 +484,13 @@
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>406, 29</value>
+    <value>855, 50</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 18</value>
+    <value>236, 36</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -549,11 +513,17 @@
   <data name="searchNameLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="searchNameLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.875pt</value>
+  </data>
   <data name="searchNameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 29</value>
+    <value>108, 50</value>
+  </data>
+  <data name="searchNameLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="searchNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 18</value>
+    <value>93, 33</value>
   </data>
   <data name="searchNameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -573,11 +543,17 @@
   <data name="&gt;&gt;searchNameLabel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="nameSearchTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.875pt</value>
+  </data>
   <data name="nameSearchTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 57</value>
+    <value>114, 104</value>
+  </data>
+  <data name="nameSearchTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="nameSearchTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 24</value>
+    <value>308, 40</value>
   </data>
   <data name="nameSearchTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -598,10 +574,16 @@
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="filtroGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 13</value>
+    <value>32, 25</value>
+  </data>
+  <data name="filtroGroupBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="filtroGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="filtroGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>757, 174</value>
+    <value>1514, 309</value>
   </data>
   <data name="filtroGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -625,10 +607,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>12, 25</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>784, 561</value>
+    <value>1568, 1079</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1153,10 +1135,10 @@
 </value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>798, 594</value>
+    <value>1570, 1077</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Irmãs do Imaculado Coração de Maria - Sistema de Cadastro de Voluntários</value>

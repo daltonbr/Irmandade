@@ -35,38 +35,41 @@
             this.textBox = new System.Windows.Forms.TextBox();
             this.editButton = new System.Windows.Forms.Button();
             this.newButton = new System.Windows.Forms.Button();
+            this.editGroup = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
+            this.editGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // addButton
             // 
             this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addButton.Location = new System.Drawing.Point(334, 402);
-            this.addButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.addButton.Location = new System.Drawing.Point(31, 353);
+            this.addButton.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(190, 71);
+            this.addButton.Size = new System.Drawing.Size(260, 140);
             this.addButton.TabIndex = 1;
-            this.addButton.Text = "&Adicionar Serviço";
+            this.addButton.Text = "&Adicionar Serviço ao Voluntário";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.listBox);
-            this.panel1.Location = new System.Drawing.Point(42, 108);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(31, 24);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(489, 283);
+            this.panel1.Size = new System.Drawing.Size(531, 317);
             this.panel1.TabIndex = 2;
             // 
             // listBox
             // 
+            this.listBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox.FormattingEnabled = true;
-            this.listBox.ItemHeight = 20;
-            this.listBox.Location = new System.Drawing.Point(6, 6);
-            this.listBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBox.ItemHeight = 33;
+            this.listBox.Location = new System.Drawing.Point(5, 6);
+            this.listBox.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(476, 264);
+            this.listBox.Size = new System.Drawing.Size(521, 301);
             this.listBox.TabIndex = 0;
             this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
@@ -74,30 +77,31 @@
             // 
             this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(344, 552);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.exitButton.Location = new System.Drawing.Point(302, 353);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(188, 71);
+            this.exitButton.Size = new System.Drawing.Size(260, 140);
             this.exitButton.TabIndex = 3;
-            this.exitButton.Text = "&OK";
+            this.exitButton.Text = "&Sair";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // textBox
             // 
-            this.textBox.Location = new System.Drawing.Point(48, 402);
-            this.textBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox.Location = new System.Drawing.Point(8, 54);
+            this.textBox.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(182, 26);
+            this.textBox.Size = new System.Drawing.Size(516, 40);
             this.textBox.TabIndex = 4;
             // 
             // editButton
             // 
             this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editButton.Location = new System.Drawing.Point(40, 557);
-            this.editButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.editButton.Location = new System.Drawing.Point(271, 106);
+            this.editButton.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(190, 71);
+            this.editButton.Size = new System.Drawing.Size(253, 89);
             this.editButton.TabIndex = 5;
             this.editButton.Text = "&Editar Serviço";
             this.editButton.UseVisualStyleBackColor = true;
@@ -106,34 +110,49 @@
             // newButton
             // 
             this.newButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newButton.Location = new System.Drawing.Point(42, 476);
-            this.newButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.newButton.Location = new System.Drawing.Point(8, 106);
+            this.newButton.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.newButton.Name = "newButton";
-            this.newButton.Size = new System.Drawing.Size(190, 71);
+            this.newButton.Size = new System.Drawing.Size(253, 89);
             this.newButton.TabIndex = 6;
             this.newButton.Text = "&Criar Novo Serviço";
             this.newButton.UseVisualStyleBackColor = true;
             this.newButton.Click += new System.EventHandler(this.newButton_Click);
             // 
+            // editGroup
+            // 
+            this.editGroup.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.editGroup.Controls.Add(this.textBox);
+            this.editGroup.Controls.Add(this.editButton);
+            this.editGroup.Controls.Add(this.newButton);
+            this.editGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editGroup.Location = new System.Drawing.Point(31, 522);
+            this.editGroup.Name = "editGroup";
+            this.editGroup.Size = new System.Drawing.Size(536, 210);
+            this.editGroup.TabIndex = 7;
+            this.editGroup.TabStop = false;
+            this.editGroup.Text = "Criar e Editar Serviços";
+            this.editGroup.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
             // ServicoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.exitButton;
-            this.ClientSize = new System.Drawing.Size(576, 642);
-            this.Controls.Add(this.newButton);
-            this.Controls.Add(this.editButton);
-            this.Controls.Add(this.textBox);
+            this.ClientSize = new System.Drawing.Size(596, 748);
+            this.Controls.Add(this.editGroup);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.addButton);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "ServicoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gerenciar Serviços";
             this.Load += new System.EventHandler(this.ServicoForm_Load);
             this.panel1.ResumeLayout(false);
+            this.editGroup.ResumeLayout(false);
+            this.editGroup.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -145,5 +164,6 @@
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button newButton;
+        private System.Windows.Forms.GroupBox editGroup;
     }
 }

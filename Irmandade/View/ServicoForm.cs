@@ -14,8 +14,7 @@ using Irmandade.Model;
 namespace Irmandade
 {
     public partial class ServicoForm : Form
-    {
-        BaseRepository baseRepo = new BaseRepository();
+    {        
         string _CPF = null;
 
         public ServicoForm()
@@ -63,7 +62,7 @@ namespace Irmandade
             }
             try
             {
-                dt = baseRepo.GetDataTableFromConnection<SQLiteConnection>(sql);
+                dt = Repository.Instance.GetDataTableFromConnection<SQLiteConnection>(sql);
 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -85,7 +84,7 @@ namespace Irmandade
                 return;                
             }                        
 
-            using (SQLiteConnection conn = BaseRepository.DbConnection())
+            using (SQLiteConnection conn = Repository.DbConnection())
             {
                 conn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(conn))
@@ -119,7 +118,7 @@ namespace Irmandade
         {
             int resultado = -1;
             
-            using (SQLiteConnection conn = BaseRepository.DbConnection())
+            using (SQLiteConnection conn = Repository.DbConnection())
             {
                 conn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(conn))
@@ -195,6 +194,11 @@ namespace Irmandade
             }
             textBox.Clear();
             CarregaDados();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

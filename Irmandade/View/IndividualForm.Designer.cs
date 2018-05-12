@@ -53,29 +53,30 @@
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.enderecoTextBox = new System.Windows.Forms.TextBox();
             this.enderecoLabel = new System.Windows.Forms.Label();
-            this.servicosLabel = new System.Windows.Forms.Label();
             this.servicosListBox = new System.Windows.Forms.ListBox();
             this.addServicoButton = new System.Windows.Forms.Button();
             this.removeServicoButton = new System.Windows.Forms.Button();
+            this.servicoGroupBox = new System.Windows.Forms.GroupBox();
+            this.servicoGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(32, 26);
-            this.nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nameLabel.Location = new System.Drawing.Point(8, 84);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(35, 13);
+            this.nameLabel.Size = new System.Drawing.Size(68, 25);
             this.nameLabel.TabIndex = 0;
             this.nameLabel.Text = "Nome";
             // 
             // saveButton
             // 
             this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.Location = new System.Drawing.Point(35, 531);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(2);
+            this.saveButton.Location = new System.Drawing.Point(12, 972);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(120, 60);
+            this.saveButton.Size = new System.Drawing.Size(240, 115);
             this.saveButton.TabIndex = 1;
             this.saveButton.Text = "&Salvar";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -85,10 +86,10 @@
             // 
             this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(304, 531);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(2);
+            this.exitButton.Location = new System.Drawing.Point(511, 972);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(120, 60);
+            this.exitButton.Size = new System.Drawing.Size(240, 115);
             this.exitButton.TabIndex = 2;
             this.exitButton.Text = "S&air";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -97,156 +98,166 @@
             // editButton
             // 
             this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editButton.Location = new System.Drawing.Point(159, 531);
-            this.editButton.Margin = new System.Windows.Forms.Padding(2);
+            this.editButton.Location = new System.Drawing.Point(263, 972);
+            this.editButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(120, 60);
+            this.editButton.Size = new System.Drawing.Size(240, 115);
             this.editButton.TabIndex = 3;
             this.editButton.Text = "&Editar";
             this.editButton.UseVisualStyleBackColor = true;
             // 
             // nomeTextBox
             // 
-            this.nomeTextBox.Location = new System.Drawing.Point(34, 40);
-            this.nomeTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.nomeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomeTextBox.Location = new System.Drawing.Point(12, 112);
+            this.nomeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(390, 20);
+            this.nomeTextBox.Size = new System.Drawing.Size(733, 40);
             this.nomeTextBox.TabIndex = 4;
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(34, 82);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.emailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTextBox.Location = new System.Drawing.Point(13, 191);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(390, 20);
+            this.emailTextBox.Size = new System.Drawing.Size(732, 40);
             this.emailTextBox.TabIndex = 6;
             // 
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(32, 68);
-            this.emailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.emailLabel.Location = new System.Drawing.Point(9, 162);
+            this.emailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(32, 13);
+            this.emailLabel.Size = new System.Drawing.Size(65, 25);
             this.emailLabel.TabIndex = 5;
             this.emailLabel.Text = "Email";
             // 
             // CPFTextBox
             // 
-            this.CPFTextBox.Location = new System.Drawing.Point(241, 352);
-            this.CPFTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.CPFTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CPFTextBox.Location = new System.Drawing.Point(13, 33);
+            this.CPFTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CPFTextBox.Name = "CPFTextBox";
-            this.CPFTextBox.Size = new System.Drawing.Size(183, 20);
+            this.CPFTextBox.Size = new System.Drawing.Size(362, 40);
             this.CPFTextBox.TabIndex = 8;
             // 
             // CPFlabel
             // 
             this.CPFlabel.AutoSize = true;
-            this.CPFlabel.Location = new System.Drawing.Point(239, 338);
-            this.CPFlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CPFlabel.Location = new System.Drawing.Point(11, 8);
+            this.CPFlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CPFlabel.Name = "CPFlabel";
-            this.CPFlabel.Size = new System.Drawing.Size(27, 13);
+            this.CPFlabel.Size = new System.Drawing.Size(54, 25);
             this.CPFlabel.TabIndex = 7;
             this.CPFlabel.Text = "CPF";
             // 
             // RGTextBox
             // 
-            this.RGTextBox.Location = new System.Drawing.Point(242, 400);
-            this.RGTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RGTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RGTextBox.Location = new System.Drawing.Point(388, 33);
+            this.RGTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RGTextBox.Name = "RGTextBox";
-            this.RGTextBox.Size = new System.Drawing.Size(112, 20);
+            this.RGTextBox.Size = new System.Drawing.Size(220, 40);
             this.RGTextBox.TabIndex = 10;
             // 
             // RGlabel
             // 
             this.RGlabel.AutoSize = true;
-            this.RGlabel.Location = new System.Drawing.Point(239, 386);
-            this.RGlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.RGlabel.Location = new System.Drawing.Point(381, 8);
+            this.RGlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RGlabel.Name = "RGlabel";
-            this.RGlabel.Size = new System.Drawing.Size(23, 13);
+            this.RGlabel.Size = new System.Drawing.Size(43, 25);
             this.RGlabel.TabIndex = 9;
             this.RGlabel.Text = "RG";
             this.RGlabel.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // emissorTextBox
             // 
-            this.emissorTextBox.Location = new System.Drawing.Point(357, 400);
-            this.emissorTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.emissorTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emissorTextBox.Location = new System.Drawing.Point(615, 33);
+            this.emissorTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.emissorTextBox.Name = "emissorTextBox";
-            this.emissorTextBox.Size = new System.Drawing.Size(67, 20);
+            this.emissorTextBox.Size = new System.Drawing.Size(130, 40);
             this.emissorTextBox.TabIndex = 12;
             // 
             // RGEmisssorLabel
             // 
             this.RGEmisssorLabel.AutoSize = true;
-            this.RGEmisssorLabel.Location = new System.Drawing.Point(354, 386);
-            this.RGEmisssorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.RGEmisssorLabel.Location = new System.Drawing.Point(610, 8);
+            this.RGEmisssorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RGEmisssorLabel.Name = "RGEmisssorLabel";
-            this.RGEmisssorLabel.Size = new System.Drawing.Size(43, 13);
+            this.RGEmisssorLabel.Size = new System.Drawing.Size(89, 25);
             this.RGEmisssorLabel.TabIndex = 11;
             this.RGEmisssorLabel.Text = "Emissor";
             // 
             // telefoneFixoTextBox
             // 
-            this.telefoneFixoTextBox.Location = new System.Drawing.Point(34, 133);
-            this.telefoneFixoTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.telefoneFixoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.telefoneFixoTextBox.Location = new System.Drawing.Point(12, 269);
+            this.telefoneFixoTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.telefoneFixoTextBox.Name = "telefoneFixoTextBox";
-            this.telefoneFixoTextBox.Size = new System.Drawing.Size(192, 20);
+            this.telefoneFixoTextBox.Size = new System.Drawing.Size(363, 40);
             this.telefoneFixoTextBox.TabIndex = 14;
             // 
             // telefoneFixoLabel
             // 
             this.telefoneFixoLabel.AutoSize = true;
-            this.telefoneFixoLabel.Location = new System.Drawing.Point(32, 119);
-            this.telefoneFixoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.telefoneFixoLabel.Location = new System.Drawing.Point(10, 242);
+            this.telefoneFixoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.telefoneFixoLabel.Name = "telefoneFixoLabel";
-            this.telefoneFixoLabel.Size = new System.Drawing.Size(71, 13);
+            this.telefoneFixoLabel.Size = new System.Drawing.Size(143, 25);
             this.telefoneFixoLabel.TabIndex = 13;
             this.telefoneFixoLabel.Text = "Telefone Fixo";
             // 
             // telefoneCelularTextBox
             // 
-            this.telefoneCelularTextBox.Location = new System.Drawing.Point(234, 133);
-            this.telefoneCelularTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.telefoneCelularTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.telefoneCelularTextBox.Location = new System.Drawing.Point(388, 269);
+            this.telefoneCelularTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.telefoneCelularTextBox.Name = "telefoneCelularTextBox";
-            this.telefoneCelularTextBox.Size = new System.Drawing.Size(190, 20);
+            this.telefoneCelularTextBox.Size = new System.Drawing.Size(357, 40);
             this.telefoneCelularTextBox.TabIndex = 16;
             // 
             // telefoneCelularLabel
             // 
             this.telefoneCelularLabel.AutoSize = true;
-            this.telefoneCelularLabel.Location = new System.Drawing.Point(229, 118);
-            this.telefoneCelularLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.telefoneCelularLabel.Location = new System.Drawing.Point(383, 242);
+            this.telefoneCelularLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.telefoneCelularLabel.Name = "telefoneCelularLabel";
-            this.telefoneCelularLabel.Size = new System.Drawing.Size(39, 13);
+            this.telefoneCelularLabel.Size = new System.Drawing.Size(80, 25);
             this.telefoneCelularLabel.TabIndex = 15;
             this.telefoneCelularLabel.Text = "Celular";
+            this.telefoneCelularLabel.Click += new System.EventHandler(this.telefoneCelularLabel_Click);
             // 
             // observacoesTextBox
             // 
             this.observacoesTextBox.AcceptsReturn = true;
             this.observacoesTextBox.AcceptsTab = true;
-            this.observacoesTextBox.Location = new System.Drawing.Point(34, 449);
-            this.observacoesTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.observacoesTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.observacoesTextBox.Location = new System.Drawing.Point(14, 833);
+            this.observacoesTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.observacoesTextBox.Multiline = true;
             this.observacoesTextBox.Name = "observacoesTextBox";
             this.observacoesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.observacoesTextBox.Size = new System.Drawing.Size(390, 68);
+            this.observacoesTextBox.Size = new System.Drawing.Size(731, 127);
             this.observacoesTextBox.TabIndex = 18;
             // 
             // observacoesLabel
             // 
             this.observacoesLabel.AutoSize = true;
-            this.observacoesLabel.Location = new System.Drawing.Point(32, 434);
-            this.observacoesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.observacoesLabel.Location = new System.Drawing.Point(10, 805);
+            this.observacoesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.observacoesLabel.Name = "observacoesLabel";
-            this.observacoesLabel.Size = new System.Drawing.Size(70, 13);
+            this.observacoesLabel.Size = new System.Drawing.Size(139, 25);
             this.observacoesLabel.TabIndex = 17;
             this.observacoesLabel.Text = "Observações";
             // 
             // diasCheckedListBox
             // 
             this.diasCheckedListBox.CheckOnClick = true;
+            this.diasCheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.diasCheckedListBox.FormattingEnabled = true;
             this.diasCheckedListBox.Items.AddRange(new object[] {
             "Segunda",
@@ -254,116 +265,122 @@
             "Quarta",
             "Quinta",
             "Sexta"});
-            this.diasCheckedListBox.Location = new System.Drawing.Point(35, 182);
-            this.diasCheckedListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.diasCheckedListBox.Location = new System.Drawing.Point(12, 346);
+            this.diasCheckedListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.diasCheckedListBox.Name = "diasCheckedListBox";
-            this.diasCheckedListBox.Size = new System.Drawing.Size(146, 79);
+            this.diasCheckedListBox.Size = new System.Drawing.Size(226, 214);
             this.diasCheckedListBox.TabIndex = 19;
             this.diasCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.diasCheckedListBox_SelectedIndexChanged);
             // 
             // diasDisponiveisLabel
             // 
             this.diasDisponiveisLabel.AutoSize = true;
-            this.diasDisponiveisLabel.Location = new System.Drawing.Point(32, 167);
-            this.diasDisponiveisLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.diasDisponiveisLabel.Location = new System.Drawing.Point(7, 317);
+            this.diasDisponiveisLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.diasDisponiveisLabel.Name = "diasDisponiveisLabel";
-            this.diasDisponiveisLabel.Size = new System.Drawing.Size(87, 13);
+            this.diasDisponiveisLabel.Size = new System.Drawing.Size(172, 25);
             this.diasDisponiveisLabel.TabIndex = 20;
             this.diasDisponiveisLabel.Text = "Dias Disponíveis";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 285);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(8, 550);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 13);
+            this.label1.Size = new System.Drawing.Size(209, 25);
             this.label1.TabIndex = 21;
             this.label1.Text = "Início das Atividades";
             // 
             // dateTimePicker
             // 
+            this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker.Location = new System.Drawing.Point(35, 300);
-            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker.Location = new System.Drawing.Point(12, 584);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(146, 20);
+            this.dateTimePicker.Size = new System.Drawing.Size(224, 40);
             this.dateTimePicker.TabIndex = 22;
             this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // enderecoTextBox
             // 
-            this.enderecoTextBox.Location = new System.Drawing.Point(35, 352);
-            this.enderecoTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.enderecoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enderecoTextBox.Location = new System.Drawing.Point(16, 668);
+            this.enderecoTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.enderecoTextBox.Multiline = true;
             this.enderecoTextBox.Name = "enderecoTextBox";
-            this.enderecoTextBox.Size = new System.Drawing.Size(191, 68);
+            this.enderecoTextBox.Size = new System.Drawing.Size(729, 127);
             this.enderecoTextBox.TabIndex = 24;
             // 
             // enderecoLabel
             // 
             this.enderecoLabel.AutoSize = true;
-            this.enderecoLabel.Location = new System.Drawing.Point(32, 337);
-            this.enderecoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.enderecoLabel.Location = new System.Drawing.Point(13, 639);
+            this.enderecoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.enderecoLabel.Name = "enderecoLabel";
-            this.enderecoLabel.Size = new System.Drawing.Size(53, 13);
+            this.enderecoLabel.Size = new System.Drawing.Size(104, 25);
             this.enderecoLabel.TabIndex = 23;
             this.enderecoLabel.Text = "Endereço";
             // 
-            // servicosLabel
-            // 
-            this.servicosLabel.AutoSize = true;
-            this.servicosLabel.Location = new System.Drawing.Point(221, 167);
-            this.servicosLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.servicosLabel.Name = "servicosLabel";
-            this.servicosLabel.Size = new System.Drawing.Size(48, 13);
-            this.servicosLabel.TabIndex = 25;
-            this.servicosLabel.Text = "Serviços";
-            // 
             // servicosListBox
             // 
+            this.servicosListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.servicosListBox.FormattingEnabled = true;
-            this.servicosListBox.Location = new System.Drawing.Point(223, 182);
-            this.servicosListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.servicosListBox.ItemHeight = 33;
+            this.servicosListBox.Location = new System.Drawing.Point(18, 31);
+            this.servicosListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.servicosListBox.Name = "servicosListBox";
-            this.servicosListBox.Size = new System.Drawing.Size(201, 95);
+            this.servicosListBox.Size = new System.Drawing.Size(366, 268);
             this.servicosListBox.TabIndex = 26;
             this.servicosListBox.SelectedIndexChanged += new System.EventHandler(this.servicosListBox_SelectedIndexChanged);
             // 
             // addServicoButton
             // 
-            this.addServicoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addServicoButton.Location = new System.Drawing.Point(223, 282);
+            this.addServicoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addServicoButton.Location = new System.Drawing.Point(394, 60);
+            this.addServicoButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.addServicoButton.Name = "addServicoButton";
-            this.addServicoButton.Size = new System.Drawing.Size(93, 47);
+            this.addServicoButton.Size = new System.Drawing.Size(90, 90);
             this.addServicoButton.TabIndex = 27;
-            this.addServicoButton.Text = "Adicionar Serviços";
+            this.addServicoButton.Text = "+";
             this.addServicoButton.UseVisualStyleBackColor = true;
             this.addServicoButton.Click += new System.EventHandler(this.addServicoButton_Click);
             // 
             // removeServicoButton
             // 
-            this.removeServicoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeServicoButton.Location = new System.Drawing.Point(331, 282);
+            this.removeServicoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeServicoButton.Location = new System.Drawing.Point(394, 160);
+            this.removeServicoButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.removeServicoButton.Name = "removeServicoButton";
-            this.removeServicoButton.Size = new System.Drawing.Size(93, 47);
+            this.removeServicoButton.Size = new System.Drawing.Size(90, 90);
             this.removeServicoButton.TabIndex = 28;
-            this.removeServicoButton.Text = "Remover Serviços";
+            this.removeServicoButton.Text = "-";
             this.removeServicoButton.UseVisualStyleBackColor = true;
             this.removeServicoButton.Click += new System.EventHandler(this.removeServicoButton_Click);
+            // 
+            // servicoGroupBox
+            // 
+            this.servicoGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.servicoGroupBox.Controls.Add(this.servicosListBox);
+            this.servicoGroupBox.Controls.Add(this.removeServicoButton);
+            this.servicoGroupBox.Controls.Add(this.addServicoButton);
+            this.servicoGroupBox.Location = new System.Drawing.Point(248, 325);
+            this.servicoGroupBox.Name = "servicoGroupBox";
+            this.servicoGroupBox.Size = new System.Drawing.Size(497, 319);
+            this.servicoGroupBox.TabIndex = 29;
+            this.servicoGroupBox.TabStop = false;
+            this.servicoGroupBox.Text = "Serviços";
             // 
             // IndividualForm
             // 
             this.AccessibleName = "Ficha do Voluntário";
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.CancelButton = this.exitButton;
-            this.ClientSize = new System.Drawing.Size(464, 611);
-            this.Controls.Add(this.removeServicoButton);
-            this.Controls.Add(this.addServicoButton);
-            this.Controls.Add(this.servicosListBox);
-            this.Controls.Add(this.servicosLabel);
+            this.ClientSize = new System.Drawing.Size(761, 1100);
+            this.Controls.Add(this.servicoGroupBox);
             this.Controls.Add(this.enderecoTextBox);
             this.Controls.Add(this.enderecoLabel);
             this.Controls.Add(this.dateTimePicker);
@@ -389,14 +406,14 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.nameLabel);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(480, 650);
-            this.MinimumSize = new System.Drawing.Size(480, 650);
             this.Name = "IndividualForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ficha do Voluntário";
             this.Load += new System.EventHandler(this.IndividualForm_Load);
+            this.servicoGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,9 +446,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.TextBox enderecoTextBox;
         private System.Windows.Forms.Label enderecoLabel;
-        private System.Windows.Forms.Label servicosLabel;
         private System.Windows.Forms.ListBox servicosListBox;
         private System.Windows.Forms.Button addServicoButton;
         private System.Windows.Forms.Button removeServicoButton;
+        private System.Windows.Forms.GroupBox servicoGroupBox;
     }
 }

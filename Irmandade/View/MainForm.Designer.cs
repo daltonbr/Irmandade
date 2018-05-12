@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridPanel = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -37,8 +39,8 @@
             this.insertButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.exitButton = new System.Windows.Forms.Button();
-            this.comboBox = new System.Windows.Forms.ComboBox();
-            this.checkedListBox = new System.Windows.Forms.CheckedListBox();
+            this.servicosComboBox = new System.Windows.Forms.ComboBox();
+            this.diasCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.filtroGroupBox = new System.Windows.Forms.GroupBox();
             this.cleanButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -63,11 +65,16 @@
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.dataGridView, "dataGridView");
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.RowTemplate.Height = 33;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
@@ -114,41 +121,40 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // comboBox
+            // servicosComboBox
             // 
-            this.comboBox.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox, "comboBox");
-            this.comboBox.Name = "comboBox";
-            this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
+            this.servicosComboBox.FormattingEnabled = true;
+            resources.ApplyResources(this.servicosComboBox, "servicosComboBox");
+            this.servicosComboBox.Name = "servicosComboBox";
+            this.servicosComboBox.SelectedIndexChanged += new System.EventHandler(this.servicosComboBox_SelectedIndexChanged);
             // 
-            // checkedListBox
+            // diasCheckedListBox
             // 
-            this.checkedListBox.CheckOnClick = true;
-            this.checkedListBox.FormattingEnabled = true;
-            this.checkedListBox.Items.AddRange(new object[] {
-            resources.GetString("checkedListBox.Items"),
-            resources.GetString("checkedListBox.Items1"),
-            resources.GetString("checkedListBox.Items2"),
-            resources.GetString("checkedListBox.Items3"),
-            resources.GetString("checkedListBox.Items4")});
-            resources.ApplyResources(this.checkedListBox, "checkedListBox");
-            this.checkedListBox.Name = "checkedListBox";
-            this.checkedListBox.SelectedIndexChanged += new System.EventHandler(this.checkedListBox_SelectedIndexChanged);
+            this.diasCheckedListBox.CheckOnClick = true;
+            resources.ApplyResources(this.diasCheckedListBox, "diasCheckedListBox");
+            this.diasCheckedListBox.FormattingEnabled = true;
+            this.diasCheckedListBox.Items.AddRange(new object[] {
+            resources.GetString("diasCheckedListBox.Items"),
+            resources.GetString("diasCheckedListBox.Items1"),
+            resources.GetString("diasCheckedListBox.Items2"),
+            resources.GetString("diasCheckedListBox.Items3"),
+            resources.GetString("diasCheckedListBox.Items4")});
+            this.diasCheckedListBox.Name = "diasCheckedListBox";
+            this.diasCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.diasCheckedListBox_SelectedIndexChanged);
             // 
             // filtroGroupBox
             // 
             resources.ApplyResources(this.filtroGroupBox, "filtroGroupBox");
-            this.filtroGroupBox.BackColor = System.Drawing.Color.Linen;
+            this.filtroGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.filtroGroupBox.Controls.Add(this.cleanButton);
             this.filtroGroupBox.Controls.Add(this.label2);
             this.filtroGroupBox.Controls.Add(this.label1);
             this.filtroGroupBox.Controls.Add(this.searchNameLabel);
             this.filtroGroupBox.Controls.Add(this.nameSearchTextBox);
-            this.filtroGroupBox.Controls.Add(this.comboBox);
-            this.filtroGroupBox.Controls.Add(this.checkedListBox);
+            this.filtroGroupBox.Controls.Add(this.servicosComboBox);
+            this.filtroGroupBox.Controls.Add(this.diasCheckedListBox);
             this.filtroGroupBox.Name = "filtroGroupBox";
             this.filtroGroupBox.TabStop = false;
-            this.filtroGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cleanButton
             // 
@@ -161,7 +167,6 @@
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -209,8 +214,8 @@
         private System.Windows.Forms.Button insertButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.ComboBox comboBox;
-        private System.Windows.Forms.CheckedListBox checkedListBox;
+        private System.Windows.Forms.ComboBox servicosComboBox;
+        private System.Windows.Forms.CheckedListBox diasCheckedListBox;
         private System.Windows.Forms.GroupBox filtroGroupBox;
         private System.Windows.Forms.Label searchNameLabel;
         private System.Windows.Forms.TextBox nameSearchTextBox;

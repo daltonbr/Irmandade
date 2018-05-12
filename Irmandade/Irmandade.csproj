@@ -73,9 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\BaseRepository.cs" />
-    <Compile Include="Data\PessoaRepository.cs" />
-    <Compile Include="Data\ServicoRepository.cs" />
+    <Compile Include="Data\Repository.cs" />
     <Compile Include="Resources\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
