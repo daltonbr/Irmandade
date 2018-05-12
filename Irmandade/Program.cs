@@ -17,8 +17,6 @@ namespace Irmandade
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
-
-            // TODO instantiate the Repository using the Singleton Pattern
         }
     }
 }

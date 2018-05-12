@@ -18,9 +18,7 @@ using Irmandade.Data;
 namespace Irmandade
 {
     public partial class MainForm : Form
-    {        
-//        Repository repo = new Repository();
-
+    {
         public MainForm()
         {
             InitializeComponent();
@@ -32,13 +30,37 @@ namespace Irmandade
             LoadServicos();
         }
 
+        private void LoadMainQueryComposed()
+        {
+            // read inputs            
+            string nome = nameSearchTextBox.Text;
+            string servico = "";
+            if (servicosComboBox.SelectedIndex != -1)
+            { servico = servicosComboBox.SelectedItem.ToString(); }
+            bool[] diasDisponiveis = { diasCheckedListBox.GetItemChecked(0),
+                                    diasCheckedListBox.GetItemChecked(1),
+                                    diasCheckedListBox.GetItemChecked(2),
+                                    diasCheckedListBox.GetItemChecked(3),
+                                    diasCheckedListBox.GetItemChecked(4) };
+           
+
+            //MessageBox.Show(nome + servico + diasDisponiveis[0].ToString());
+
+            //dataGridView.DataSource = Repository.Instance.GetPessoasByDiasDisponiveis(diasCheckedListBox.GetItemChecked(0),
+            //                                                           diasCheckedListBox.GetItemChecked(1),
+            //                                                           diasCheckedListBox.GetItemChecked(2),
+            //                                                           diasCheckedListBox.GetItemChecked(3),
+            //                                                           diasCheckedListBox.GetItemChecked(4));            
+
+            //dataGridView.DataSource = Repository.Instance.GetPessoasByNome(nameSearchTextBox.Text);
+        }
+
         private void LoadMainQuery()
         {
             DataTable dt = new DataTable();            
             string sql = "SELECT * FROM Pessoas";            
             try
-            {
-                //dt = repo.GetDataTableFromConnection<SQLiteConnection>(sql);
+            {                
                 dt = Repository.Instance.GetDataTableFromConnection<SQLiteConnection>(sql);
                 dataGridView.DataSource = dt.DefaultView;
             }
@@ -88,8 +110,7 @@ namespace Irmandade
         private void editButton_Click(object sender, EventArgs e)
         {
             string CPF = GetPessoaCPFFromActiveRow();
-            //TODO MessageBox when cannot get valid CPF
-            // TODO garantir que temos uma linha selecionada (talvez botao disabled)
+            //TODO MessageBox when cannot get valid CPF            
             Pessoa pessoa = Repository.Instance.GetPessoaByCPF(CPF);
 
             try
@@ -112,14 +133,13 @@ namespace Irmandade
                       MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
                 if (response == DialogResult.Yes)
                 {
-                    DeletePessoaByCPF(GetPessoaCPFFromActiveRow());
-                    //TODO make a verication above
+                    DeletePessoaByCPF(GetPessoaCPFFromActiveRow());                    
                     LoadMainQuery();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro : " + ex.Message);
+                MessageBox.Show("Erro: " + ex.Message);
             }
         }
 
@@ -179,11 +199,13 @@ namespace Irmandade
 
         private void nameSearchTextBox_TextChanged(object sender, EventArgs e)
         {
+            LoadMainQueryComposed();
             dataGridView.DataSource = Repository.Instance.GetPessoasByNome(nameSearchTextBox.Text);
         }
 
         private void diasCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {                        
+        {
+            LoadMainQueryComposed();
             dataGridView.DataSource = Repository.Instance.GetPessoasByDiasDisponiveis(diasCheckedListBox.GetItemChecked(0),
                                                                        diasCheckedListBox.GetItemChecked(1),
                                                                        diasCheckedListBox.GetItemChecked(2),
@@ -198,19 +220,15 @@ namespace Irmandade
 
         private void servicosComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (servicosComboBox.SelectedIndex == -1) return;
-            
-            // Concatenates the SQL Query suffix
-            var servicosList = new List<string>();           
-
-            string sqlSuffix = "WHERE S.Descricao = " + @" """ + servicosComboBox.SelectedItem.ToString() + @""" ";
+            LoadMainQueryComposed();
+            if (servicosComboBox.SelectedIndex == -1) return;                                   
 
             string sql = @"SELECT * FROM Pessoas P
                            INNER JOIN Pessoas_Servicos PS
                                 ON (P.CPF = PS.Pessoa_CPF)
                            INNER JOIN Servicos S
                                 ON (PS.Servico_Id = S.Id)
-                            " + sqlSuffix;            
+                            WHERE S.Descricao = " + @" """ + servicosComboBox.SelectedItem.ToString() + @""" ";
 
             DataTable dt = Repository.Instance.GetDataTableFromConnection<SQLiteConnection>(sql);
             dataGridView.DataSource = dt.DefaultView;

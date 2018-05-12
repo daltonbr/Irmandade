@@ -140,29 +140,8 @@ namespace Irmandade.Data
         {
             string sql = "SELECT * FROM Pessoas WHERE Nome LIKE '%" + nome + "%'";
 
-            using (SQLiteConnection conn = DbConnection())
-            {
-                conn.Open();
-                using (SQLiteDataAdapter da = new SQLiteDataAdapter(sql, conn))
-                {
-                    try
-                    {
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        return dt;
-                    }
-                    catch (SQLiteException ex)
-                    {
-                        throw ex;
-                    }
-                    finally
-                    {
-                        conn.Close();
-                    }
-                }
-            }
+            return this.GetDataTableFromConnection<SQLiteConnection>(sql);            
         }
-
 
         public DataTable GetPessoasByDiasDisponiveis(bool segunda,
                                                      bool terca,
@@ -193,28 +172,8 @@ namespace Irmandade.Data
 
             string sql = "SELECT * FROM Pessoas " + sqlSuffix;
 
-            using (var conn = DbConnection())
-            {
-                conn.Open();
-                using (SQLiteDataAdapter da = new SQLiteDataAdapter(sql, conn))
-                {
-                    try
-                    {
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        return dt;
-                    }
-                    catch (SQLiteException ex)
-                    {
-                        throw ex;
-                    }
-                    finally
-                    {
-                        conn.Close();
-                    }
-                }
-            }
-        }
+            return this.GetDataTableFromConnection<SQLiteConnection>(sql);            
+        }        
 
         public void SavePessoa(Pessoa pessoa)
         {
