@@ -92,7 +92,7 @@ namespace Irmandade
                     cmd.CommandText = "INSERT INTO Pessoas_Servicos(Servico_Id, Pessoa_CPF) " +
                                          "SELECT S.Id, @Pessoa_CPF " + 
                                          "FROM Servicos S " + 
-                                         "WHERE (S.Descricao = @Descricao)";                                      
+                                         "WHERE (S.Descricao = @Descricao)";
                     cmd.Prepare();
                     cmd.Parameters.AddWithValue("@Descricao", listBox.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@Pessoa_CPF", _CPF);

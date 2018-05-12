@@ -94,7 +94,7 @@ namespace Irmandade
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (ValidateInputs())
-            {
+            {                
                 Pessoa pessoa = new Pessoa();
                 pessoa.CPF = CPFTextBox.Text;
                 pessoa.RG = RGTextBox.Text;
@@ -119,6 +119,7 @@ namespace Irmandade
                         if (InsertPessoa(pessoa) > 0)
                         {
                             MessageBox.Show("Dados incluídos com sucesso!");
+                            _pessoa = pessoa;
                             _operation = operation.update;
                         }
                         else
@@ -131,6 +132,7 @@ namespace Irmandade
                         if (UpdatePessoa(pessoa) > 0)
                         {
                             MessageBox.Show("Dados atualizados com sucesso!");
+                            _operation = operation.update;
                         }
                         else
                         {

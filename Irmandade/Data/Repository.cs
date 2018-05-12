@@ -5,7 +5,6 @@ using System.Data;
 using System.Data.SQLite;
 using System.IO;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace Irmandade.Data
 {
@@ -114,7 +113,7 @@ namespace Irmandade.Data
                         Servico_Id INTEGER,
                         Pessoa_CPF TEXT,
                         PRIMARY KEY(Servico_Id,Pessoa_CPF),
-                        FOREIGN KEY(Pessoa_CPF) REFERENCES Pessoas(CPF) ON DELETE CASCADE, 
+                        FOREIGN KEY(Pessoa_CPF) REFERENCES Pessoas(CPF) ON DELETE CASCADE ON UPDATE CASCADE, 
                         FOREIGN KEY(Servico_Id) REFERENCES Servicos(Id) ON DELETE CASCADE
                 )");
                 conn.Close();
