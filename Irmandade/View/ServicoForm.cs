@@ -14,7 +14,10 @@ using Irmandade.Model;
 namespace Irmandade
 {
     public partial class ServicoForm : Form
-    {        
+    {
+        private const int FormInitialHeight = 366;
+        private const int FormExpandedHeight = 490;
+        private bool _isExpanded = false;
         string _CPF = null;
 
         public ServicoForm()
@@ -30,6 +33,9 @@ namespace Irmandade
 
         private void ServicoForm_Load(object sender, EventArgs e)
         {
+            Form form = this.FindForm();
+            form.Size = new Size(form.Size.Width, FormInitialHeight);
+
             CarregaDados();
             if (listBox.SelectedIndex == -1)
             {
@@ -199,6 +205,27 @@ namespace Irmandade
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void expandButton_Click(object sender, EventArgs e)
+        {
+            Form form = this.FindForm();            
+            if (_isExpanded)
+            {
+                form.Size = new Size(form.Size.Width, FormInitialHeight);
+                expandButton.Text = " >> ";
+            }
+            else
+            {
+                form.Size = new Size(form.Size.Width, FormExpandedHeight);
+                expandButton.Text = " << ";
+            }
+
+            textBox.Enabled = !_isExpanded;
+            newButton.Enabled = !_isExpanded;
+            editButton.Enabled = !_isExpanded;
+
+            _isExpanded = !_isExpanded;
         }
     }
 }
