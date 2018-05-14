@@ -64,6 +64,7 @@ namespace Irmandade
 
         private void LoadServicos()
         {
+            servicosComboBox.Items.Clear();
             DataTable dt = new DataTable();            
             string sql = "SELECT * FROM Servicos ORDER BY Descricao";            
             try
@@ -92,6 +93,7 @@ namespace Irmandade
                 IndividualForm iForm = new IndividualForm(pessoa);
                 iForm.ShowDialog();
                 LoadMainQueryComposed();
+                LoadServicos();
             }
             catch (Exception ex)
             {
@@ -109,7 +111,8 @@ namespace Irmandade
             {
                 IndividualForm iform = new IndividualForm(pessoa);
                 iform.ShowDialog();
-                LoadMainQueryComposed();
+                LoadMainQueryComposed();                
+                LoadServicos();
             }
             catch (Exception ex)
             {
