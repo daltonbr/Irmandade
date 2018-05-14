@@ -25,8 +25,9 @@ namespace Irmandade
         }
 
         private void MainForm_Load(object sender, EventArgs e)
-        {            
-            LoadMainQuery();
+        {
+            //LoadMainQuery();
+            LoadMainQueryComposed();
             LoadServicos();
         }
 
@@ -42,17 +43,8 @@ namespace Irmandade
                                     diasCheckedListBox.GetItemChecked(2),
                                     diasCheckedListBox.GetItemChecked(3),
                                     diasCheckedListBox.GetItemChecked(4) };
-           
 
-            //MessageBox.Show(nome + servico + diasDisponiveis[0].ToString());
-
-            //dataGridView.DataSource = Repository.Instance.GetPessoasByDiasDisponiveis(diasCheckedListBox.GetItemChecked(0),
-            //                                                           diasCheckedListBox.GetItemChecked(1),
-            //                                                           diasCheckedListBox.GetItemChecked(2),
-            //                                                           diasCheckedListBox.GetItemChecked(3),
-            //                                                           diasCheckedListBox.GetItemChecked(4));            
-
-            //dataGridView.DataSource = Repository.Instance.GetPessoasByNome(nameSearchTextBox.Text);
+            dataGridView.DataSource = Repository.Instance.GetPessoasByNomeServicoDiasDisponiveis(nome, servico, diasDisponiveis);
         }
 
         private void LoadMainQuery()
@@ -97,9 +89,9 @@ namespace Irmandade
             try
             {
                 Pessoa pessoa = null;
-                IndividualForm iForm = new IndividualForm(pessoa); // passar _pessoa como parametro
+                IndividualForm iForm = new IndividualForm(pessoa);
                 iForm.ShowDialog();
-                LoadMainQuery();
+                LoadMainQueryComposed();
             }
             catch (Exception ex)
             {
@@ -117,7 +109,7 @@ namespace Irmandade
             {
                 IndividualForm iform = new IndividualForm(pessoa);
                 iform.ShowDialog();
-                LoadMainQuery();
+                LoadMainQueryComposed();
             }
             catch (Exception ex)
             {
@@ -133,8 +125,8 @@ namespace Irmandade
                       MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
                 if (response == DialogResult.Yes)
                 {
-                    DeletePessoaByCPF(GetPessoaCPFFromActiveRow());                    
-                    LoadMainQuery();
+                    DeletePessoaByCPF(GetPessoaCPFFromActiveRow());
+                    LoadMainQueryComposed();
                 }
             }
             catch (Exception ex)
@@ -200,17 +192,11 @@ namespace Irmandade
         private void nameSearchTextBox_TextChanged(object sender, EventArgs e)
         {
             LoadMainQueryComposed();
-            dataGridView.DataSource = Repository.Instance.GetPessoasByNome(nameSearchTextBox.Text);
         }
 
         private void diasCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadMainQueryComposed();
-            dataGridView.DataSource = Repository.Instance.GetPessoasByDiasDisponiveis(diasCheckedListBox.GetItemChecked(0),
-                                                                       diasCheckedListBox.GetItemChecked(1),
-                                                                       diasCheckedListBox.GetItemChecked(2),
-                                                                       diasCheckedListBox.GetItemChecked(3),
-                                                                       diasCheckedListBox.GetItemChecked(4));
+            LoadMainQueryComposed();            
         }
 
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -220,18 +206,18 @@ namespace Irmandade
 
         private void servicosComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadMainQueryComposed();
-            if (servicosComboBox.SelectedIndex == -1) return;                                   
+            LoadMainQueryComposed();            
+            //if (servicosComboBox.SelectedIndex == -1) return;                                   
 
-            string sql = @"SELECT * FROM Pessoas P
-                           INNER JOIN Pessoas_Servicos PS
-                                ON (P.CPF = PS.Pessoa_CPF)
-                           INNER JOIN Servicos S
-                                ON (PS.Servico_Id = S.Id)
-                            WHERE S.Descricao = " + @" """ + servicosComboBox.SelectedItem.ToString() + @""" ";
+            //string sql = @"SELECT * FROM Pessoas P
+            //               INNER JOIN Pessoas_Servicos PS
+            //                    ON (P.CPF = PS.Pessoa_CPF)
+            //               INNER JOIN Servicos S
+            //                    ON (PS.Servico_Id = S.Id)
+            //                WHERE S.Descricao = " + @" """ + servicosComboBox.SelectedItem.ToString() + @""" ";
 
-            DataTable dt = Repository.Instance.GetDataTableFromConnection<SQLiteConnection>(sql);
-            dataGridView.DataSource = dt.DefaultView;
+            //DataTable dt = Repository.Instance.GetDataTableFromConnection<SQLiteConnection>(sql);
+            //dataGridView.DataSource = dt.DefaultView;
         }
 
         private void cleanButton_Click(object sender, EventArgs e)
@@ -243,7 +229,7 @@ namespace Irmandade
             {
                 diasCheckedListBox.SetItemCheckState(i, CheckState.Unchecked);
             }
-            LoadMainQuery();
+            //LoadMainQueryComposed();
         }
 
     }

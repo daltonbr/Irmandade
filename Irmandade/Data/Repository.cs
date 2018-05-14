@@ -173,7 +173,48 @@ namespace Irmandade.Data
             string sql = "SELECT * FROM Pessoas " + sqlSuffix;
 
             return this.GetDataTableFromConnection<SQLiteConnection>(sql);            
-        }        
+        }
+
+        public DataTable GetPessoasByNomeServicoDiasDisponiveis(string nome, string servico, bool[] diasDisponiveis)
+        {
+            // Concatenates the SQL Query suffix
+            string[] sqlSuffixList = new string[]
+            {
+                diasDisponiveis[0] ? "DisponivelSegunda = 1" : null,
+                diasDisponiveis[1] ? "DisponivelTerca = 1" : null,
+                diasDisponiveis[2] ? "DisponivelQuarta = 1" : null,
+                diasDisponiveis[3] ? "DisponivelQuinta = 1" : null,
+                diasDisponiveis[4] ? "DisponivelSexta = 1" : null
+            };
+            string sqlDias = string.Join(" AND ", sqlSuffixList.Where(x => x != null));
+            bool isEmpty = sqlSuffixList.All(x => x == null);
+
+            if (isEmpty)
+            {
+                sqlDias = "";
+            }
+            else
+            {
+                sqlDias = " AND " + sqlDias;
+            }
+
+            string sqlServicoJoin = "";
+            if (string.IsNullOrEmpty(servico))            
+            {
+                sqlServicoJoin = " WHERE ";
+            }
+            else
+            {
+                sqlServicoJoin = @" INNER JOIN Pessoas_Servicos PS
+                                        ON (P.CPF = PS.Pessoa_CPF)
+                                    INNER JOIN Servicos S
+                                        ON (PS.Servico_Id = S.Id)
+                                    WHERE S.Descricao = " + @" """ + servico + @""" AND ";
+            }
+            string fields = "P.CPF, P.Nome, P.Email, P.TelefoneFixo`, P.TelefoneCelular";
+            string finalSql = "SELECT "+ fields + " FROM Pessoas P " + sqlServicoJoin + " Nome LIKE '%" + nome + "%'" + sqlDias ;
+            return this.GetDataTableFromConnection<SQLiteConnection>(finalSql);
+        }
 
         public void SavePessoa(Pessoa pessoa)
         {
