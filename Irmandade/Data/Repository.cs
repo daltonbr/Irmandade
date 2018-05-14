@@ -300,5 +300,37 @@ namespace Irmandade.Data
         }
 
         #endregion
+
+        public int EditServico(string oldDescricao, string newDescricao)
+        {
+            int resultado = -1;
+
+            using (SQLiteConnection conn = Repository.DbConnection())
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                {
+                    cmd.CommandText = "UPDATE Servicos " + 
+                                      "SET Descricao = @newDescricao " +
+                                      "WHERE Descricao = @oldDescricao";
+                    cmd.Prepare();                    
+                    cmd.Parameters.AddWithValue("@newDescricao", newDescricao);
+                    cmd.Parameters.AddWithValue("@oldDescricao", oldDescricao);
+                    try
+                    {
+                        resultado = cmd.ExecuteNonQuery();
+                    }
+                    catch (SQLiteException ex)
+                    {
+                        throw ex;
+                    }
+                    finally
+                    {
+                        conn.Close();                        
+                    }
+                }
+            }
+            return resultado;
+        }
     }
 }

@@ -155,7 +155,36 @@ namespace Irmandade
 
         private void editButton_Click(object sender, EventArgs e)
         {
-                        
+            //if (servicosComboBox.SelectedIndex != -1)
+            //{ servico = servicosComboBox.SelectedItem.ToString(); }
+
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                MessageBox.Show("Erro: Digite o novo nome do serviço na caixa ao lado!");
+                return;
+            }
+
+            if (listBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Erro: Selecione algum Serviço para ser alterado!");
+                return;
+            }
+
+            try
+            {
+                DialogResult response = MessageBox.Show($"Deseja EDITAR este o serviço {listBox.SelectedItem.ToString()} por {textBox.Text}?", "Editar Serviço",
+                      MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (response == DialogResult.Yes)
+                {
+                    Repository.Instance.EditServico(listBox.SelectedItem.ToString(), textBox.Text);                    
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+            textBox.Clear();
+            CarregaDados();
         }
 
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -192,11 +221,7 @@ namespace Irmandade
             }
             catch(SQLiteException ex)
             {
-                MessageBox.Show("Erro2: " + ex.Message);
-            }
-            finally
-            {
-
+                MessageBox.Show("Erro: " + ex.Message);
             }
             textBox.Clear();
             CarregaDados();
