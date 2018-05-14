@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Irmandade.Data
 {
@@ -118,6 +119,7 @@ namespace Irmandade.Data
                 )");
                 conn.Close();
             }
+            MessageBox.Show("Um novo banco de dados foi criado!");
         }
 
         #region Pessoa table
@@ -211,7 +213,7 @@ namespace Irmandade.Data
                                         ON (PS.Servico_Id = S.Id)
                                     WHERE S.Descricao = " + @" """ + servico + @""" AND ";
             }
-            string fields = "P.CPF, P.Nome, P.Email, P.TelefoneFixo`, P.TelefoneCelular";
+            string fields = "P.CPF, P.Nome, P.Email, P.TelefoneFixo, P.TelefoneCelular";
             string finalSql = "SELECT "+ fields + " FROM Pessoas P " + sqlServicoJoin + " Nome LIKE '%" + nome + "%'" + sqlDias ;
             return this.GetDataTableFromConnection<SQLiteConnection>(finalSql);
         }
