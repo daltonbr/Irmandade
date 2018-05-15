@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.addButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listBox = new System.Windows.Forms.ListBox();
@@ -156,13 +157,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.exitButton;
-            this.ClientSize = new System.Drawing.Size(298, 463);
+            this.ClientSize = new System.Drawing.Size(298, 331);
             this.Controls.Add(this.expandButton);
             this.Controls.Add(this.editGroup);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.addButton);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MaximumSize = new System.Drawing.Size(314, 493);
+            this.MinimumSize = new System.Drawing.Size(314, 370);
             this.Name = "ServicoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gerenciar Serviços";
