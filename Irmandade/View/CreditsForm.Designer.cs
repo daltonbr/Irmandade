@@ -42,6 +42,8 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.versionTextLabel = new System.Windows.Forms.Label();
+            this.versionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -181,12 +183,36 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Sistema de Controle de Voluntários";
             // 
+            // versionTextLabel
+            // 
+            this.versionTextLabel.AutoSize = true;
+            this.versionTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.versionTextLabel.Location = new System.Drawing.Point(285, 9);
+            this.versionTextLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.versionTextLabel.Name = "versionTextLabel";
+            this.versionTextLabel.Size = new System.Drawing.Size(53, 18);
+            this.versionTextLabel.TabIndex = 12;
+            this.versionTextLabel.Text = "versão";
+            // 
+            // versionLabel
+            // 
+            this.versionLabel.AutoSize = true;
+            this.versionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.versionLabel.Location = new System.Drawing.Point(346, 9);
+            this.versionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.versionLabel.Name = "versionLabel";
+            this.versionLabel.Size = new System.Drawing.Size(16, 18);
+            this.versionLabel.TabIndex = 13;
+            this.versionLabel.Text = "1";
+            // 
             // CreditsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.okButton;
             this.ClientSize = new System.Drawing.Size(665, 400);
+            this.Controls.Add(this.versionLabel);
+            this.Controls.Add(this.versionTextLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox5);
@@ -206,6 +232,7 @@
             this.MinimumSize = new System.Drawing.Size(681, 439);
             this.Name = "CreditsForm";
             this.Text = "Sobre";
+            this.Load += new System.EventHandler(this.CreditsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -230,5 +257,7 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label versionTextLabel;
+        private System.Windows.Forms.Label versionLabel;
     }
 }

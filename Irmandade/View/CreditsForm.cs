@@ -42,5 +42,10 @@ namespace Irmandade.View
         {
 
         }
+
+        private void CreditsForm_Load(object sender, EventArgs e)
+        {
+            versionLabel.Text = Irmandade.strings.version;
+        }
     }
 }
