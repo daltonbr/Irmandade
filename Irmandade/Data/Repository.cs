@@ -332,5 +332,31 @@ namespace Irmandade.Data
             }
             return resultado;
         }
+
+        public void DeleteServiçoByDescricao(string descricao)
+        {            
+            using (SQLiteConnection conn = Repository.DbConnection())
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                {
+                    cmd.CommandText = "DELETE FROM Servicos WHERE Descricao = @Descricao";
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@Descricao", descricao);
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SQLiteException ex)
+                    {
+                        throw ex;
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+        }
     }
 }

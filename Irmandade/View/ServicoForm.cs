@@ -238,12 +238,12 @@ namespace Irmandade
             if (_isExpanded)
             {
                 form.Size = new Size(form.Size.Width, FormInitialHeight);
-                expandButton.Text = " >> ";
+                expandButton.Text = "Mais Opções >>";
             }
             else
             {
                 form.Size = new Size(form.Size.Width, FormExpandedHeight);
-                expandButton.Text = " << ";
+                expandButton.Text = "Menos Opções <<";
             }
 
             textBox.Enabled = !_isExpanded;
@@ -251,6 +251,30 @@ namespace Irmandade
             editButton.Enabled = !_isExpanded;
 
             _isExpanded = !_isExpanded;
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if (listBox.SelectedIndex == -1)
+            {                
+                MessageBox.Show("Por favor selecione um item para excluí-lo!");
+                return;
+            }
+
+            try
+            {
+                DialogResult response = MessageBox.Show($"ATENÇÃO! Deseja EXCLUIR o Serviço {listBox.SelectedItem.ToString()}? \n Este Serviço será removido de TODOS os voluntários!", "CUIDADO! Exclusão de Serviço",
+                      MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                if (response == DialogResult.Yes)
+                {
+                    Repository.Instance.DeleteServiçoByDescricao(listBox.SelectedItem.ToString());
+                    CarregaDados();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: Serviço não excluído!\n" + ex.Message);
+            }
         }
     }
 }

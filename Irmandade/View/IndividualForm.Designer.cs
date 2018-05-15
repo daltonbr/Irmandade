@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.nameLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
@@ -78,7 +77,7 @@
             this.saveButton.Margin = new System.Windows.Forms.Padding(2);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(120, 60);
-            this.saveButton.TabIndex = 1;
+            this.saveButton.TabIndex = 15;
             this.saveButton.Text = "&Salvar";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -91,8 +90,8 @@
             this.exitButton.Margin = new System.Windows.Forms.Padding(2);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(120, 60);
-            this.exitButton.TabIndex = 2;
-            this.exitButton.Text = "S&air";
+            this.exitButton.TabIndex = 0;
+            this.exitButton.Text = "&Fechar";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
@@ -103,7 +102,7 @@
             this.editButton.Margin = new System.Windows.Forms.Padding(2);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(120, 60);
-            this.editButton.TabIndex = 3;
+            this.editButton.TabIndex = 16;
             this.editButton.Text = "&Editar";
             this.editButton.UseVisualStyleBackColor = true;
             // 
@@ -123,7 +122,7 @@
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(368, 24);
-            this.emailTextBox.TabIndex = 6;
+            this.emailTextBox.TabIndex = 5;
             // 
             // emailLabel
             // 
@@ -142,7 +141,7 @@
             this.CPFTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.CPFTextBox.Name = "CPFTextBox";
             this.CPFTextBox.Size = new System.Drawing.Size(183, 24);
-            this.CPFTextBox.TabIndex = 8;
+            this.CPFTextBox.TabIndex = 1;
             // 
             // CPFlabel
             // 
@@ -161,7 +160,7 @@
             this.RGTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.RGTextBox.Name = "RGTextBox";
             this.RGTextBox.Size = new System.Drawing.Size(112, 24);
-            this.RGTextBox.TabIndex = 10;
+            this.RGTextBox.TabIndex = 2;
             // 
             // RGlabel
             // 
@@ -181,7 +180,7 @@
             this.emissorTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.emissorTextBox.Name = "emissorTextBox";
             this.emissorTextBox.Size = new System.Drawing.Size(67, 24);
-            this.emissorTextBox.TabIndex = 12;
+            this.emissorTextBox.TabIndex = 3;
             // 
             // RGEmisssorLabel
             // 
@@ -200,7 +199,7 @@
             this.telefoneFixoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.telefoneFixoTextBox.Name = "telefoneFixoTextBox";
             this.telefoneFixoTextBox.Size = new System.Drawing.Size(184, 24);
-            this.telefoneFixoTextBox.TabIndex = 14;
+            this.telefoneFixoTextBox.TabIndex = 6;
             // 
             // telefoneFixoLabel
             // 
@@ -219,7 +218,7 @@
             this.telefoneCelularTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.telefoneCelularTextBox.Name = "telefoneCelularTextBox";
             this.telefoneCelularTextBox.Size = new System.Drawing.Size(180, 24);
-            this.telefoneCelularTextBox.TabIndex = 16;
+            this.telefoneCelularTextBox.TabIndex = 7;
             // 
             // telefoneCelularLabel
             // 
@@ -235,7 +234,7 @@
             // observacoesTextBox
             // 
             this.observacoesTextBox.AcceptsReturn = true;
-            this.observacoesTextBox.AcceptsTab = true;
+            this.observacoesTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.observacoesTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.observacoesTextBox.Location = new System.Drawing.Point(7, 433);
             this.observacoesTextBox.Margin = new System.Windows.Forms.Padding(2);
@@ -243,7 +242,7 @@
             this.observacoesTextBox.Name = "observacoesTextBox";
             this.observacoesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.observacoesTextBox.Size = new System.Drawing.Size(368, 68);
-            this.observacoesTextBox.TabIndex = 18;
+            this.observacoesTextBox.TabIndex = 14;
             // 
             // observacoesLabel
             // 
@@ -270,7 +269,7 @@
             this.diasCheckedListBox.Margin = new System.Windows.Forms.Padding(2);
             this.diasCheckedListBox.Name = "diasCheckedListBox";
             this.diasCheckedListBox.Size = new System.Drawing.Size(115, 99);
-            this.diasCheckedListBox.TabIndex = 19;
+            this.diasCheckedListBox.TabIndex = 8;
             this.diasCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.diasCheckedListBox_SelectedIndexChanged);
             // 
             // diasDisponiveisLabel
@@ -301,7 +300,7 @@
             this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(114, 24);
-            this.dateTimePicker.TabIndex = 22;
+            this.dateTimePicker.TabIndex = 9;
             this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // enderecoTextBox
@@ -312,7 +311,7 @@
             this.enderecoTextBox.Multiline = true;
             this.enderecoTextBox.Name = "enderecoTextBox";
             this.enderecoTextBox.Size = new System.Drawing.Size(366, 68);
-            this.enderecoTextBox.TabIndex = 24;
+            this.enderecoTextBox.TabIndex = 13;
             // 
             // enderecoLabel
             // 
@@ -326,6 +325,7 @@
             // 
             // servicosListBox
             // 
+            this.servicosListBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.servicosListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.servicosListBox.FormattingEnabled = true;
             this.servicosListBox.ItemHeight = 17;
@@ -333,7 +333,8 @@
             this.servicosListBox.Margin = new System.Windows.Forms.Padding(2);
             this.servicosListBox.Name = "servicosListBox";
             this.servicosListBox.Size = new System.Drawing.Size(185, 140);
-            this.servicosListBox.TabIndex = 26;
+            this.servicosListBox.TabIndex = 10;
+            this.servicosListBox.UseTabStops = false;
             this.servicosListBox.SelectedIndexChanged += new System.EventHandler(this.servicosListBox_SelectedIndexChanged);
             // 
             // addServicoButton
@@ -342,7 +343,7 @@
             this.addServicoButton.Location = new System.Drawing.Point(197, 31);
             this.addServicoButton.Name = "addServicoButton";
             this.addServicoButton.Size = new System.Drawing.Size(45, 47);
-            this.addServicoButton.TabIndex = 27;
+            this.addServicoButton.TabIndex = 11;
             this.addServicoButton.Text = "+";
             this.addServicoButton.UseVisualStyleBackColor = true;
             this.addServicoButton.Click += new System.EventHandler(this.addServicoButton_Click);
@@ -353,9 +354,10 @@
             this.removeServicoButton.Location = new System.Drawing.Point(197, 83);
             this.removeServicoButton.Name = "removeServicoButton";
             this.removeServicoButton.Size = new System.Drawing.Size(45, 47);
-            this.removeServicoButton.TabIndex = 28;
+            this.removeServicoButton.TabIndex = 12;
             this.removeServicoButton.Text = "-";
             this.removeServicoButton.UseVisualStyleBackColor = true;
+            this.removeServicoButton.UseWaitCursor = true;
             this.removeServicoButton.Click += new System.EventHandler(this.removeServicoButton_Click);
             // 
             // servicoGroupBox
@@ -407,6 +409,7 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.nameLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(396, 610);
