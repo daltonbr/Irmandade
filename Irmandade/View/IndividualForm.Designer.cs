@@ -105,6 +105,7 @@
             this.editButton.TabIndex = 16;
             this.editButton.Text = "&Editar";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // nomeTextBox
             // 

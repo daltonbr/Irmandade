@@ -59,6 +59,8 @@ namespace Irmandade.View
                 observacoesTextBox.Text = _pessoa.Observacoes;
                 emailTextBox.Text = _pessoa.Email;
 
+                SetEnableOnAllInputElements(false);
+             
                 diasCheckedListBox.SetItemChecked(0, _pessoa.DisponivelSegunda == 1);
                 diasCheckedListBox.SetItemChecked(1, _pessoa.DisponivelTerca == 1);
                 diasCheckedListBox.SetItemChecked(2, _pessoa.DisponivelQuarta == 1);
@@ -67,6 +69,25 @@ namespace Irmandade.View
                 
                 UpdateServicos(_pessoa.CPF);
             }
+        }
+
+        private void SetEnableOnAllInputElements(bool enabled)
+        {
+            CPFTextBox.Enabled = enabled;
+            RGTextBox.Enabled = enabled;
+            emissorTextBox.Enabled = enabled;
+            nomeTextBox.Enabled = enabled;
+            enderecoTextBox.Enabled = enabled;
+            telefoneFixoTextBox.Enabled = enabled;
+            telefoneCelularTextBox.Enabled = enabled;
+            dateTimePicker.Enabled = enabled;
+            observacoesTextBox.Enabled = enabled;
+            emailTextBox.Enabled = enabled;
+            diasCheckedListBox.Enabled = enabled;
+            servicoGroupBox.Enabled = enabled;
+            addServicoButton.Enabled = enabled;
+            removeServicoButton.Enabled = enabled;
+            saveButton.Enabled = enabled;
         }
 
         private void UpdateServicos(string CPF)
@@ -382,6 +403,11 @@ namespace Irmandade.View
         private void telefoneCelularLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            SetEnableOnAllInputElements(true);
         }
     }
 
