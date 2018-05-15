@@ -124,17 +124,17 @@ namespace Irmandade
         {
             try
             {
-                DialogResult response = MessageBox.Show("Deseja REMOVER este voluntário?", "Remover Voluntario",
-                      MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                DialogResult response = MessageBox.Show($"Deseja REMOVER o voluntário de CPF {GetPessoaCPFFromActiveRow()}?", "ATENÇÃO! Remover Voluntario",
+                      MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 if (response == DialogResult.Yes)
                 {
-                    DeletePessoaByCPF(GetPessoaCPFFromActiveRow());
-                    LoadMainQueryComposed();
+                    Repository.Instance.DeletePessoaByCPF(GetPessoaCPFFromActiveRow());
+                    LoadMainQueryComposed();                    
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + ex.Message);
+                MessageBox.Show("Erro: Voluntário não removido!" + ex.Message);
             }
         }
 
@@ -162,35 +162,7 @@ namespace Irmandade
             {
                 throw ex;
             }            
-        }
-
-        public int DeletePessoaByCPF(string CPF)
-        {
-            int resultado = -1;            
-            using (SQLiteConnection conn = Repository.DbConnection())
-            {
-                conn.Open();
-                using (SQLiteCommand cmd = new SQLiteCommand(conn))
-                {
-                    cmd.CommandText = "DELETE FROM Pessoas WHERE CPF = @CPF";
-                    cmd.Prepare();
-                    cmd.Parameters.AddWithValue("@CPF", CPF);
-                    try
-                    {
-                        resultado = cmd.ExecuteNonQuery();
-                    }
-                    catch (SQLiteException ex)
-                    {
-                        throw ex;
-                    }
-                    finally
-                    {
-                        conn.Close();
-                    }
-                }
-            }
-            return resultado;
-        }
+        }        
 
         private void nameSearchTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -223,6 +195,10 @@ namespace Irmandade
             //dataGridView.DataSource = dt.DefaultView;
         }
 
+        /// <summary>
+        /// Clear all the query filter inputs
+        /// </summary>
+        /// <param name="sender"></param>
         private void cleanButton_Click(object sender, EventArgs e)
         {
             nameSearchTextBox.Text = "";
@@ -231,8 +207,7 @@ namespace Irmandade
             foreach (int i in diasCheckedListBox.CheckedIndices)
             {
                 diasCheckedListBox.SetItemCheckState(i, CheckState.Unchecked);
-            }
-            //LoadMainQueryComposed();
+            }            
         }
 
     }

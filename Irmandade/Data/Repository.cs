@@ -238,6 +238,32 @@ namespace Irmandade.Data
             }
         }
 
+        public void DeletePessoaByCPF(string CPF)
+        {            
+            using (SQLiteConnection conn = Repository.DbConnection())
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                {
+                    cmd.CommandText = "DELETE FROM Pessoas WHERE CPF = @CPF";
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@CPF", CPF);
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SQLiteException ex)
+                    {
+                        throw ex;
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+        }
+
         #endregion
 
         #region Servicos Table
