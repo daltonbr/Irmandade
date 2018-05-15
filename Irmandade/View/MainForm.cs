@@ -222,7 +222,7 @@ namespace Irmandade.View
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Repository.RestoreDatabase();
+
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -273,6 +273,11 @@ namespace Irmandade.View
         {
             CreditsForm credits = new CreditsForm();
             credits.Show();
+        }
+
+        private void openToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Repository.RestoreDatabase();
         }
     }
 }

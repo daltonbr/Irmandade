@@ -41,7 +41,9 @@
             this.servicosComboBox = new System.Windows.Forms.ComboBox();
             this.diasCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.filtroGroupBox = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.cleanButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.searchNameLabel = new System.Windows.Forms.Label();
@@ -58,21 +60,19 @@
             this.inserirVoluntárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarVoluntárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.gerenciarServiçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.excluirVoluntárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.gerenciarServiçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.filtroGroupBox.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridPanel
@@ -171,12 +171,24 @@
             this.filtroGroupBox.Name = "filtroGroupBox";
             this.filtroGroupBox.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.TabStop = false;
+            // 
             // cleanButton
             // 
             resources.ApplyResources(this.cleanButton, "cleanButton");
             this.cleanButton.Name = "cleanButton";
             this.cleanButton.UseVisualStyleBackColor = true;
             this.cleanButton.Click += new System.EventHandler(this.cleanButton_Click);
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -231,7 +243,7 @@
             // 
             resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator
             // 
@@ -285,22 +297,22 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             // 
-            // gerenciarServiçosToolStripMenuItem
+            // excluirVoluntárioToolStripMenuItem
             // 
-            this.gerenciarServiçosToolStripMenuItem.Name = "gerenciarServiçosToolStripMenuItem";
-            resources.ApplyResources(this.gerenciarServiçosToolStripMenuItem, "gerenciarServiçosToolStripMenuItem");
-            this.gerenciarServiçosToolStripMenuItem.Click += new System.EventHandler(this.gerenciarServiçosToolStripMenuItem_Click);
+            this.excluirVoluntárioToolStripMenuItem.Name = "excluirVoluntárioToolStripMenuItem";
+            resources.ApplyResources(this.excluirVoluntárioToolStripMenuItem, "excluirVoluntárioToolStripMenuItem");
+            this.excluirVoluntárioToolStripMenuItem.Click += new System.EventHandler(this.excluirVoluntárioToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
-            // excluirVoluntárioToolStripMenuItem
+            // gerenciarServiçosToolStripMenuItem
             // 
-            this.excluirVoluntárioToolStripMenuItem.Name = "excluirVoluntárioToolStripMenuItem";
-            resources.ApplyResources(this.excluirVoluntárioToolStripMenuItem, "excluirVoluntárioToolStripMenuItem");
-            this.excluirVoluntárioToolStripMenuItem.Click += new System.EventHandler(this.excluirVoluntárioToolStripMenuItem_Click);
+            this.gerenciarServiçosToolStripMenuItem.Name = "gerenciarServiçosToolStripMenuItem";
+            resources.ApplyResources(this.gerenciarServiçosToolStripMenuItem, "gerenciarServiçosToolStripMenuItem");
+            this.gerenciarServiçosToolStripMenuItem.Click += new System.EventHandler(this.gerenciarServiçosToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -314,18 +326,6 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // pictureBox3
-            // 
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
@@ -345,10 +345,10 @@
             this.panel2.ResumeLayout(false);
             this.filtroGroupBox.ResumeLayout(false);
             this.filtroGroupBox.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

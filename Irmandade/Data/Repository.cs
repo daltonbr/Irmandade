@@ -154,22 +154,27 @@ namespace Irmandade.Data
                 {
                     string fileToRestore = ofd.FileName;
                     // Rename Current Database to .Bak
-                    //File.Move(PathToRestoreDB, PathToRestoreDB + ".bak");
+                    File.Move(pathToRestoreDB, pathToRestoreDB + ".bak");
                     //Restore the Database From Backup Folder
 
                     if (File.Exists(DbFile))
                     {
-                        using (var db = DbConnection())
-                        {
-                            db.ClearTypeCallbacks();
-                            db.Dispose();                            
-                            GC.Collect();
-                            GC.WaitForPendingFinalizers();
-                            File.Delete(DbFile);
-                            File.Copy(fileToRestore, pathToRestoreDB, true);
-                            MessageBox.Show("Backup restaurado com sucesso!");
-                        }
+                        File.Delete(DbFile);
                     }
+
+                    //File.Move(fileToRestore, pathToRestoreDB);
+                        //using (var conn = DbConnection())
+                        //{                                                        
+                        //    //conn.ClearTypeCallbacks();
+                        //    conn.Dispose();                            
+                        //    SQLiteConnection.ClearAllPools();
+                        //    GC.Collect();
+                        //    GC.WaitForPendingFinalizers();
+                        //    File.Delete(DbFile);
+                        //    //File.Copy(fileToRestore, pathToRestoreDB, true);
+                        MessageBox.Show("Backup restaurado com sucesso!");
+                        //}
+                   // }
                     //if (File.Exists(tempFile)) File.Delete(tempFile);                
                 }
                 catch (Exception ex)
