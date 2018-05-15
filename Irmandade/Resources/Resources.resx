@@ -133,4 +133,13 @@
   <data name="heartIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\heartIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ceapla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\ceapla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brasaoIGCE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\brasaoIGCE.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unesp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\unesp.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

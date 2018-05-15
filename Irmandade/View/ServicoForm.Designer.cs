@@ -1,4 +1,4 @@
-﻿namespace Irmandade
+﻿namespace Irmandade.View
 {
     partial class ServicoForm
     {

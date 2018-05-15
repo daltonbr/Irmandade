@@ -11,7 +11,7 @@ using Irmandade.Model;
 using Irmandade.Data;
 using System.Data.SQLite;
 
-namespace Irmandade
+namespace Irmandade.View
 {
     enum operation
     {

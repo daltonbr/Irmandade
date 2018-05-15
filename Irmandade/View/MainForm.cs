@@ -16,7 +16,7 @@ using Irmandade.Model;
 using Irmandade.Data;
 using System.IO;
 
-namespace Irmandade
+namespace Irmandade.View
 {
     public partial class MainForm : Form
     {
@@ -267,6 +267,12 @@ namespace Irmandade
         {
             ServicoForm form = new ServicoForm();
             form.Show();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreditsForm credits = new CreditsForm();
+            credits.Show();
         }
     }
 }

@@ -73,6 +73,26 @@ namespace Irmandade.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap brasaoIGCE {
+            get {
+                object obj = ResourceManager.GetObject("brasaoIGCE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ceapla {
+            get {
+                object obj = ResourceManager.GetObject("ceapla", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap coracaoIcon128 {
             get {
                 object obj = ResourceManager.GetObject("coracaoIcon128", resourceCulture);
@@ -106,6 +126,16 @@ namespace Irmandade.Resources {
         internal static System.Drawing.Bitmap MariaRight {
             get {
                 object obj = ResourceManager.GetObject("MariaRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unesp {
+            get {
+                object obj = ResourceManager.GetObject("unesp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

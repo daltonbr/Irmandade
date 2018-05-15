@@ -11,7 +11,7 @@ using Irmandade.Data;
 using System.Data.SQLite;
 using Irmandade.Model;
 
-namespace Irmandade
+namespace Irmandade.View
 {
     public partial class ServicoForm : Form
     {
@@ -23,7 +23,11 @@ namespace Irmandade
         public ServicoForm()
         {
             InitializeComponent();
-            _isExpanded = true;
+            addButton.Enabled = false;
+            //ExpandForm();
+            //ToggleServicosEditing();
+            
+            //expandButton.Enabled = false;
         }
 
         public ServicoForm(string CPF)
@@ -235,16 +239,26 @@ namespace Irmandade
 
         private void expandButton_Click(object sender, EventArgs e)
         {
-            Form form = this.FindForm();            
+            ToggleServicosEditing();
+        }
+
+        /// <summary>
+        /// Toggles controls for editing Servicos
+        /// </summary>
+        private void ToggleServicosEditing()
+        {
+            Form form = this.FindForm();
+
             if (_isExpanded)
             {
                 form.Size = new Size(form.Size.Width, FormInitialHeight);
-                expandButton.Text = "Mais Opções >>";
+                expandButton.Text = "Mais Opções >>"; 
             }
             else
             {
+
                 form.Size = new Size(form.Size.Width, FormExpandedHeight);
-                expandButton.Text = "Menos Opções <<";
+                expandButton.Text = "Menos Opções <<";               
             }
 
             textBox.Enabled = !_isExpanded;
@@ -252,6 +266,14 @@ namespace Irmandade
             editButton.Enabled = !_isExpanded;
 
             _isExpanded = !_isExpanded;
+        }
+
+        private void ExpandForm()
+        {
+            Form form = this.FindForm();
+            form.Size = new Size(form.Size.Width, FormExpandedHeight);
+            expandButton.Text = "Menos Opções <<";
+            _isExpanded = true;
         }
 
         private void deleteButton_Click(object sender, EventArgs e)

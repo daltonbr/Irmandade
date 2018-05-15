@@ -79,6 +79,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="strings.pt-BR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>strings.pt-BR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\CreditsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CreditsForm.Designer.cs">
+      <DependentUpon>CreditsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\IndividualForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +121,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CreditsForm.resx">
+      <DependentUpon>CreditsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\IndividualForm.resx">
       <DependentUpon>IndividualForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,7 +142,10 @@
     <EmbeddedResource Include="View\ServicoForm.resx">
       <DependentUpon>ServicoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="strings.pt-BR.resx" />
+    <EmbeddedResource Include="strings.pt-BR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>strings.pt-BR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>strings.Designer.cs</LastGenOutput>
@@ -148,9 +165,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Images\unesp.jpg" />
     <None Include="Resources\Images\heartIcon.ico" />
     <None Include="Resources\Images\coracaoIcon128.png" />
     <None Include="Resources\Images\brasao.jpg" />
+    <None Include="Resources\Images\ceapla.png" />
+    <None Include="Resources\Images\brasaoIGCE.jpg" />
     <Content Include="Resources\Images\coracaoIcon256.ico" />
     <None Include="Resources\Images\MariaRight.jpg" />
     <None Include="Resources\Images\coracaoIcon256.png" />
