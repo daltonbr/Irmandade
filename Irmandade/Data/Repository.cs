@@ -122,6 +122,26 @@ namespace Irmandade.Data
             MessageBox.Show("Um novo banco de dados foi criado!");
         }
 
+        public static void SaveDatabase()
+        {
+            if (!File.Exists(DbFile))
+            {
+                MessageBox.Show("Erro: Banco de Dados não encontrado para fazer backup!");
+                return;
+            }
+
+            string CurrentDatabasePath = Environment.CurrentDirectory + @"\VoluntariosDB.db";
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                string PathtobackUp = fbd.SelectedPath.ToString();
+                string timeStamp = DateTime.Now.ToString("ddMMyyyy-HHmmss");
+                File.Copy(CurrentDatabasePath, PathtobackUp + $@"\VoluntariosDB_{timeStamp}.db", true);
+                MessageBox.Show("Backup efetuado com sucesso!");
+            }
+        }
+
         #region Pessoa table
         public Pessoa GetPessoaByCPF(string CPF)
         {

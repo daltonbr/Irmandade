@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using System.Windows.Input;
 using Irmandade.Model;
 using Irmandade.Data;
+using System.IO;
 
 namespace Irmandade
 {
@@ -141,7 +142,7 @@ namespace Irmandade
         private void exitButton_Click(object sender, EventArgs e)
         {
             // TODO put this message box to work in release version
-            //MessageBoxResult result = MessageBox.Show("Deseja realmente sair?", "Irmandade", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            //MessageBoxResult result = MessageBox.Show("Deseja realmente sair?", "Irmãs do Imaculado Coração de Maria", MessageBoxButton.YesNo, MessageBoxImage.Question);
             //if (result == MessageBoxResult.Yes)
             //{
                 Close();
@@ -208,6 +209,16 @@ namespace Irmandade
             {
                 diasCheckedListBox.SetItemCheckState(i, CheckState.Unchecked);
             }            
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Repository.SaveDatabase();
         }
 
     }
