@@ -27,7 +27,6 @@ namespace Irmandade
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //LoadMainQuery();
             LoadMainQueryComposed();
             LoadServicos();
         }
@@ -221,5 +220,14 @@ namespace Irmandade
             Repository.SaveDatabase();
         }
 
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Repository.RestoreDatabase();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

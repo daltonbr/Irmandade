@@ -130,15 +130,52 @@ namespace Irmandade.Data
                 return;
             }
 
-            string CurrentDatabasePath = Environment.CurrentDirectory + @"\VoluntariosDB.db";
+            string currentDatabasePath = DbFile;
             FolderBrowserDialog fbd = new FolderBrowserDialog();
 
             if (fbd.ShowDialog() == DialogResult.OK)
             {
                 string PathtobackUp = fbd.SelectedPath.ToString();
                 string timeStamp = DateTime.Now.ToString("ddMMyyyy-HHmmss");
-                File.Copy(CurrentDatabasePath, PathtobackUp + $@"\VoluntariosDB_{timeStamp}.db", true);
+                File.Copy(currentDatabasePath, PathtobackUp + $@"\VoluntariosDB_{timeStamp}.db", true);
                 MessageBox.Show("Backup efetuado com sucesso!");
+            }
+        }
+
+        public static void RestoreDatabase()
+        {
+            string pathToRestoreDB = DbFile;
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Arquivos db (*.db)|*.db|Todos os arquivos(*.*)|*.*";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string fileToRestore = ofd.FileName;
+                    // Rename Current Database to .Bak
+                    //File.Move(PathToRestoreDB, PathToRestoreDB + ".bak");
+                    //Restore the Database From Backup Folder
+
+                    if (File.Exists(DbFile))
+                    {
+                        using (var db = DbConnection())
+                        {
+                            db.ClearTypeCallbacks();
+                            db.Dispose();                            
+                            GC.Collect();
+                            GC.WaitForPendingFinalizers();
+                            File.Delete(DbFile);
+                            File.Copy(fileToRestore, pathToRestoreDB, true);
+                            MessageBox.Show("Backup restaurado com sucesso!");
+                        }
+                    }
+                    //if (File.Exists(tempFile)) File.Delete(tempFile);                
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: O arquivo não pode ser lido.\n nErro original: " + ex.Message);
+                }
             }
         }
 
@@ -245,7 +282,7 @@ namespace Irmandade.Data
                 CreateDatabase();
             }
 
-            using (SQLiteConnection conn = DbConnection())
+            using (var conn = DbConnection())
             {
                 conn.Open();
                 pessoa.CPF = conn.Query<string>(
@@ -260,7 +297,7 @@ namespace Irmandade.Data
 
         public void DeletePessoaByCPF(string CPF)
         {            
-            using (SQLiteConnection conn = Repository.DbConnection())
+            using (var conn = Repository.DbConnection())
             {
                 conn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(conn))
@@ -351,7 +388,7 @@ namespace Irmandade.Data
         {
             int resultado = -1;
 
-            using (SQLiteConnection conn = Repository.DbConnection())
+            using (var conn = Repository.DbConnection())
             {
                 conn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(conn))
@@ -381,7 +418,7 @@ namespace Irmandade.Data
 
         public void DeleteServiçoByDescricao(string descricao)
         {            
-            using (SQLiteConnection conn = Repository.DbConnection())
+            using (var conn = Repository.DbConnection())
             {
                 conn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(conn))
