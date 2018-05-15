@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridPanel = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.deleteButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.insertButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -62,6 +61,8 @@
             this.excluirVoluntárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gerenciarServiçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.gridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -81,16 +82,16 @@
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.dataGridView, "dataGridView");
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView.RowTemplate.Height = 33;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
@@ -98,17 +99,9 @@
             // panel1
             // 
             resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Controls.Add(this.deleteButton);
             this.panel1.Controls.Add(this.editButton);
             this.panel1.Controls.Add(this.insertButton);
             this.panel1.Name = "panel1";
-            // 
-            // deleteButton
-            // 
-            resources.ApplyResources(this.deleteButton, "deleteButton");
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // editButton
             // 
@@ -202,6 +195,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
@@ -261,19 +255,24 @@
             this.inserirVoluntárioToolStripMenuItem,
             this.editarVoluntárioToolStripMenuItem,
             this.toolStripSeparator4,
+            this.gerenciarServiçosToolStripMenuItem,
+            this.toolStripSeparator1,
             this.excluirVoluntárioToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             resources.ApplyResources(this.editToolStripMenuItem, "editToolStripMenuItem");
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // inserirVoluntárioToolStripMenuItem
             // 
             this.inserirVoluntárioToolStripMenuItem.Name = "inserirVoluntárioToolStripMenuItem";
             resources.ApplyResources(this.inserirVoluntárioToolStripMenuItem, "inserirVoluntárioToolStripMenuItem");
+            this.inserirVoluntárioToolStripMenuItem.Click += new System.EventHandler(this.inserirVoluntárioToolStripMenuItem_Click);
             // 
             // editarVoluntárioToolStripMenuItem
             // 
             this.editarVoluntárioToolStripMenuItem.Name = "editarVoluntárioToolStripMenuItem";
             resources.ApplyResources(this.editarVoluntárioToolStripMenuItem, "editarVoluntárioToolStripMenuItem");
+            this.editarVoluntárioToolStripMenuItem.Click += new System.EventHandler(this.editarVoluntárioToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
@@ -284,6 +283,7 @@
             // 
             this.excluirVoluntárioToolStripMenuItem.Name = "excluirVoluntárioToolStripMenuItem";
             resources.ApplyResources(this.excluirVoluntárioToolStripMenuItem, "excluirVoluntárioToolStripMenuItem");
+            this.excluirVoluntárioToolStripMenuItem.Click += new System.EventHandler(this.excluirVoluntárioToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -296,6 +296,17 @@
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
+            // 
+            // gerenciarServiçosToolStripMenuItem
+            // 
+            this.gerenciarServiçosToolStripMenuItem.Name = "gerenciarServiçosToolStripMenuItem";
+            resources.ApplyResources(this.gerenciarServiçosToolStripMenuItem, "gerenciarServiçosToolStripMenuItem");
+            this.gerenciarServiçosToolStripMenuItem.Click += new System.EventHandler(this.gerenciarServiçosToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // MainForm
             // 
@@ -327,7 +338,6 @@
         private System.Windows.Forms.Panel gridPanel;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button insertButton;
         private System.Windows.Forms.Panel panel2;
@@ -355,6 +365,8 @@
         private System.Windows.Forms.ToolStripMenuItem inserirVoluntárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarVoluntárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excluirVoluntárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gerenciarServiçosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

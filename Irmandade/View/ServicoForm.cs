@@ -23,6 +23,7 @@ namespace Irmandade
         public ServicoForm()
         {
             InitializeComponent();
+            _isExpanded = true;
         }
 
         public ServicoForm(string CPF)
@@ -39,7 +40,7 @@ namespace Irmandade
             CarregaDados();
             if (listBox.SelectedIndex == -1)
             {
-                editButton.Enabled = false;
+                //editButton.Enabled = false;
                 // MessageBox.Show("Por favor selecione um item antes!");
             }
         }

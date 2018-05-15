@@ -212,7 +212,7 @@ namespace Irmandade
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            exitButton_Click(sender, e);
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -228,6 +228,45 @@ namespace Irmandade
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void inserirVoluntárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            insertButton_Click(sender, e);
+        }
+
+        private void editarVoluntárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            editButton_Click(sender, e);
+        }
+
+        private void excluirVoluntárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult response = MessageBox.Show($"Deseja REMOVER o voluntário de CPF {GetPessoaCPFFromActiveRow()}?", "ATENÇÃO! Remover Voluntario",
+                      MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                if (response == DialogResult.Yes)
+                {
+                    Repository.Instance.DeletePessoaByCPF(GetPessoaCPFFromActiveRow());
+                    LoadMainQueryComposed();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: Voluntário não removido!" + ex.Message);
+            }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gerenciarServiçosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ServicoForm form = new ServicoForm();
+            form.Show();
         }
     }
 }
