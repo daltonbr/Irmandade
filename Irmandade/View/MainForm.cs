@@ -140,12 +140,11 @@ namespace Irmandade.View
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            // TODO put this message box to work in release version
-            //MessageBoxResult result = MessageBox.Show("Deseja realmente sair?", "Irmãs do Imaculado Coração de Maria", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            //if (result == MessageBoxResult.Yes)
-            //{
+            DialogResult response = MessageBox.Show("Deseja realmente sair?", "Irmãs do Imaculado Coração de Maria", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (response == DialogResult.Yes)
+            {
                 Close();
-            //}
+            }
         }
 
         #endregion
@@ -280,5 +279,22 @@ namespace Irmandade.View
             Repository.RestoreDatabase();
             LoadMainQueryComposed();
         }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult response = MessageBox.Show($"Atenção! Deseja EXCLUIR TODOS OS Dados do Sistema?", "ATENÇÃO! Exclusão de dados!",
+                      MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (response == DialogResult.Yes)
+            {
+                DialogResult response2 = MessageBox.Show($"Atenção! Última confirmação: Deseja EXCLUIR TODOS OS Dados do Sistema? Esta operação é irreversível!", "ATENÇÃO! Exclusão de dados!",
+                      MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                if (response2 == DialogResult.Yes)
+                {
+                    Repository.Instance.DeleteDataFromAllTables();
+                    LoadMainQueryComposed();
+                }
+            }
+        }
     }
+
 }

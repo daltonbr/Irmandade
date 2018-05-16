@@ -79,6 +79,25 @@ namespace Irmandade.Data
             }
         }
 
+        public void DeleteDataFromAllTables()
+        {
+            if (!File.Exists(DbFile))
+            {
+                CreateDatabase();
+            }
+
+            using (var conn = DbConnection())
+            {
+                conn.Open();
+
+                conn.Execute("DELETE FROM Pessoas;");
+                conn.Execute("DELETE FROM Servicos;");
+                conn.Execute("DELETE FROM Pessoas_Servicos;");
+                conn.Close();
+            }
+            MessageBox.Show("Todos os dados anteriores foram removidos!");
+        }
+
         protected static void CreateDatabase()
         {
             using (var conn = DbConnection())
@@ -265,7 +284,15 @@ namespace Irmandade.Data
             }
             string fields = "P.CPF, P.Nome, P.Email, P.TelefoneFixo, P.TelefoneCelular";
             string finalSql = "SELECT "+ fields + " FROM Pessoas P " + sqlServicoJoin + " Nome LIKE '%" + nome + "%'" + sqlDias ;
-            return this.GetDataTableFromConnection<SQLiteConnection>(finalSql);
+            try
+            {
+                return this.GetDataTableFromConnection<SQLiteConnection>(finalSql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao exibir dados!" + ex);
+                return null;
+            }
         }
 
         public void SavePessoa(Pessoa pessoa)
