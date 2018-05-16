@@ -278,6 +278,7 @@ namespace Irmandade.View
         private void openToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Repository.RestoreDatabase();
+            LoadMainQueryComposed();
         }
     }
 }

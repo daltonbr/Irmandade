@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Irmandade</RootNamespace>
-    <AssemblyName>Irmandade</AssemblyName>
+    <AssemblyName>Cadastro de Voluntários</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -60,7 +60,10 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>heartIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapper, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
@@ -201,6 +204,7 @@
     <None Include="Resources\Images\brasao.jpg" />
     <None Include="Resources\Images\ceapla.png" />
     <None Include="Resources\Images\brasaoIGCE.jpg" />
+    <Content Include="heartIcon.ico" />
     <Content Include="Resources\Images\coracaoIcon256.ico" />
     <None Include="Resources\Images\MariaRight.jpg" />
     <None Include="Resources\Images\coracaoIcon256.png" />

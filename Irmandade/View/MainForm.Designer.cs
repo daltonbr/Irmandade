@@ -33,10 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridPanel = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.editButton = new System.Windows.Forms.Button();
             this.insertButton = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.exitButton = new System.Windows.Forms.Button();
             this.servicosComboBox = new System.Windows.Forms.ComboBox();
             this.diasCheckedListBox = new System.Windows.Forms.CheckedListBox();
@@ -67,8 +65,6 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.filtroGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -100,13 +96,6 @@
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 
-            // panel1
-            // 
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Controls.Add(this.editButton);
-            this.panel1.Controls.Add(this.insertButton);
-            this.panel1.Name = "panel1";
-            // 
             // editButton
             // 
             resources.ApplyResources(this.editButton, "editButton");
@@ -120,12 +109,6 @@
             this.insertButton.Name = "insertButton";
             this.insertButton.UseVisualStyleBackColor = true;
             this.insertButton.Click += new System.EventHandler(this.insertButton_Click);
-            // 
-            // panel2
-            // 
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Controls.Add(this.exitButton);
-            this.panel2.Name = "panel2";
             // 
             // exitButton
             // 
@@ -331,9 +314,10 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.editButton);
+            this.Controls.Add(this.insertButton);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.filtroGroupBox);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.gridPanel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -341,8 +325,6 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.gridPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.filtroGroupBox.ResumeLayout(false);
             this.filtroGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -358,10 +340,8 @@
 
         private System.Windows.Forms.Panel gridPanel;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button insertButton;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.ComboBox servicosComboBox;
         private System.Windows.Forms.CheckedListBox diasCheckedListBox;

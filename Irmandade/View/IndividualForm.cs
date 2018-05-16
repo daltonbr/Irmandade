@@ -44,6 +44,7 @@ namespace Irmandade.View
                 saveButton.Enabled = true;
                 nomeTextBox.Focus();
                 _operation = operation.insert;
+                CPFTextBox.Enabled = true;
             }
             else
             {

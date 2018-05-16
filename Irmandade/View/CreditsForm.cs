@@ -47,5 +47,20 @@ namespace Irmandade.View
         {
             versionLabel.Text = Irmandade.strings.version;
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://rc.unesp.br");
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://igce.rc.unesp.br/#!/unidade-auxiliar/ceapla/");
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://igce.rc.unesp.br/");
+        }
     }
 }

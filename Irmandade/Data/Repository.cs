@@ -144,7 +144,6 @@ namespace Irmandade.Data
 
         public static void RestoreDatabase()
         {
-            string pathToRestoreDB = DbFile;
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Arquivos db (*.db)|*.db|Todos os arquivos(*.*)|*.*";
 
@@ -153,29 +152,18 @@ namespace Irmandade.Data
                 try
                 {
                     string fileToRestore = ofd.FileName;
-                    // Rename Current Database to .Bak
-                    File.Move(pathToRestoreDB, pathToRestoreDB + ".bak");
-                    //Restore the Database From Backup Folder
-
-                    if (File.Exists(DbFile))
-                    {
-                        File.Delete(DbFile);
-                    }
-
-                    //File.Move(fileToRestore, pathToRestoreDB);
-                        //using (var conn = DbConnection())
-                        //{                                                        
-                        //    //conn.ClearTypeCallbacks();
-                        //    conn.Dispose();                            
-                        //    SQLiteConnection.ClearAllPools();
-                        //    GC.Collect();
-                        //    GC.WaitForPendingFinalizers();
-                        //    File.Delete(DbFile);
-                        //    //File.Copy(fileToRestore, pathToRestoreDB, true);
-                        MessageBox.Show("Backup restaurado com sucesso!");
-                        //}
-                   // }
-                    //if (File.Exists(tempFile)) File.Delete(tempFile);                
+                    // auto backup
+                    string timeStamp = DateTime.Now.ToString("ddMMyyyy-HHmmss");
+                    string backupFilename = DbFile + timeStamp + "autobackup.db";
+                    File.Copy(DbFile, backupFilename, true);                    
+                        using (var conn = DbConnection())
+                        {                                                        
+                            conn.Dispose();
+                            GC.Collect();                            
+                            File.Copy(fileToRestore, DbFile, true);
+                            MessageBox.Show("Backup restaurado com sucesso!\n " + 
+                                             "Os dados antigos foram salvos em " + backupFilename);
+                        }
                 }
                 catch (Exception ex)
                 {
