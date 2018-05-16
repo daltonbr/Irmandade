@@ -73,7 +73,7 @@ namespace Irmandade.View
 
         private void SetEnableOnAllInputElements(bool enabled)
         {
-            CPFTextBox.Enabled = enabled;
+            //CPFTextBox.Enabled = enabled;
             RGTextBox.Enabled = enabled;
             emissorTextBox.Enabled = enabled;
             nomeTextBox.Enabled = enabled;
