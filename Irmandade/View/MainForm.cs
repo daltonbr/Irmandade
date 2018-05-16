@@ -45,6 +45,27 @@ namespace Irmandade.View
                                     diasCheckedListBox.GetItemChecked(4) };
 
             dataGridView.DataSource = Repository.Instance.GetPessoasByNomeServicoDiasDisponiveis(nome, servico, diasDisponiveis);
+            //dataGridView.Columns[0].Name = "Code ";
+            //dataGridView.Columns[1].Width = 200;    // Nome
+            //dataGridView.Columns[2].Width = 200;    // Email
+            dataGridView.Columns[3].HeaderText = "Telefone Fixo";
+            dataGridView.Columns[4].HeaderText = "Celular";
+            dataGridView.Columns[5].HeaderText = "SEG";
+            dataGridView.Columns[6].HeaderText = "TER";
+            dataGridView.Columns[7].HeaderText = "QUA";
+            dataGridView.Columns[8].HeaderText = "QUI";
+            dataGridView.Columns[9].HeaderText = "SEX";
+
+            // Resize the master DataGridView columns to fit the newly loaded data.
+            dataGridView.AutoResizeColumns();
+
+            // Configure the details DataGridView so that its columns automatically
+            // adjust their widths when the data changes.
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            //DataGridViewColumn amount = new DataGridViewColumn();
+            //amount.HeaderText = "Amount";
+            //amount.Name = "Amount";
+            //dataGridView.Columns.Insert(3, amount);
         }
 
         private void LoadMainQuery()
@@ -295,6 +316,7 @@ namespace Irmandade.View
                 }
             }
         }
+
     }
 
 }

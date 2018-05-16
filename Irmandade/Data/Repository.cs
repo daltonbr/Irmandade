@@ -282,7 +282,7 @@ namespace Irmandade.Data
                                         ON (PS.Servico_Id = S.Id)
                                     WHERE S.Descricao = " + @" """ + servico + @""" AND ";
             }
-            string fields = "P.CPF, P.Nome, P.Email, P.TelefoneFixo, P.TelefoneCelular";
+            string fields = "P.CPF, P.Nome, P.Email, P.TelefoneFixo, P.TelefoneCelular, P.DisponivelSegunda, P.DisponivelTerca, P.DisponivelQuarta, P.DisponivelQuinta, P.DisponivelSexta";
             string finalSql = "SELECT "+ fields + " FROM Pessoas P " + sqlServicoJoin + " Nome LIKE '%" + nome + "%'" + sqlDias ;
             try
             {
