@@ -124,20 +124,11 @@ namespace Irmandade.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.0.
+        ///   Looks up a localized string similar to 1.1.
         /// </summary>
         internal static string version {
             get {
                 return ResourceManager.GetString("version", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to wednesday.
-        /// </summary>
-        internal static string wednesday {
-            get {
-                return ResourceManager.GetString("wednesday", resourceCulture);
             }
         }
     }

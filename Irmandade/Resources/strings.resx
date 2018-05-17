@@ -139,9 +139,6 @@
     <value>tuesday</value>
   </data>
   <data name="version" xml:space="preserve">
-    <value>1.0</value>
-  </data>
-  <data name="wednesday" xml:space="preserve">
-    <value>wednesday</value>
+    <value>1.1</value>
   </data>
 </root>
