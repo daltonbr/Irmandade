@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Deployment.Application;
 using System.Windows.Forms;
 
 namespace Irmandade.View
@@ -23,7 +24,12 @@ namespace Irmandade.View
 
          private void CreditsForm_Load(object sender, EventArgs e)
         {
-            versionLabel.Text = Resources.strings.version;
+            //versionLabel.Text = Irmandade.Util.Versioning.AssemblyVersion.Major.ToString() + "." +
+            //                    Irmandade.Util.Versioning.AssemblyVersion.Minor.ToString();
+            if (ApplicationDeployment.IsNetworkDeployed)
+            {
+                versionLabel.Text = Irmandade.Util.Versioning.AssemblyVersion.ToString(2);
+            }
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -39,6 +45,11 @@ namespace Irmandade.View
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://igce.rc.unesp.br/");
+        }
+
+        private void versionLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
