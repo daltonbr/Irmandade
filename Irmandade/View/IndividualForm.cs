@@ -27,9 +27,8 @@ namespace Irmandade.View
                 
         public IndividualForm(Pessoa pessoa)
         {
-            _pessoa = pessoa;
-            InitializeComponent();
-            // TODO use a nested constructor              
+            _pessoa = pessoa;            
+            InitializeComponent();            
         }
 
         public IndividualForm()
@@ -354,10 +353,7 @@ namespace Irmandade.View
                       MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
                 if (response == DialogResult.Yes)
                 {
-                    RemoveFromPessoasServicos(descricaoServico, CPF);
-                    // TODO make a verication above
-                    // TODO atualiza listBox
-                    // CarregaDados();
+                    RemoveFromPessoasServicos(descricaoServico, CPF);                    
                 }
             }
             catch (Exception ex)

@@ -33,7 +33,9 @@ namespace Irmandade.View
 
         private void LoadMainQueryComposed()
         {
-            // read inputs            
+            dataGridView.Columns.Clear();            
+            
+            // read inputs
             string nome = nameSearchTextBox.Text;
             string servico = "";
             if (servicosComboBox.SelectedIndex != -1)
@@ -44,28 +46,21 @@ namespace Irmandade.View
                                     diasCheckedListBox.GetItemChecked(3),
                                     diasCheckedListBox.GetItemChecked(4) };
 
-            dataGridView.DataSource = Repository.Instance.GetPessoasByNomeServicoDiasDisponiveis(nome, servico, diasDisponiveis);
-            //dataGridView.Columns[0].Name = "Code ";
-            //dataGridView.Columns[1].Width = 200;    // Nome
-            //dataGridView.Columns[2].Width = 200;    // Email
-            dataGridView.Columns[3].HeaderText = "Telefone Fixo";
-            dataGridView.Columns[4].HeaderText = "Celular";
-            dataGridView.Columns[5].HeaderText = "SEG";
-            dataGridView.Columns[6].HeaderText = "TER";
-            dataGridView.Columns[7].HeaderText = "QUA";
-            dataGridView.Columns[8].HeaderText = "QUI";
-            dataGridView.Columns[9].HeaderText = "SEX";
+            dataGridView.AutoGenerateColumns = false;
+            dataGridView.DataSource = Repository.Instance.GetPessoasByNomeServicoDiasDisponiveis(nome, servico, diasDisponiveis);            
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { Name = "Code", DataPropertyName="CPF" });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { Name = "Nome", DataPropertyName = "Nome" });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { Name = "Email", DataPropertyName = "Email" });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { Name = "Fone Fixo", DataPropertyName = "TelefoneFixo" });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { Name = "Celular", DataPropertyName = "TelefoneCelular" });
+            dataGridView.Columns.Add(new DataGridViewCheckBoxColumn { Name = "SEG", DataPropertyName = "DisponivelSegunda" });
+            dataGridView.Columns.Add(new DataGridViewCheckBoxColumn { Name = "TER", DataPropertyName = "DisponivelTerca" });
+            dataGridView.Columns.Add(new DataGridViewCheckBoxColumn { Name = "QUA", DataPropertyName = "DisponivelQuarta" });
+            dataGridView.Columns.Add(new DataGridViewCheckBoxColumn { Name = "QUI", DataPropertyName = "DisponivelQuinta" });
+            dataGridView.Columns.Add(new DataGridViewCheckBoxColumn { Name = "SEX", DataPropertyName = "DisponivelSexta" });
 
-            // Resize the master DataGridView columns to fit the newly loaded data.
-            dataGridView.AutoResizeColumns();
-
-            // Configure the details DataGridView so that its columns automatically
-            // adjust their widths when the data changes.
-            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            //DataGridViewColumn amount = new DataGridViewColumn();
-            //amount.HeaderText = "Amount";
-            //amount.Name = "Amount";
-            //dataGridView.Columns.Insert(3, amount);
+            dataGridView.AutoResizeColumns();            
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;            
         }
 
         private void LoadMainQuery()
@@ -124,20 +119,21 @@ namespace Irmandade.View
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            string CPF = GetPessoaCPFFromActiveRow();
-            //TODO MessageBox when cannot get valid CPF            
-            Pessoa pessoa = Repository.Instance.GetPessoaByCPF(CPF);
-
             try
             {
+                string CPF = GetPessoaCPFFromActiveRow();
+                Pessoa pessoa = Repository.Instance.GetPessoaByCPF(CPF);
                 IndividualForm iform = new IndividualForm(pessoa);
-                iform.ShowDialog();
-                LoadMainQueryComposed();                
-                LoadServicos();
+                iform.ShowDialog();                
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + ex.Message);
+                MessageBox.Show("Erro: " + ex.ToString());
+            }
+            finally
+            {
+                LoadMainQueryComposed();
+                LoadServicos();
             }
         }
 
@@ -175,7 +171,7 @@ namespace Irmandade.View
             try
             {
                 int linha = dataGridView.CurrentRow.Index;
-                // Todo improve check
+                // TODO improve check
                 return dataGridView[0, linha].Value.ToString();                
             }
             catch (Exception ex)
@@ -227,7 +223,8 @@ namespace Irmandade.View
             foreach (int i in diasCheckedListBox.CheckedIndices)
             {
                 diasCheckedListBox.SetItemCheckState(i, CheckState.Unchecked);
-            }            
+            }
+            LoadMainQueryComposed();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -317,6 +314,10 @@ namespace Irmandade.View
             }
         }
 
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 }

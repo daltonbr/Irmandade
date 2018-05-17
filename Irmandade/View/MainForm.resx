@@ -128,11 +128,8 @@
   <data name="dataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="dataGridView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
   <data name="dataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 242</value>
+    <value>1140, 372</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView.TabIndex" type="System.Int32, mscorlib">
@@ -151,13 +148,10 @@
     <value>0</value>
   </data>
   <data name="gridPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 209</value>
-  </data>
-  <data name="gridPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>24, 322</value>
   </data>
   <data name="gridPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 242</value>
+    <value>1140, 372</value>
   </data>
   <data name="gridPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -181,13 +175,10 @@
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="editButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 481</value>
-  </data>
-  <data name="editButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>256, 740</value>
   </data>
   <data name="editButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 60</value>
+    <value>210, 92</value>
   </data>
   <data name="editButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -214,13 +205,10 @@
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="insertButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 481</value>
-  </data>
-  <data name="insertButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>24, 740</value>
   </data>
   <data name="insertButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 60</value>
+    <value>210, 92</value>
   </data>
   <data name="insertButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -250,13 +238,10 @@
     <value>NoControl</value>
   </data>
   <data name="exitButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>633, 481</value>
-  </data>
-  <data name="exitButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>950, 740</value>
   </data>
   <data name="exitButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 60</value>
+    <value>210, 92</value>
   </data>
   <data name="exitButton.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -277,13 +262,10 @@
     <value>2</value>
   </data>
   <data name="servicosComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 114</value>
-  </data>
-  <data name="servicosComboBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>210, 175</value>
   </data>
   <data name="servicosComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 26</value>
+    <value>312, 37</value>
   </data>
   <data name="servicosComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -319,13 +301,10 @@
     <value>Sexta</value>
   </data>
   <data name="diasCheckedListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>370, 54</value>
-  </data>
-  <data name="diasCheckedListBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>555, 72</value>
   </data>
   <data name="diasCheckedListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 99</value>
+    <value>170, 166</value>
   </data>
   <data name="diasCheckedListBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -842,10 +821,13 @@
 </value>
   </data>
   <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 17</value>
+    <value>9, 26</value>
+  </data>
+  <data name="pictureBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 138</value>
+    <value>154, 212</value>
   </data>
   <data name="pictureBox3.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -866,10 +848,13 @@
     <value>0</value>
   </data>
   <data name="cleanButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>490, 54</value>
+    <value>735, 83</value>
+  </data>
+  <data name="cleanButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="cleanButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 69</value>
+    <value>189, 106</value>
   </data>
   <data name="cleanButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3195,10 +3180,13 @@
 </value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>629, 17</value>
+    <value>944, 26</value>
+  </data>
+  <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 138</value>
+    <value>168, 212</value>
   </data>
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -3225,10 +3213,13 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 94</value>
+    <value>206, 145</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 18</value>
+    <value>106, 29</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3252,10 +3243,13 @@
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>367, 27</value>
+    <value>550, 42</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 18</value>
+    <value>192, 29</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -3282,10 +3276,13 @@
     <value>Microsoft Sans Serif, 10.875pt</value>
   </data>
   <data name="searchNameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 27</value>
+    <value>206, 42</value>
+  </data>
+  <data name="searchNameLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="searchNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 18</value>
+    <value>71, 26</value>
   </data>
   <data name="searchNameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -3309,10 +3306,13 @@
     <value>Microsoft Sans Serif, 10.875pt</value>
   </data>
   <data name="nameSearchTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 48</value>
+    <value>210, 74</value>
+  </data>
+  <data name="nameSearchTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="nameSearchTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 24</value>
+    <value>312, 32</value>
   </data>
   <data name="nameSearchTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3333,10 +3333,16 @@
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="filtroGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 43</value>
+    <value>24, 66</value>
+  </data>
+  <data name="filtroGroupBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="filtroGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="filtroGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 161</value>
+    <value>1140, 248</value>
   </data>
   <data name="filtroGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -3362,13 +3368,49 @@
   <data name="menuStrip.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
+  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>9, 3, 0, 3</value>
+  </data>
+  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1176, 38</value>
+  </data>
+  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="menuStrip.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
+    <value>menuStrip</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="fileToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="fileToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Arquivo</value>
   </data>
   <data name="newToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAERSURBVDhPrZDbSgJRGIXnpewd6jXsjSQvIrwoI0RQMChU
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAERSURBVDhPrZDbSgJRGIXnpewd6jXsjSQvIrwoI0RQMChU
         0iiDPCGiE3ZCRkvR8VzTeBhnyR5/ccaZNnPhB4t9sdf6Ln5hb8QeathNJFVFKF5C8DqL4ksDVHWGDf7j
         LHyPg6NjviSaFqlu5yQYR+KpupaIkrMknCxT3Y7v/NYYb0ITK1c3BarbWWhLQ7IR0cTKReyZ6lZ0XYei
         ztHpK4bAc+h1FgQijzSxMptrGIxVSO0xX3AaStFki7bUMVFmaMm/eJMGfIH/MkGzLep0AXn4h/r3CJV3
@@ -3386,7 +3428,7 @@
     <value>False</value>
   </data>
   <data name="newToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 38</value>
+    <value>400, 38</value>
   </data>
   <data name="newToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Excluir TODOS os dados do sistema</value>
@@ -3394,7 +3436,7 @@
   <data name="openToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJHSURBVDhPxZBdSNNhFMb/F110ZZEVhVBgeeHNICiiuggp
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAJHSURBVDhPxZBdSNNhFMb/F110ZZEVhVBgeeHNICiiuggp
         olAUyyxI0oSaH1QYC3N+tKnp5ubm1JUua5uuqdNKMwr7kApFItTUkWZqVhSVYmao5Nevvy7UoYR3HXh4
         4XCe33nOKyy3lAY7l9RWMo0O/raWXxEyo5spVYTNvOGyfIRPfW+ptOkXqaPl6T83hcRmExSdgzAz3NVm
         YWyoYla/B+1M9JtxWLPpaH22JORIjI6gKAMB0jyEimIdo4OlbuaprwVMOOMovammpDADc34qppwUrmnl
@@ -3417,18 +3459,18 @@
     <value>False</value>
   </data>
   <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 38</value>
+    <value>400, 38</value>
   </data>
   <data name="openToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Restaurar Backup</value>
   </data>
   <data name="toolStripSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 6</value>
+    <value>397, 6</value>
   </data>
   <data name="saveToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIySURBVDhPrZLfS5NRGMfff6H7boIuuq2pMZyL1eAt11CW
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAIySURBVDhPrZLfS5NRGMfff6H7boIuuq2pMZyL1eAt11CW
         DcOKsB9vpFmaLtNExco0av6CbIVLJ61Wk3BSkT/AFCkRZSpZmrmiJQ41xSaCwdfznL15XEUX0Reem5f3
         8znnec4j/Zc8fxYGla91CS3eRTx0z6OpMYS7jmnU1X6B/VYA18snUVoyjsKCt8jLHcH5c36ouCQR2NUJ
         1Nas4G9ZXlmFKbULh1Kf8lJxSfI+WeCCyopv6q+/h+DQ/DJ2WV5Ao1FgPegRAveDOS4oLfmq/h6dn/DH
@@ -3448,34 +3490,34 @@
     <value>Ctrl+S</value>
   </data>
   <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 38</value>
+    <value>400, 38</value>
   </data>
   <data name="saveToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Salvar Backup</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 6</value>
+    <value>397, 6</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 36</value>
+    <value>400, 36</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Sair</value>
   </data>
-  <data name="fileToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="editToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 20</value>
+  <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 32</value>
   </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Arquivo</value>
+  <data name="editToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Editar</value>
   </data>
   <data name="inserirVoluntárioToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+I</value>
   </data>
   <data name="inserirVoluntárioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 22</value>
+    <value>341, 32</value>
   </data>
   <data name="inserirVoluntárioToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Inserir Voluntário</value>
@@ -3484,79 +3526,46 @@
     <value>Ctrl+D</value>
   </data>
   <data name="editarVoluntárioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 22</value>
+    <value>341, 32</value>
   </data>
   <data name="editarVoluntárioToolStripMenuItem.Text" xml:space="preserve">
     <value>Cadastro &amp;Detalhado</value>
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 6</value>
+    <value>338, 6</value>
   </data>
   <data name="excluirVoluntárioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 22</value>
+    <value>341, 32</value>
   </data>
   <data name="excluirVoluntárioToolStripMenuItem.Text" xml:space="preserve">
     <value>E&amp;xcluir Voluntário</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 6</value>
+    <value>338, 6</value>
   </data>
   <data name="gerenciarServiçosToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+E</value>
   </data>
   <data name="gerenciarServiçosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 22</value>
+    <value>341, 32</value>
   </data>
   <data name="gerenciarServiçosToolStripMenuItem.Text" xml:space="preserve">
     <value>Gerenciar &amp;Serviços</value>
-  </data>
-  <data name="editToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 21</value>
-  </data>
-  <data name="editToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Editar</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Créditos</value>
   </data>
   <data name="helpToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 21</value>
+    <value>76, 32</value>
   </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Sobre</value>
   </data>
-  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 32</value>
   </data>
-  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 25</value>
-  </data>
-  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="menuStrip.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
-    <value>menuStrip</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Créditos</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3565,10 +3574,10 @@
     <value>74</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>9, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>784, 552</value>
+    <value>1176, 849</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4092,11 +4101,8 @@
         ABimjGEBYJgyhgWAYcoYFgCGKWP+P+XUvmuKNlCUAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 591</value>
+    <value>1189, 879</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Irmãs do Imaculado Coração de Maria - Sistema de Cadastro de Voluntários</value>

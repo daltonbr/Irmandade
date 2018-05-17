@@ -17,6 +17,5 @@
         public int DisponivelQuarta { get; set; }
         public int DisponivelQuinta { get; set; }
         public int DisponivelSexta { get; set; }
-
     }
 }

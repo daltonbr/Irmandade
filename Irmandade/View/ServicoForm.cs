@@ -41,15 +41,10 @@ namespace Irmandade.View
             Form form = this.FindForm();
             form.Size = new Size(form.Size.Width, FormInitialHeight);
 
-            CarregaDados();
-            if (listBox.SelectedIndex == -1)
-            {
-                //editButton.Enabled = false;
-                // MessageBox.Show("Por favor selecione um item antes!");
-            }
+            LoadServicos();            
         }
 
-        private void CarregaDados()
+        private void LoadServicos()
         {
             listBox.Items.Clear();
 
@@ -62,7 +57,7 @@ namespace Irmandade.View
             }
             else
             {
-                // TODO load only the Servicos that the Pessoa doesn't have
+                // only the Servicos that the Pessoa doesn't have
                 sql = "SELECT S.* FROM Servicos S " +
                             "WHERE (S.Id) NOT IN " +
                             "( SELECT S.Id " +
@@ -120,7 +115,7 @@ namespace Irmandade.View
                         conn.Close();
                     }
                 }
-                CarregaDados();
+                LoadServicos();
             }
 
         }
@@ -151,7 +146,7 @@ namespace Irmandade.View
                     finally
                     {
                         conn.Close();
-                        CarregaDados();
+                        LoadServicos();
                     }
                 }
             }
@@ -189,7 +184,7 @@ namespace Irmandade.View
                 MessageBox.Show("Erro: " + ex.Message);
             }
             textBox.Clear();
-            CarregaDados();
+            LoadServicos();
         }
 
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -229,7 +224,7 @@ namespace Irmandade.View
                 MessageBox.Show("Erro: " + ex.Message);
             }
             textBox.Clear();
-            CarregaDados();
+            LoadServicos();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -291,7 +286,7 @@ namespace Irmandade.View
                 if (response == DialogResult.Yes)
                 {
                     Repository.Instance.DeleteServiçoByDescricao(listBox.SelectedItem.ToString());
-                    CarregaDados();
+                    LoadServicos();
                 }
             }
             catch (Exception ex)
