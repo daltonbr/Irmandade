@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridPanel = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.editButton = new System.Windows.Forms.Button();
@@ -38,7 +38,7 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.servicosComboBox = new System.Windows.Forms.ComboBox();
             this.diasCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.filtroGroupBox = new System.Windows.Forms.GroupBox();
+            this.consultasGroupBox = new System.Windows.Forms.GroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.cleanButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -65,7 +65,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.filtroGroupBox.SuspendLayout();
+            this.consultasGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip.SuspendLayout();
@@ -82,19 +82,19 @@
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.dataGridView, "dataGridView");
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView.RowTemplate.Height = 33;
-            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;            
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 
             // editButton
@@ -120,15 +120,15 @@
             // 
             // servicosComboBox
             // 
-            this.servicosComboBox.FormattingEnabled = true;
             resources.ApplyResources(this.servicosComboBox, "servicosComboBox");
+            this.servicosComboBox.FormattingEnabled = true;
             this.servicosComboBox.Name = "servicosComboBox";
             this.servicosComboBox.SelectedIndexChanged += new System.EventHandler(this.servicosComboBox_SelectedIndexChanged);
             // 
             // diasCheckedListBox
             // 
-            this.diasCheckedListBox.CheckOnClick = true;
             resources.ApplyResources(this.diasCheckedListBox, "diasCheckedListBox");
+            this.diasCheckedListBox.CheckOnClick = true;
             this.diasCheckedListBox.FormattingEnabled = true;
             this.diasCheckedListBox.Items.AddRange(new object[] {
             resources.GetString("diasCheckedListBox.Items"),
@@ -139,21 +139,19 @@
             this.diasCheckedListBox.Name = "diasCheckedListBox";
             this.diasCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.diasCheckedListBox_SelectedIndexChanged);
             // 
-            // filtroGroupBox
+            // consultasGroupBox
             // 
-            resources.ApplyResources(this.filtroGroupBox, "filtroGroupBox");
-            this.filtroGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.filtroGroupBox.Controls.Add(this.pictureBox3);
-            this.filtroGroupBox.Controls.Add(this.cleanButton);
-            this.filtroGroupBox.Controls.Add(this.pictureBox1);
-            this.filtroGroupBox.Controls.Add(this.label2);
-            this.filtroGroupBox.Controls.Add(this.label1);
-            this.filtroGroupBox.Controls.Add(this.searchNameLabel);
-            this.filtroGroupBox.Controls.Add(this.nameSearchTextBox);
-            this.filtroGroupBox.Controls.Add(this.servicosComboBox);
-            this.filtroGroupBox.Controls.Add(this.diasCheckedListBox);
-            this.filtroGroupBox.Name = "filtroGroupBox";
-            this.filtroGroupBox.TabStop = false;
+            resources.ApplyResources(this.consultasGroupBox, "consultasGroupBox");
+            this.consultasGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.consultasGroupBox.Controls.Add(this.cleanButton);
+            this.consultasGroupBox.Controls.Add(this.label2);
+            this.consultasGroupBox.Controls.Add(this.label1);
+            this.consultasGroupBox.Controls.Add(this.searchNameLabel);
+            this.consultasGroupBox.Controls.Add(this.nameSearchTextBox);
+            this.consultasGroupBox.Controls.Add(this.servicosComboBox);
+            this.consultasGroupBox.Controls.Add(this.diasCheckedListBox);
+            this.consultasGroupBox.Name = "consultasGroupBox";
+            this.consultasGroupBox.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -203,7 +201,7 @@
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.helpToolStripMenuItem});
-            this.menuStrip.Name = "menuStrip";            
+            this.menuStrip.Name = "menuStrip";
             // 
             // fileToolStripMenuItem
             // 
@@ -262,7 +260,7 @@
             this.toolStripSeparator1,
             this.gerenciarServiçosToolStripMenuItem});
             resources.ApplyResources(this.editToolStripMenuItem, "editToolStripMenuItem");
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";            
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             // 
             // inserirVoluntárioToolStripMenuItem
             // 
@@ -315,10 +313,12 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.insertButton);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.filtroGroupBox);
+            this.Controls.Add(this.consultasGroupBox);
             this.Controls.Add(this.gridPanel);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
@@ -327,8 +327,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.gridPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.filtroGroupBox.ResumeLayout(false);
-            this.filtroGroupBox.PerformLayout();
+            this.consultasGroupBox.ResumeLayout(false);
+            this.consultasGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip.ResumeLayout(false);
@@ -347,7 +347,7 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.ComboBox servicosComboBox;
         private System.Windows.Forms.CheckedListBox diasCheckedListBox;
-        private System.Windows.Forms.GroupBox filtroGroupBox;
+        private System.Windows.Forms.GroupBox consultasGroupBox;
         private System.Windows.Forms.Label searchNameLabel;
         private System.Windows.Forms.TextBox nameSearchTextBox;
         private System.Windows.Forms.Label label2;

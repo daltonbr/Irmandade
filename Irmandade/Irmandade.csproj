@@ -115,6 +115,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>strings.pt-BR.resx</DependentUpon>
     </Compile>
+    <Compile Include="Util\Validation.cs" />
     <Compile Include="View\CreditsForm.cs">
       <SubType>Form</SubType>
     </Compile>

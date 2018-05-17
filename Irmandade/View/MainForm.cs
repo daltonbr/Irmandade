@@ -51,7 +51,7 @@ namespace Irmandade.View
 
             dataGridView.AutoGenerateColumns = false;
             dataGridView.DataSource = Repository.Instance.GetPessoasByNomeServicoDiasDisponiveis(nome, servico, diasDisponiveis);            
-            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { Name = "Code", DataPropertyName="CPF" });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { Name = "CPF", DataPropertyName="CPF"});           
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { Name = "Nome", DataPropertyName = "Nome" });
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { Name = "Email", DataPropertyName = "Email" });
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { Name = "Fone Fixo", DataPropertyName = "TelefoneFixo" });

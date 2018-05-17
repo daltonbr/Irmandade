@@ -24,10 +24,17 @@ namespace Irmandade.View
     };
 
     public partial class IndividualForm : Form
-    {        
+    {                
+
         Pessoa _pessoa;
         operation _operation = operation.notDefined;        
         bool _hasEdition = false;   // used to control if the form has some editions
+
+        void CPFMaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            toolTipCPF.ToolTipTitle = "CPF com entrada inválida";
+            toolTipCPF.Show("Somente dígitos de (0-9) são permitidos.", CPFMaskedTextBox, CPFMaskedTextBox.Location, 5000);
+        }
 
         public IndividualForm(Pessoa pessoa)
         {
@@ -48,20 +55,20 @@ namespace Irmandade.View
                 saveButton.Enabled = true;
                 nomeTextBox.Focus();
                 _operation = operation.insert;
-                CPFTextBox.Enabled = true;
+                CPFMaskedTextBox.Enabled = true;
                 _hasEdition = false;
             }
             else
             {
                 // update mode
                 _operation = operation.update;
-                CPFTextBox.Text = _pessoa.CPF;
+                CPFMaskedTextBox.Text = _pessoa.CPF;
                 RGTextBox.Text = _pessoa.RG;                
                 emissorTextBox.Text = _pessoa.RGEmissor;
                 nomeTextBox.Text = _pessoa.Nome;
                 enderecoTextBox.Text = _pessoa.Endereco;
-                telefoneFixoTextBox.Text = _pessoa.TelefoneFixo;
-                telefoneCelularTextBox.Text = _pessoa.TelefoneCelular;
+                telefoneFixoMaskedTextBox.Text = _pessoa.TelefoneFixo;
+                telefoneCelularMaskedTextBox.Text = _pessoa.TelefoneCelular;
                 dateTimePicker.Text = _pessoa.InicioDasAtividades;
                 observacoesTextBox.Text = _pessoa.Observacoes;
                 emailTextBox.Text = _pessoa.Email;
@@ -81,13 +88,13 @@ namespace Irmandade.View
 
         private void SetEnableOnAllInputElements(bool enabled)
         {
-            //CPFTextBox.Enabled = enabled;       // we decide to avoid updates in this field
+            //CPFMaskedTextBox.Enabled = enabled;       // we decide to avoid updates in this field
             RGTextBox.Enabled = enabled;
             emissorTextBox.Enabled = enabled;
             nomeTextBox.Enabled = enabled;
             enderecoTextBox.Enabled = enabled;
-            telefoneFixoTextBox.Enabled = enabled;
-            telefoneCelularTextBox.Enabled = enabled;
+            telefoneFixoMaskedTextBox.Enabled = enabled;
+            telefoneCelularMaskedTextBox.Enabled = enabled;
             dateTimePicker.Enabled = enabled;
             observacoesTextBox.Enabled = enabled;
             emailTextBox.Enabled = enabled;
@@ -125,13 +132,13 @@ namespace Irmandade.View
             if (ValidateInputs())
             {                
                 Pessoa pessoa = new Pessoa();
-                pessoa.CPF = CPFTextBox.Text;
+                pessoa.CPF = CPFMaskedTextBox.Text;
                 pessoa.RG = RGTextBox.Text;
                 pessoa.RGEmissor = emissorTextBox.Text;
                 pessoa.Nome = nomeTextBox.Text;
                 pessoa.Endereco = enderecoTextBox.Text;
-                pessoa.TelefoneFixo = telefoneFixoTextBox.Text;
-                pessoa.TelefoneCelular = telefoneCelularTextBox.Text;
+                pessoa.TelefoneFixo = telefoneFixoMaskedTextBox.Text;
+                pessoa.TelefoneCelular = telefoneCelularMaskedTextBox.Text;
                 pessoa.InicioDasAtividades = dateTimePicker.Text;
                 pessoa.Observacoes = observacoesTextBox.Text;
                 pessoa.Email = emailTextBox.Text;
@@ -190,11 +197,18 @@ namespace Irmandade.View
                 MessageBox.Show("Erro : " + "Campo Nome inválido!");
                 return false;
             }
-            if (CPFTextBox.Text == string.Empty)
+            if (CPFMaskedTextBox.Text == string.Empty)
             {
-                MessageBox.Show("Erro : " + "Campo CPF inválido!");
+                MessageBox.Show("Erro : " + "Campo CPF vazio!");
                 return false;
             }
+            
+            if (!Validation.Validation.IsCpf(CPFMaskedTextBox.Text))
+            {
+                MessageBox.Show("Erro: CPF inválido!");
+                return false;
+            }
+
             return true;
         }
 
@@ -320,7 +334,7 @@ namespace Irmandade.View
                 // We need first to add a Pessoa
                 if (!ValidateInputs()) return;
                 _pessoa = new Pessoa();
-                _pessoa.CPF = CPFTextBox.Text;
+                _pessoa.CPF = CPFMaskedTextBox.Text;
                 _pessoa.Nome = nomeTextBox.Text;
                 _pessoa.InicioDasAtividades = dateTimePicker.Text;
                 InsertPessoa(_pessoa);
@@ -389,60 +403,17 @@ namespace Irmandade.View
             return resultado;
         }
 
-        #region update check
-
-        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            _hasEdition = true;
-        }
-
         private void editButton_Click(object sender, EventArgs e)
         {
             SetEnableOnAllInputElements(true);
             _hasEdition = false;
         }
 
-        private void RGTextBox_TextChanged(object sender, EventArgs e)
+        private void SetHasEditionToTrue(object sender, EventArgs e)
         {
             _hasEdition = true;
         }
 
-        private void emissorTextBox_TextChanged(object sender, EventArgs e)
-        {
-            _hasEdition = true;
-        }
-
-        private void nomeTextBox_TextChanged(object sender, EventArgs e)
-        {
-            _hasEdition = true;
-        }
-
-        private void emailTextBox_TextChanged(object sender, EventArgs e)
-        {
-            _hasEdition = true;
-        }
-
-        private void telefoneFixoTextBox_TextChanged(object sender, EventArgs e)
-        {
-            _hasEdition = true;
-        }
-
-        private void telefoneCelularTextBox_TextChanged(object sender, EventArgs e)
-        {
-            _hasEdition = true;
-        }
-
-        private void enderecoTextBox_TextChanged(object sender, EventArgs e)
-        {
-            _hasEdition = true;
-        }
-
-        private void observacoesTextBox_TextChanged(object sender, EventArgs e)
-        {
-            _hasEdition = true;
-        }
-
-        #endregion
     }
 
 }
