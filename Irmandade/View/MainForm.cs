@@ -124,7 +124,9 @@ namespace Irmandade.View
                 string CPF = GetPessoaCPFFromActiveRow();
                 Pessoa pessoa = Repository.Instance.GetPessoaByCPF(CPF);
                 IndividualForm iform = new IndividualForm(pessoa);
-                iform.ShowDialog();                
+                iform.Show();
+                LoadMainQueryComposed();
+                LoadServicos();
             }
             catch (Exception ex)
             {
@@ -170,9 +172,9 @@ namespace Irmandade.View
         {            
             try
             {
-                int linha = dataGridView.CurrentRow.Index;
-                // TODO improve check
-                return dataGridView[0, linha].Value.ToString();                
+                // a line must be selected AND CPF must be in the first column
+                int row = dataGridView.CurrentRow.Index;                
+                return dataGridView[0, row].Value.ToString();                
             }
             catch (Exception ex)
             {

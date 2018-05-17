@@ -24,6 +24,7 @@ namespace Irmandade.View
     {        
         Pessoa _pessoa;
         operation _operation = operation.notDefined;
+        bool _hasEdition = false;
                 
         public IndividualForm(Pessoa pessoa)
         {
@@ -44,6 +45,7 @@ namespace Irmandade.View
                 nomeTextBox.Focus();
                 _operation = operation.insert;
                 CPFTextBox.Enabled = true;
+                _hasEdition = false;
             }
             else
             {
@@ -68,6 +70,7 @@ namespace Irmandade.View
                 diasCheckedListBox.SetItemChecked(4, _pessoa.DisponivelSexta == 1);
                 
                 UpdateServicos(_pessoa.CPF);
+                _hasEdition = false;
             }
         }
 
@@ -87,7 +90,7 @@ namespace Irmandade.View
             servicoGroupBox.Enabled = enabled;
             addServicoButton.Enabled = enabled;
             removeServicoButton.Enabled = enabled;
-            saveButton.Enabled = enabled;
+            saveButton.Enabled = enabled;            
         }
 
         private void UpdateServicos(string CPF)
@@ -142,6 +145,7 @@ namespace Irmandade.View
                             MessageBox.Show("Dados incluídos com sucesso!");
                             _pessoa = pessoa;
                             _operation = operation.update;
+                            _hasEdition = false;
                         }
                         else
                         {
@@ -154,6 +158,7 @@ namespace Irmandade.View
                         {
                             MessageBox.Show("Dados atualizados com sucesso!");
                             _operation = operation.update;
+                            _hasEdition = false;
                         }
                         else
                         {
@@ -172,7 +177,7 @@ namespace Irmandade.View
             }
         }
 
-        // TODO improve this verification
+        // TODO we could improve this data validation
         private Boolean ValidateInputs()
         {            
             if (nomeTextBox.Text == string.Empty)
@@ -205,7 +210,7 @@ namespace Irmandade.View
 
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-
+            _hasEdition = true;
         }
 
         public int InsertPessoa(Pessoa pessoa)
@@ -300,7 +305,14 @@ namespace Irmandade.View
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            // TODO check for editions before closing!
+            if (_hasEdition)
+            {
+                DialogResult response = MessageBox.Show("Existem alterações não salvas! Deseja sair e descartar alterações?", "Alterações não salvas", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (response == DialogResult.No)
+                {
+                    return;
+                }                
+            }
             Close();
         }
 
@@ -342,7 +354,7 @@ namespace Irmandade.View
 
         private void diasCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            _hasEdition = true;
         }
 
         private void removeServiceFromPessoa(string descricaoServico, string CPF)
@@ -405,6 +417,47 @@ namespace Irmandade.View
         private void editButton_Click(object sender, EventArgs e)
         {
             SetEnableOnAllInputElements(true);
+            _hasEdition = false;
+        }
+
+        private void RGTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _hasEdition = true;
+        }
+
+        private void emissorTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _hasEdition = true;
+        }
+
+        private void nomeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _hasEdition = true;
+        }
+
+        private void emailTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _hasEdition = true;
+        }
+
+        private void telefoneFixoTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _hasEdition = true;
+        }
+
+        private void telefoneCelularTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _hasEdition = true;
+        }
+
+        private void enderecoTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _hasEdition = true;
+        }
+
+        private void observacoesTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _hasEdition = true;
         }
     }
 

@@ -203,8 +203,7 @@ namespace Irmandade.View
         }
 
         private void exitButton_Click(object sender, EventArgs e)
-        {
-            // TODO fazer alguma verificacao antes de fechar
+        {            
             Close();
         }
 
