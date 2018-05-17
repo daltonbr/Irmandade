@@ -1,5 +1,8 @@
 ﻿namespace Irmandade.Model
 {
+    /// <summary>
+    /// Represents the entity 'Person' in our database
+    /// </summary>
     public class Pessoa
     {
         public string CPF { get; set; }

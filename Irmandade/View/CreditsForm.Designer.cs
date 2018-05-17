@@ -72,8 +72,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(484, 18);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Este programa foi desenvolvido por CEAPLA - IGCE - UNESP Rio Claro";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "Este programa foi desenvolvido por CEAPLA - IGCE - UNESP Rio Claro";            
             // 
             // label2
             // 
@@ -85,8 +84,7 @@
             this.label2.Size = new System.Drawing.Size(531, 36);
             this.label2.TabIndex = 2;
             this.label2.Text = "Agradecimentos aos colegas do CEAPLA, e em especial ao coordenador deste\r\n projet" +
-    "o Prof. Dr. Farid Nourani.\r\n";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+    "o Prof. Dr. Farid Nourani.\r\n";            
             // 
             // linkLabel1
             // 
@@ -112,7 +110,6 @@
             this.label3.Size = new System.Drawing.Size(235, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Desenvolvedor Dalton Lima - 2018";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // imageList1
             // 

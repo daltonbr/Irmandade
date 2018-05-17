@@ -63,7 +63,8 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>heartIcon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapper, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
@@ -110,8 +111,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resources\strings.cs" />
-    <Compile Include="strings.pt-BR.Designer.cs">
+    <Compile Include="Resources\strings.pt-BR.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>strings.pt-BR.resx</DependentUpon>
@@ -144,7 +144,7 @@
     <Compile Include="View\ServicoForm.Designer.cs">
       <DependentUpon>ServicoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="strings.Designer.cs">
+    <Compile Include="Resources\strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>strings.resx</DependentUpon>
@@ -174,11 +174,11 @@
     <EmbeddedResource Include="View\ServicoForm.resx">
       <DependentUpon>ServicoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="strings.pt-BR.resx">
+    <EmbeddedResource Include="Resources\strings.pt-BR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>strings.pt-BR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="strings.resx">
+    <EmbeddedResource Include="Resources\strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -204,7 +204,6 @@
     <None Include="Resources\Images\brasao.jpg" />
     <None Include="Resources\Images\ceapla.png" />
     <None Include="Resources\Images\brasaoIGCE.jpg" />
-    <Content Include="heartIcon.ico" />
     <Content Include="Resources\Images\coracaoIcon256.ico" />
     <None Include="Resources\Images\MariaRight.jpg" />
     <None Include="Resources\Images\coracaoIcon256.png" />

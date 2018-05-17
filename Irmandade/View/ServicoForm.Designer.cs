@@ -140,7 +140,6 @@
             this.editGroup.TabIndex = 7;
             this.editGroup.TabStop = false;
             this.editGroup.Text = "Criar e Editar Serviços";
-            this.editGroup.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // deleteButton
             // 

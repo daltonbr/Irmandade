@@ -15,19 +15,16 @@ namespace Irmandade.View
 {
     public partial class ServicoForm : Form
     {
+        string _CPF = null;
+        // used to expand/contract this form's height
         private const int FormInitialHeight = 366;
         private const int FormExpandedHeight = 490;
         private bool _isExpanded = false;
-        string _CPF = null;
 
         public ServicoForm()
         {
             InitializeComponent();
             addButton.Enabled = false;
-            //ExpandForm();
-            //ToggleServicosEditing();
-            
-            //expandButton.Enabled = false;
         }
 
         public ServicoForm(string CPF)
@@ -41,10 +38,10 @@ namespace Irmandade.View
             Form form = this.FindForm();
             form.Size = new Size(form.Size.Width, FormInitialHeight);
 
-            LoadServicos();            
+            LoadServicosIntoListbox();            
         }
 
-        private void LoadServicos()
+        private void LoadServicosIntoListbox()
         {
             listBox.Items.Clear();
 
@@ -115,7 +112,7 @@ namespace Irmandade.View
                         conn.Close();
                     }
                 }
-                LoadServicos();
+                LoadServicosIntoListbox();
             }
 
         }
@@ -146,7 +143,7 @@ namespace Irmandade.View
                     finally
                     {
                         conn.Close();
-                        LoadServicos();
+                        LoadServicosIntoListbox();
                     }
                 }
             }
@@ -154,10 +151,7 @@ namespace Irmandade.View
         }
 
         private void editButton_Click(object sender, EventArgs e)
-        {
-            //if (servicosComboBox.SelectedIndex != -1)
-            //{ servico = servicosComboBox.SelectedItem.ToString(); }
-
+        {            
             if (string.IsNullOrWhiteSpace(textBox.Text))
             {
                 MessageBox.Show("Erro: Digite o novo nome do serviço na caixa ao lado!");
@@ -184,13 +178,12 @@ namespace Irmandade.View
                 MessageBox.Show("Erro: " + ex.Message);
             }
             textBox.Clear();
-            LoadServicos();
+            LoadServicosIntoListbox();
         }
 
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // if any item is selectec in the list box, enable this button
-
             if (listBox.SelectedIndex == -1)
             {
                 editButton.Enabled = false;                
@@ -223,12 +216,7 @@ namespace Irmandade.View
                 MessageBox.Show("Erro: " + ex.Message);
             }
             textBox.Clear();
-            LoadServicos();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
+            LoadServicosIntoListbox();
         }
 
         private void expandButton_Click(object sender, EventArgs e)
@@ -285,7 +273,7 @@ namespace Irmandade.View
                 if (response == DialogResult.Yes)
                 {
                     Repository.Instance.DeleteServiçoByDescricao(listBox.SelectedItem.ToString());
-                    LoadServicos();
+                    LoadServicosIntoListbox();
                 }
             }
             catch (Exception ex)

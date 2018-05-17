@@ -13,6 +13,9 @@ using System.Data.SQLite;
 
 namespace Irmandade.View
 {
+    /// <summary>
+    /// Controls the operation mode in this form
+    /// </summary>
     enum operation
     {
         notDefined,
@@ -23,9 +26,9 @@ namespace Irmandade.View
     public partial class IndividualForm : Form
     {        
         Pessoa _pessoa;
-        operation _operation = operation.notDefined;
-        bool _hasEdition = false;
-                
+        operation _operation = operation.notDefined;        
+        bool _hasEdition = false;   // used to control if the form has some editions
+
         public IndividualForm(Pessoa pessoa)
         {
             _pessoa = pessoa;            
@@ -41,6 +44,7 @@ namespace Irmandade.View
         {
             if (_pessoa == null)
             {
+                // insertion mode
                 saveButton.Enabled = true;
                 nomeTextBox.Focus();
                 _operation = operation.insert;
@@ -49,6 +53,7 @@ namespace Irmandade.View
             }
             else
             {
+                // update mode
                 _operation = operation.update;
                 CPFTextBox.Text = _pessoa.CPF;
                 RGTextBox.Text = _pessoa.RG;                
@@ -76,7 +81,7 @@ namespace Irmandade.View
 
         private void SetEnableOnAllInputElements(bool enabled)
         {
-            //CPFTextBox.Enabled = enabled;
+            //CPFTextBox.Enabled = enabled;       // we decide to avoid updates in this field
             RGTextBox.Enabled = enabled;
             emissorTextBox.Enabled = enabled;
             nomeTextBox.Enabled = enabled;
@@ -193,26 +198,6 @@ namespace Irmandade.View
             return true;
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            _hasEdition = true;
-        }
-
         public int InsertPessoa(Pessoa pessoa)
         {            
             int resultado = -1;            
@@ -327,12 +312,7 @@ namespace Irmandade.View
             removeServiceFromPessoa(servicosListBox.SelectedItem.ToString(), _pessoa.CPF);
             UpdateServicos(_pessoa.CPF);
         }
-
-        private void servicosListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void addServicoButton_Click(object sender, EventArgs e)
         {
             if (_pessoa == null)
@@ -409,9 +389,11 @@ namespace Irmandade.View
             return resultado;
         }
 
-        private void telefoneCelularLabel_Click(object sender, EventArgs e)
-        {
+        #region update check
 
+        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            _hasEdition = true;
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -459,6 +441,8 @@ namespace Irmandade.View
         {
             _hasEdition = true;
         }
+
+        #endregion
     }
 
 }

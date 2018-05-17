@@ -28,9 +28,12 @@ namespace Irmandade.View
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadMainQueryComposed();
-            LoadServicos();
+            LoadServicosIntoCombobox();
         }
 
+        /// <summary>
+        /// Main query of this form
+        /// </summary>
         private void LoadMainQueryComposed()
         {
             dataGridView.Columns.Clear();            
@@ -63,6 +66,9 @@ namespace Irmandade.View
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;            
         }
 
+        /// <summary>
+        /// Old and simple main query
+        /// </summary>
         private void LoadMainQuery()
         {
             DataTable dt = new DataTable();            
@@ -77,8 +83,8 @@ namespace Irmandade.View
                 MessageBox.Show("Erro:" + ex.Message);
             }            
         }
-
-        private void LoadServicos()
+        
+        private void LoadServicosIntoCombobox()
         {
             servicosComboBox.Items.Clear();
             DataTable dt = new DataTable();            
@@ -101,6 +107,21 @@ namespace Irmandade.View
 
         #region Buttons
 
+        /// <summary>
+        /// Clear all the query filter inputs
+        /// </summary>        
+        private void cleanButton_Click(object sender, EventArgs e)
+        {
+            nameSearchTextBox.Text = "";
+            servicosComboBox.SelectedIndex = -1;
+            diasCheckedListBox.ClearSelected();
+            foreach (int i in diasCheckedListBox.CheckedIndices)
+            {
+                diasCheckedListBox.SetItemCheckState(i, CheckState.Unchecked);
+            }
+            LoadMainQueryComposed();
+        }
+
         private void insertButton_Click(object sender, EventArgs e)
         {
             try
@@ -109,7 +130,7 @@ namespace Irmandade.View
                 IndividualForm iForm = new IndividualForm(pessoa);
                 iForm.ShowDialog();
                 LoadMainQueryComposed();
-                LoadServicos();
+                LoadServicosIntoCombobox();
             }
             catch (Exception ex)
             {
@@ -126,7 +147,7 @@ namespace Irmandade.View
                 IndividualForm iform = new IndividualForm(pessoa);
                 iform.Show();
                 LoadMainQueryComposed();
-                LoadServicos();
+                LoadServicosIntoCombobox();
             }
             catch (Exception ex)
             {
@@ -135,7 +156,7 @@ namespace Irmandade.View
             finally
             {
                 LoadMainQueryComposed();
-                LoadServicos();
+                LoadServicosIntoCombobox();
             }
         }
 
@@ -172,6 +193,7 @@ namespace Irmandade.View
         {            
             try
             {
+                // TODO this method could be improved
                 // a line must be selected AND CPF must be in the first column
                 int row = dataGridView.CurrentRow.Index;                
                 return dataGridView[0, row].Value.ToString();                
@@ -213,22 +235,6 @@ namespace Irmandade.View
             //dataGridView.DataSource = dt.DefaultView;
         }
 
-        /// <summary>
-        /// Clear all the query filter inputs
-        /// </summary>
-        /// <param name="sender"></param>
-        private void cleanButton_Click(object sender, EventArgs e)
-        {
-            nameSearchTextBox.Text = "";
-            servicosComboBox.SelectedIndex = -1;
-            diasCheckedListBox.ClearSelected();
-            foreach (int i in diasCheckedListBox.CheckedIndices)
-            {
-                diasCheckedListBox.SetItemCheckState(i, CheckState.Unchecked);
-            }
-            LoadMainQueryComposed();
-        }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             exitButton_Click(sender, e);
@@ -237,16 +243,6 @@ namespace Irmandade.View
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Repository.SaveDatabase();
-        }
-
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
 
         private void inserirVoluntárioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -275,11 +271,6 @@ namespace Irmandade.View
             {
                 MessageBox.Show("Erro: Voluntário não removido!" + ex.Message);
             }
-        }
-
-        private void editToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void gerenciarServiçosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -316,10 +307,6 @@ namespace Irmandade.View
             }
         }
 
-        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 
 }

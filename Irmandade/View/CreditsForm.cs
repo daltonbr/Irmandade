@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Irmandade.View
@@ -15,11 +8,6 @@ namespace Irmandade.View
         public CreditsForm()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void okButton_Click(object sender, EventArgs e)
@@ -33,19 +21,9 @@ namespace Irmandade.View
             System.Diagnostics.Process.Start("http://www.github.com/daltonbr/Irmandade");
         }
 
-        private void label3_Click(object sender, EventArgs e)
+         private void CreditsForm_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CreditsForm_Load(object sender, EventArgs e)
-        {
-            versionLabel.Text = Irmandade.strings.version;
+            versionLabel.Text = Resources.strings.version;
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

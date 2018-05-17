@@ -39,7 +39,7 @@ namespace Irmandade.Data
         public static string DbFile
         {
             // The file name is written in the resource file
-            get { return Environment.CurrentDirectory + "\\" + strings.databaseFileName; }
+            get { return Environment.CurrentDirectory + "\\" + Resources.strings.databaseFileName; }
         }
 
         public static SQLiteConnection DbConnection()
@@ -79,6 +79,9 @@ namespace Irmandade.Data
             }
         }
 
+        /// <summary>
+        /// Reset the data from all tables in the Database, doesn't drop the database
+        /// </summary>
         public void DeleteDataFromAllTables()
         {
             if (!File.Exists(DbFile))
@@ -161,6 +164,9 @@ namespace Irmandade.Data
             }
         }
 
+        /// <summary>
+        /// Restore another database file, and makes and auto backup in the original folder
+        /// </summary>
         public static void RestoreDatabase()
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -402,8 +408,6 @@ namespace Irmandade.Data
             }
         }
 
-        #endregion
-
         public int EditServico(string oldDescricao, string newDescricao)
         {
             int resultado = -1;
@@ -413,10 +417,10 @@ namespace Irmandade.Data
                 conn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(conn))
                 {
-                    cmd.CommandText = "UPDATE Servicos " + 
+                    cmd.CommandText = "UPDATE Servicos " +
                                       "SET Descricao = @newDescricao " +
                                       "WHERE Descricao = @oldDescricao";
-                    cmd.Prepare();                    
+                    cmd.Prepare();
                     cmd.Parameters.AddWithValue("@newDescricao", newDescricao);
                     cmd.Parameters.AddWithValue("@oldDescricao", oldDescricao);
                     try
@@ -429,7 +433,7 @@ namespace Irmandade.Data
                     }
                     finally
                     {
-                        conn.Close();                        
+                        conn.Close();
                     }
                 }
             }
@@ -437,7 +441,7 @@ namespace Irmandade.Data
         }
 
         public void DeleteServiçoByDescricao(string descricao)
-        {            
+        {
             using (var conn = Repository.DbConnection())
             {
                 conn.Open();
@@ -461,5 +465,8 @@ namespace Irmandade.Data
                 }
             }
         }
+
+        #endregion
+        
     }
 }
