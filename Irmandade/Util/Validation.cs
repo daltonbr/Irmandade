@@ -1,9 +1,7 @@
-﻿using System;
-
-namespace Validation
+﻿namespace Irmandade.Util
 {
     /// <summary>
-    /// Validadtes a Brazilian CPF
+    /// Validates a Brazilian CPF
     /// </summary>
     public static class Validation
     {

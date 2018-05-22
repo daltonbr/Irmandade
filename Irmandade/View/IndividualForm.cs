@@ -203,7 +203,7 @@ namespace Irmandade.View
                 return false;
             }
             
-            if (!Validation.Validation.IsCpf(CPFMaskedTextBox.Text))
+            if (!Util.Validation.IsCpf(CPFMaskedTextBox.Text))
             {
                 MessageBox.Show("Erro: CPF inválido!");
                 return false;

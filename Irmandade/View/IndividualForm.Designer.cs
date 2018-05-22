@@ -357,7 +357,7 @@
             // 
             this.CPFMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPFMaskedTextBox.Location = new System.Drawing.Point(6, 17);
-            this.CPFMaskedTextBox.Mask = "000.000.000-00";
+            this.CPFMaskedTextBox.Mask = "000,000,000-00";
             this.CPFMaskedTextBox.Name = "CPFMaskedTextBox";
             this.CPFMaskedTextBox.Size = new System.Drawing.Size(179, 24);
             this.CPFMaskedTextBox.TabIndex = 1;
